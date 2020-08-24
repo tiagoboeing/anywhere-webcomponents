@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
-    "@types/jest": "^26.0.10"
+    "@types/jest": "^26.0.10",
+    "puppeteer-core": "^5.2.1"
   },
   "license": "MIT",
   "bugs": {
@@ -32,5 +33,11 @@
   },
   "repository": {
     "url": "https://github.com/tiagoboeing/anywhere-webcomponents"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "2.0.1",
+    "jest": "26.0.1",
+    "jest-cli": "26.0.1",
+    "puppeteer": "2.1.1"
   }
 }

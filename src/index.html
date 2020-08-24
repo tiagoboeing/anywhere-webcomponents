@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <style>
+      body {
+        background: #f1f2f6;
+      }
+    </style>
+
     <script type="module" src="/build/anywhere-webcomponents.esm.js"></script>
     <script nomodule src="/build/anywhere-webcomponents.js"></script>
   </head>
@@ -12,8 +18,12 @@
     <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
 
     <h1>Buttons</h1>
-    <aw-button label="Primary" id="my-button" status="primary"></aw-button>
-    <aw-button label="Success" id="my-button" status="success"></aw-button>
-    <aw-button label="Danger" id="my-button" status="danger"></aw-button>
+    <aw-button label="Primary" id="my-primary-button" status="primary"></aw-button>
+    <aw-button label="Secondary" id="my-secondary-button" status="secondary"></aw-button>
+    <aw-button label="Success" id="my-success-button" status="success"></aw-button>
+    <aw-button label="Danger" id="my-danger-button" status="danger"></aw-button>
+    <aw-button label="Warn" id="my-warn-button" status="warn"></aw-button>
+    <aw-button label="Info" id="my-info-button" status="info"></aw-button>
+    <aw-button label="Outline" id="my-outline-button" status="outline"></aw-button>
   </body>
 </html>

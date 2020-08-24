@@ -10,7 +10,7 @@ describe('aw-button', () => {
     expect(page.root).toEqualHtml(`
       <aw-button>
         <mock:shadow-root>
-          <slot></slot>
+          <button type="button" class="primary"></button>
         </mock:shadow-root>
       </aw-button>
     `);

@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 :host {
   --aw-button-primary-color: #ffffff;
   --aw-button-primary-background: #2e61ec;
   --aw-button-primary-background-hover: #5498ff;
+
+  --aw-button-secondary-color: #5e5e5e;
+  --aw-button-secondary-border-color: #c8c8c8;
+  --aw-button-secondary-background: #ffffff;
+  --aw-button-secondary-background-hover: #ffffff;
 
   --aw-button-success-color: #ffffff;
   --aw-button-success-background: #14c767;
@@ -10,9 +17,21 @@
   --aw-button-danger-color: #ffffff;
   --aw-button-danger-background: #e64141;
   --aw-button-danger-background-hover: #e77070;
+
+  --aw-button-warn-color: #ffffff;
+  --aw-button-warn-background: #f39761;
+  --aw-button-warn-background-hover: #f8b58e;
+
+  --aw-button-info-color: #ffffff;
+  --aw-button-info-background: #2ea0ec;
+  --aw-button-info-background-hover: #5baee5;
+
+  --aw-button-outline-color: #2e61ec;
+  --aw-button-outline-color-hover: #5498ff;
 }
 
 button {
+  font-family: 'Open Sans', sans-serif;
   border: none;
   padding: 18px 25px;
   font-size: 15px;
@@ -32,6 +51,15 @@ button {
   background: var(--aw-button-primary-background-hover);
 }
 
+.secondary {
+  border: 1px solid var(--aw-button-secondary-border-color);
+  background: var(--aw-button-secondary-background);
+  color: var(--aw-button-secondary-color);
+}
+.secondary:hover {
+  background: var(--aw-button-secondary-background-hover);
+}
+
 .success {
   background: var(--aw-button-success-background);
   color: var(--aw-button-success-color);
@@ -46,4 +74,27 @@ button {
 }
 .danger:hover {
   background: var(--aw-button-danger-background-hover);
+}
+
+.warn {
+  background: var(--aw-button-warn-background);
+  color: var(--aw-button-warn-color);
+}
+.warn:hover {
+  background: var(--aw-button-warn-background-hover);
+}
+
+.info {
+  background: var(--aw-button-info-background);
+  color: var(--aw-button-info-color);
+}
+.info:hover {
+  background: var(--aw-button-info-background-hover);
+}
+
+.outline {
+  color: var(--aw-button-outline-color);
+}
+.outline:hover {
+  color: var(-aw-button-outline-color-hover);
 }
