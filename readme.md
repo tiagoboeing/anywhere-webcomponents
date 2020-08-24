@@ -44,11 +44,4 @@ The first step for all three of these strategies is to [publish to NPM](https://
 
 ## Components status
 
-| Component     | Preffix       | Status           |
-| ------------- | ------------- | ---------------- |
-| Buttons       | `aw-button`   | Work In Progress |
-| Checkboxes    | `aw-checkbox` | TO DO            |
-| Radio buttons | `aw-radio`    | TO DO            |
-| Select menu   | `aw-select`   | TO DO            |
-
-\+ others components
+See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
