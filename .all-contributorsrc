@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "tiagoboeing",
+      "name": "Tiago Boeing",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3449932?v=4",
+      "profile": "http://linkedin.com/in/tiagoboeing/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "anywhere-webcomponents",
+  "projectOwner": "tiagoboeing",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
