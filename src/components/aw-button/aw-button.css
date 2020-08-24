@@ -1,0 +1,49 @@
+:host {
+  --aw-button-primary-color: #ffffff;
+  --aw-button-primary-background: #2e61ec;
+  --aw-button-primary-background-hover: #5498ff;
+
+  --aw-button-success-color: #ffffff;
+  --aw-button-success-background: #14c767;
+  --aw-button-success-background-hover: #4be091;
+
+  --aw-button-danger-color: #ffffff;
+  --aw-button-danger-background: #e64141;
+  --aw-button-danger-background-hover: #e77070;
+}
+
+button {
+  border: none;
+  padding: 18px 25px;
+  font-size: 15px;
+  outline: none;
+  transition: 150ms ease-in;
+  cursor: pointer;
+  border-radius: 5rem;
+  text-transform: uppercase;
+}
+
+/* status */
+.primary {
+  background: var(--aw-button-primary-background);
+  color: var(--aw-button-primary-color);
+}
+.primary:hover {
+  background: var(--aw-button-primary-background-hover);
+}
+
+.success {
+  background: var(--aw-button-success-background);
+  color: var(--aw-button-success-color);
+}
+.success:hover {
+  background: var(--aw-button-success-background-hover);
+}
+
+.danger {
+  background: var(--aw-button-danger-background);
+  color: var(--aw-button-danger-color);
+}
+.danger:hover {
+  background: var(--aw-button-danger-background-hover);
+}
