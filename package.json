@@ -35,6 +35,7 @@
     "url": "https://github.com/tiagoboeing/anywhere-webcomponents"
   },
   "devDependencies": {
+    "@stencil/sass": "^1.3.2",
     "@types/puppeteer": "2.0.1",
     "jest": "26.0.1",
     "jest-cli": "26.0.1",

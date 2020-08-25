@@ -4,5 +4,9 @@ export enum AwButtonStatus {
   success = 'success',
   danger = 'danger',
   warn = 'warn',
+}
+
+export enum AwButtonMode {
+  default = 'default',
   outline = 'outline',
 }

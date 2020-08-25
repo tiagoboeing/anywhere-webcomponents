@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'anywhere-webcomponents',
@@ -9,7 +10,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     {
-      type: 'dist-custom-elements-bundle'
+      type: 'dist-custom-elements-bundle',
     },
     {
       type: 'docs-readme',
@@ -19,4 +20,5 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  plugins: [sass()],
 };

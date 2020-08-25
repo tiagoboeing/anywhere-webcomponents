@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AwButtonStatus } from "./components/aw-button/aw-button.model";
+import { AwButtonMode, AwButtonStatus } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwButton {
         /**
@@ -16,6 +16,10 @@ export namespace Components {
           * Text to show inside button
          */
         "label": string;
+        /**
+          * Mode of button (style)
+         */
+        "mode": AwButtonMode;
         /**
           * The status of button (color)
          */
@@ -64,6 +68,10 @@ declare namespace LocalJSX {
           * Text to show inside button
          */
         "label"?: string;
+        /**
+          * Mode of button (style)
+         */
+        "mode"?: AwButtonMode;
         /**
           * The status of button (color)
          */
