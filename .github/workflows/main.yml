@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy_CDN:
-    name: Distribute on CDN
+    name: Build and distribute
     runs-on: ubuntu-latest
 
     steps:
