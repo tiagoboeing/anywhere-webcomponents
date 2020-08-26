@@ -12,9 +12,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  deploy:
-    name: Upload to Amazon S3
+  deploy_CDN:
+    name: Distribute on CDN
     runs-on: ubuntu-latest
 
     steps:
@@ -36,6 +35,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
           aws-region: sa-east-1
 
-      - name: Copy files to the test website with the AWS CLI
-        run: |
-          aws s3 sync dist s3://cdn.tiagoboeing.com --delete
+      - name: Copy files CDN and invalidate cache
+      - run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents --delete
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "anywhere-webcomponents/*'
