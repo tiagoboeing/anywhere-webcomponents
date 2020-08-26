@@ -22,7 +22,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false",
-    "changelog.debug": "auto-changelog --template changelog-template.hbs -p --template json --output changelog-data.json"
+    "changelog.debug": "auto-changelog --template changelog-template.hbs -p -u --template json --output changelog-data.json"
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
@@ -46,7 +46,7 @@
   "auto-changelog": {
     "commitLimit": false,
     "unreleased": true,
-    "issueUrl": "https://app.clickup.com/t/{id}",
+    "issueUrl": "https://github.com/tiagoboeing/anywhere-webcomponents/issues/{id}",
     "replaceText": {
       "[Ff]eature:": "",
       "[Ff]ix:": "",
