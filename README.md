@@ -8,7 +8,16 @@
 
 A web component library will be built, the design system and specifications still are open.
 
-## Getting Started
+## Using components
+
+Now you can test components in a HTML page importing via script from CDN. **(ATTENTION!! Not use for production!)**
+
+```html
+<script src="https://cdn.tiagoboeing.com/anywhere-webcomponents/develop/anywhere-webcomponents.js"></script>
+<aw-button label="Primary" mode="outline" status="success"></aw-button>
+```
+
+## Developing
 
 - Clone this repo
 - Access directory and run:
