@@ -1,9 +1,7 @@
-name: Deploy to CDN (develop)
+name: Deploy (develop)
 
 on:
   push:
-    branches: [develop]
-  pull_request:
     branches: [develop]
 
 jobs:
@@ -16,13 +14,13 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: "14.x"
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
         env:
           CI: true
-    
+
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
         with:
