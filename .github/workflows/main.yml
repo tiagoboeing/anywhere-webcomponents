@@ -26,8 +26,7 @@ jobs:
         
       - name: Perform build to generate dist folder
         run: |
-          npm ci
-          npm run build
+          npm ci && npm run build
     
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
