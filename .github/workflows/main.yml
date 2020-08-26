@@ -18,15 +18,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v1.4.3
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
-          node-version: 14.8.0
-        
-      - name: Perform build to generate dist folder
-        run: |
-          npm ci && npm run build
+          node-version: '14.x'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+        env:
+          CI: true
     
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
