@@ -33,4 +33,4 @@ jobs:
       - name: Copy files to S3
         run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/develop --delete
       - name: Invalidate cache on CloudFront
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "anywhere-webcomponents/develop/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "/anywhere-webcomponents/develop/*"
