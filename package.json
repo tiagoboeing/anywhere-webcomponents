@@ -20,11 +20,14 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false",
+    "changelog.debug": "auto-changelog --template changelog-template.hbs -p --template json --output changelog-data.json"
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
     "@types/jest": "^26.0.10",
+    "auto-changelog": "^2.2.0",
     "puppeteer-core": "^5.2.1"
   },
   "license": "MIT",
@@ -39,5 +42,20 @@
     "jest": "26.0.1",
     "jest-cli": "26.0.1",
     "puppeteer": "2.1.1"
+  },
+  "auto-changelog": {
+    "commitLimit": false,
+    "unreleased": true,
+    "issueUrl": "https://app.clickup.com/t/{id}",
+    "replaceText": {
+      "[Ff]eature:": "",
+      "[Ff]ix:": "",
+      "[Bb]reak:": "",
+      "^\\#\\d": "[$1](https://github.com/tiagoboeing/anywhere-webcomponents/issues/$1) - "
+    },
+    "includeBranch": [
+      "develop",
+      "master"
+    ]
   }
 }
