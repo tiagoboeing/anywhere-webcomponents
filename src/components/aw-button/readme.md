@@ -2,7 +2,6 @@
 
 A simple button with styles of Anywhere Design System applied.
 
-
 <!-- Auto Generated Below -->
 
 
