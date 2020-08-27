@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// TODO: move to new folder with variables.scss
+$primary: #2e61ec;
+$primary-hover: #5498ff;
+
+$secondary: #ffffff;
+$secondary-hover: #f0f0f0;
+
+$success: #14c767;
+$success-hover: #4be091;
+
+$danger: #e64141;
+$danger-hover: #e77070;
+
+$warn: #f39761;
+$warn-hover: #f8b58e;
+
+$info: #2ea0ec;
+$info-hover: #5baee5;
+
+/* ----------------------- */
+
+/* default mode */
+$default-primary-color: #ffffff;
+$default-primary-background: $primary;
+$default-primary-background-hover: $primary-hover;
+
+$default-secondary-color: #5e5e5e;
+$default-secondary-border-color: #c8c8c8;
+$default-secondary-background: $secondary;
+$default-secondary-background-hover: $secondary-hover;
+
+$default-success-color: #ffffff;
+$default-success-background: $success;
+$default-success-background-hover: $success-hover;
+
+$default-danger-color: #ffffff;
+$default-danger-background: $danger;
+$default-danger-background-hover: $danger-hover;
+
+$default-warn-color: #ffffff;
+$default-warn-background: $warn;
+$default-warn-background-hover: $warn-hover;
+
+$default-info-color: #ffffff;
+$default-info-background: $info;
+$default-info-background-hover: $info-hover;
+
+/* outline mode */
+$outline-primary-color: $primary;
+$outline-primary-color-hover: $primary-hover;
+
+$outline-secondary-color: $secondary;
+$outline-secondary-color-hover: $secondary-hover;
+
+$outline-success-color: $success;
+$outline-success-color-hover: $success-hover;
+
+$outline-danger-color: $danger;
+$outline-danger-color-hover: $danger-hover;
+
+$outline-warn-color: $warn;
+$outline-warn-color-hover: $warn-hover;
+
+$outline-info-color: $info;
+$outline-info-color-hover: $info-hover;
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  padding: 18px 25px;
+  font-size: 15px;
+  outline: none;
+  transition: 150ms ease-in;
+  cursor: pointer;
+  border-radius: 5rem;
+  text-transform: uppercase;
+
+  /* default mode */
+  &.default {
+    &.primary {
+      background: $default-primary-background;
+      color: $default-primary-color;
+    }
+    &.primary:hover {
+      background: $default-primary-background-hover;
+    }
+
+    &.secondary {
+      border: 1px solid $default-secondary-border-color;
+      background: $default-secondary-background;
+      color: $default-secondary-color;
+    }
+    &.secondary:hover {
+      background: $default-secondary-background-hover;
+    }
+
+    &.success {
+      background: $default-success-background;
+      color: $default-success-color;
+    }
+    &.success:hover {
+      background: $default-success-background-hover;
+    }
+
+    &.danger {
+      background: $default-danger-background;
+      color: $default-danger-color;
+    }
+    &.danger:hover {
+      background: $default-danger-background-hover;
+    }
+
+    &.warn {
+      background: $default-warn-background;
+      color: $default-warn-color;
+    }
+    &.warn:hover {
+      background: $default-warn-background-hover;
+    }
+
+    &.info {
+      background: $default-info-background;
+      color: $default-info-color;
+    }
+    &.info:hover {
+      background: $default-info-background-hover;
+    }
+  }
+
+  /* outline mode */
+  &.outline {
+    background: unset;
+    border: none;
+
+    &.primary {
+      color: $outline-primary-color;
+    }
+    &.primary:hover {
+      color: $outline-primary-color-hover;
+    }
+
+    &.secondary {
+      color: $outline-secondary-color;
+    }
+    &.secondary:hover {
+      color: $outline-secondary-color-hover;
+    }
+
+    &.success {
+      color: $outline-success-color;
+    }
+    &.success:hover {
+      color: $outline-success-color-hover;
+    }
+
+    &.danger {
+      color: $outline-danger-color;
+    }
+    &.danger:hover {
+      color: $outline-danger-color-hover;
+    }
+
+    &.warn {
+      color: $outline-warn-color;
+    }
+    &.warn:hover {
+      color: $outline-warn-color-hover;
+    }
+
+    &.info {
+      color: $outline-info-color;
+    }
+    &.info:hover {
+      color: $outline-info-color-hover;
+    }
+  }
+}

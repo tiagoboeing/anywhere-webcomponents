@@ -15,15 +15,22 @@
     <script nomodule src="/build/anywhere-webcomponents.js"></script>
   </head>
   <body>
-    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
-
     <h1>Buttons</h1>
+
+    <h2>Default mode</h2>
     <aw-button label="Primary" id="my-primary-button" status="primary"></aw-button>
     <aw-button label="Secondary" id="my-secondary-button" status="secondary"></aw-button>
     <aw-button label="Success" id="my-success-button" status="success"></aw-button>
     <aw-button label="Danger" id="my-danger-button" status="danger"></aw-button>
     <aw-button label="Warn" id="my-warn-button" status="warn"></aw-button>
     <aw-button label="Info" id="my-info-button" status="info"></aw-button>
-    <aw-button label="Outline" id="my-outline-button" status="outline"></aw-button>
+
+    <h2>Outline mode</h2>
+    <aw-button label="Outline" id="my-outline-button" mode="outline" status="primary"></aw-button>
+    <aw-button label="Outline" id="my-outline-button" mode="outline" status="secondary"></aw-button>
+    <aw-button label="Outline" id="my-outline-button" mode="outline" status="success"></aw-button>
+    <aw-button label="Outline" id="my-outline-button" mode="outline" status="danger"></aw-button>
+    <aw-button label="Outline" id="my-outline-button" mode="outline" status="warn"></aw-button>
+    <aw-button label="Outline" id="my-outline-button" mode="outline" status="info"></aw-button>
   </body>
 </html>
