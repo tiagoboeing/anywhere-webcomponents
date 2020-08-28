@@ -20,6 +20,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
+    "test.coverage": "stencil test --spec --e2e --coverage",
     "generate": "stencil generate",
     "changelog": "auto-changelog",
     "changelog.debug": "auto-changelog --template json --output changelog-data.json "
