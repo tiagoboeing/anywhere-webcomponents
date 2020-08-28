@@ -27,6 +27,7 @@ $default-primary-background: $primary;
 $default-primary-background-hover: $primary-hover;
 
 $default-secondary-color: #5e5e5e;
+$default-secondary-border-color: #c8c8c8;
 $default-secondary-background: $secondary;
 $default-secondary-background-hover: $secondary-hover;
 
@@ -46,8 +47,8 @@ $default-info-color: #ffffff;
 $default-info-background: $info;
 $default-info-background-hover: $info-hover;
 
-$default-disabled-color: #929292;
-$default-disabled-background: #cccccc;
+$default-disabled-color: #a5a5a5;
+$default-disabled-background: #d8d8d8;
 
 /* outline mode */
 $outline-primary-color: $primary;
@@ -68,7 +69,7 @@ $outline-warn-color-hover: $warn-hover;
 $outline-info-color: $info;
 $outline-info-color-hover: $info-hover;
 
-$outline-disabled-color: #929292;
+$outline-disabled-color: $default-disabled-color;
 
 button {
   font-family: 'Open Sans', sans-serif;
@@ -92,6 +93,7 @@ button {
     }
 
     &.secondary {
+      box-shadow: inset 0px 0px 0px 1px $default-secondary-border-color;
       background: $default-secondary-background;
       color: $default-secondary-color;
     }
