@@ -51,9 +51,9 @@ There are three strategies we recommend for using web components built with Sten
 
 The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
 
-## Screenshots
+## Screenshots (WIP preview)
 
-![](https://i.imgur.com/jaIx8KG.png)
+![](https://i.imgur.com/3TgtuBR.png)
 
 ## Components status
 
