@@ -31,6 +31,12 @@ export class AwButton {
   @Prop()
   mode: AwButtonMode = AwButtonMode.default;
 
+  /**
+   * Boolean to indicate if button is disabled
+   */
+  @Prop({ attribute: 'disabled' })
+  disabled: boolean = false;
+
   render() {
     const classList = {
       [this.mode]: true,
@@ -39,7 +45,7 @@ export class AwButton {
 
     return (
       <Host>
-        <button type="button" id={this.identifier} class={classList}>
+        <button type="button" id={this.identifier} class={classList} disabled={this.disabled}>
           {this.label}
         </button>
       </Host>

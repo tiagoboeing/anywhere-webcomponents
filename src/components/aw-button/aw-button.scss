@@ -27,7 +27,6 @@ $default-primary-background: $primary;
 $default-primary-background-hover: $primary-hover;
 
 $default-secondary-color: #5e5e5e;
-$default-secondary-border-color: #c8c8c8;
 $default-secondary-background: $secondary;
 $default-secondary-background-hover: $secondary-hover;
 
@@ -47,6 +46,9 @@ $default-info-color: #ffffff;
 $default-info-background: $info;
 $default-info-background-hover: $info-hover;
 
+$default-disabled-color: #929292;
+$default-disabled-background: #cccccc;
+
 /* outline mode */
 $outline-primary-color: $primary;
 $outline-primary-color-hover: $primary-hover;
@@ -65,6 +67,8 @@ $outline-warn-color-hover: $warn-hover;
 
 $outline-info-color: $info;
 $outline-info-color-hover: $info-hover;
+
+$outline-disabled-color: #929292;
 
 button {
   font-family: 'Open Sans', sans-serif;
@@ -88,7 +92,6 @@ button {
     }
 
     &.secondary {
-      border: 1px solid $default-secondary-border-color;
       background: $default-secondary-background;
       color: $default-secondary-color;
     }
@@ -126,6 +129,15 @@ button {
     }
     &.info:hover {
       background: $default-info-background-hover;
+    }
+
+    &:disabled {
+      color: $default-disabled-color;
+      background: $default-disabled-background;
+
+      &:hover {
+        background: $default-disabled-background;
+      }
     }
   }
 
@@ -174,6 +186,14 @@ button {
     }
     &.info:hover {
       color: $outline-info-color-hover;
+    }
+
+    &:disabled {
+      color: $outline-disabled-color;
+
+      &:hover {
+        color: $outline-disabled-color;
+      }
     }
   }
 }
