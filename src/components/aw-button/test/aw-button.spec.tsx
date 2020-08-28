@@ -55,4 +55,36 @@ describe('aw-button', () => {
       </aw-button>
     `);
   });
+
+  describe('Disabled state', () => {
+    it('Default mode', async () => {
+      const withModeSpecified = await newSpecPage({
+        components: [AwButton],
+        html: `<aw-button mode="default" status="danger" disabled="true"></aw-button>`,
+      });
+      expect(withModeSpecified.root).toEqualHtml(`
+        <aw-button mode="default" status="danger" disabled="true">
+          <mock:shadow-root>
+            <button type="button" class="default danger" disabled></button>
+          </mock:shadow-root>
+        </aw-button>
+      `);
+    });
+
+    it('Outline mode', async () => {
+      const withModeSpecified = await newSpecPage({
+        components: [AwButton],
+        html: `<aw-button mode="outline" status="danger" disabled="true"></aw-button>`,
+      });
+      expect(withModeSpecified.root).toEqualHtml(`
+        <aw-button mode="outline" status="danger" disabled="true">
+          <mock:shadow-root>
+            <button type="button" class="outline danger" disabled></button>
+          </mock:shadow-root>
+        </aw-button>
+      `);
+    });
+
+
+  });
 });

@@ -9,6 +9,10 @@ import { AwButtonMode, AwButtonStatus } from "./components/aw-button/aw-button.m
 export namespace Components {
     interface AwButton {
         /**
+          * Boolean to indicate if button is disabled
+         */
+        "disabled": boolean;
+        /**
           * Optional ID to be attached on button
          */
         "identifier": string;
@@ -25,20 +29,6 @@ export namespace Components {
          */
         "status": AwButtonStatus;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
     interface HTMLAwButtonElement extends Components.AwButton, HTMLStencilElement {
@@ -47,19 +37,16 @@ declare global {
         prototype: HTMLAwButtonElement;
         new (): HTMLAwButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "aw-button": HTMLAwButtonElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface AwButton {
+        /**
+          * Boolean to indicate if button is disabled
+         */
+        "disabled"?: boolean;
         /**
           * Optional ID to be attached on button
          */
@@ -77,23 +64,8 @@ declare namespace LocalJSX {
          */
         "status"?: AwButtonStatus;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "aw-button": AwButton;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -101,7 +73,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

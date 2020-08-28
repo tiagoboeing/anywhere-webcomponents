@@ -6,8 +6,16 @@
     <title>Stencil Component Starter</title>
 
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
       body {
-        background: #f1f2f6;
+        font-family: 'Montserrat', sans-serif;
+        color: #fff;
+        background: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 50px;
       }
     </style>
 
@@ -15,22 +23,29 @@
     <script nomodule src="/build/anywhere-webcomponents.js"></script>
   </head>
   <body>
-    <h1>Buttons</h1>
+    <h1>anywhere-webcomponents</h1>
+    <h2>Buttons</h2>
 
-    <h2>Default mode</h2>
-    <aw-button label="Primary" id="my-primary-button" status="primary"></aw-button>
-    <aw-button label="Secondary" id="my-secondary-button" status="secondary"></aw-button>
-    <aw-button label="Success" id="my-success-button" status="success"></aw-button>
-    <aw-button label="Danger" id="my-danger-button" status="danger"></aw-button>
-    <aw-button label="Warn" id="my-warn-button" status="warn"></aw-button>
-    <aw-button label="Info" id="my-info-button" status="info"></aw-button>
+    <div>
+      <h3>Default mode</h3>
+      <aw-button label="Primary" id="my-primary-button" status="primary"></aw-button>
+      <aw-button label="Secondary" id="my-secondary-button" status="secondary"></aw-button>
+      <aw-button label="Success" id="my-success-button" status="success"></aw-button>
+      <aw-button label="Danger" id="my-danger-button" status="danger"></aw-button>
+      <aw-button label="Warn" id="my-warn-button" status="warn"></aw-button>
+      <aw-button label="Info" id="my-info-button" status="info"></aw-button>
+      <aw-button label="Disabled" id="my-disabled-button" status="info" disabled="true"></aw-button>
+    </div>
 
-    <h2>Outline mode</h2>
-    <aw-button label="Outline" id="my-outline-button" mode="outline" status="primary"></aw-button>
-    <aw-button label="Outline" id="my-outline-button" mode="outline" status="secondary"></aw-button>
-    <aw-button label="Outline" id="my-outline-button" mode="outline" status="success"></aw-button>
-    <aw-button label="Outline" id="my-outline-button" mode="outline" status="danger"></aw-button>
-    <aw-button label="Outline" id="my-outline-button" mode="outline" status="warn"></aw-button>
-    <aw-button label="Outline" id="my-outline-button" mode="outline" status="info"></aw-button>
+    <div>
+      <h3>Outline mode</h3>
+      <aw-button label="Outline" id="my-primary-outline-button" mode="outline" status="primary"></aw-button>
+      <aw-button label="Outline" id="my-secondary-outline-button" mode="outline" status="secondary"></aw-button>
+      <aw-button label="Outline" id="my-success-outline-button" mode="outline" status="success"></aw-button>
+      <aw-button label="Outline" id="my-danger-outline-button" mode="outline" status="danger"></aw-button>
+      <aw-button label="Outline" id="my-warn-outline-button" mode="outline" status="warn"></aw-button>
+      <aw-button label="Outline" id="my-info-outline-button" mode="outline" status="info"></aw-button>
+      <aw-button label="Disabled" id="my-disabled-outline-button" mode="outline" status="info" disabled="true"></aw-button>
+    </div>
   </body>
 </html>
