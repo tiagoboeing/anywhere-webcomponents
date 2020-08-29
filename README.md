@@ -8,7 +8,7 @@
 
 **This project is a work in progress.** See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
 
-A web component library will be built, the design system and specifications still are open.
+The design system and specifications still are open but should be inspired in [Nebular](https://github.com/akveo/nebular) and [Bootstrap](https://github.com/twbs/bootstrap).
 
 [![](https://i.imgur.com/ojeUYYo.png)](https://3fp9w.csb.app/)
 
