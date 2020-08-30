@@ -26,7 +26,7 @@ $primary-outline-hover-color: $primary-hover;
 
 $primary-gradient-color: #ffffff;
 $primary-gradient-background-fallback: $primary;
-$primary-gradient-background: linear-gradient(to right, $primary, #5e89ff);
+$primary-gradient-background: linear-gradient(to right, $primary, #799cfd);
 
 // Secondary
 $secondary-solid-background: $secondary;
@@ -88,7 +88,7 @@ $warn-outline-hover-border-color: $warn-hover;
 
 $warn-gradient-color: #ffffff;
 $warn-gradient-background-fallback: $warn;
-$warn-gradient-background: linear-gradient(to right, $warn, #ff7423);
+$warn-gradient-background: linear-gradient(to right, #ff7423, $warn);
 
 // info
 $info-solid-background: $info;
@@ -167,6 +167,7 @@ button {
     &.solid {
       background: $primary-solid-background;
       color: $primary-solid-color;
+
       &:hover {
         background: $primary-solid-hover-background;
       }
@@ -181,12 +182,20 @@ button {
       color: $primary-outline-color;
       background: $primary-outline-background;
       border: 1px solid $primary-outline-border-color;
+
       &:hover {
         color: $primary-outline-hover-color;
         border-color: $primary-outline-hover-border-color;
       }
     }
     &.basic {
+      color: $primary-outline-color;
+      background: $primary-outline-background;
+
+      &:hover {
+        color: $primary-outline-hover-color;
+        border-color: $primary-outline-hover-border-color;
+      }
     }
   }
   &.secondary {
@@ -198,6 +207,7 @@ button {
       box-shadow: inset 0px 0px 0px 1px $secondary-solid-border-color;
       background: $secondary-solid-background;
       color: $secondary-solid-color;
+
       &:hover {
         background: $secondary-solid-hover-background;
       }
@@ -219,6 +229,12 @@ button {
       }
     }
     &.basic {
+      background: $secondary-outline-background;
+      color: $secondary-outline-color;
+
+      &:hover {
+        color: $secondary-outline-hover-color;
+      }
     }
   }
   &.success {
@@ -229,6 +245,7 @@ button {
     &.solid {
       color: $success-solid-color;
       background: $success-solid-background;
+
       &:hover {
         background: $success-solid-hover-background;
       }
@@ -242,12 +259,19 @@ button {
       background: $success-outline-background;
       border: 1px solid $success-outline-border-color;
       color: $success-outline-color;
+
       &:hover {
         border: 1px solid $success-outline-hover-border-color;
         color: $success-outline-hover-color;
       }
     }
     &.basic {
+      background: $success-outline-background;
+      color: $success-outline-color;
+
+      &:hover {
+        color: $success-outline-hover-color;
+      }
     }
   }
   &.danger {
@@ -258,6 +282,7 @@ button {
     &.solid {
       background: $danger-solid-background;
       color: $danger-solid-color;
+
       &:hover {
         background: $danger-solid-hover-background;
       }
@@ -271,12 +296,19 @@ button {
       background: $danger-outline-background;
       border: 1px solid $danger-outline-border-color;
       color: $danger-outline-color;
+
       &:hover {
         color: $danger-outline-hover-color;
         border: 1px solid $danger-outline-hover-border-color;
       }
     }
     &.basic {
+      background: $danger-outline-background;
+      color: $danger-outline-color;
+
+      &:hover {
+        color: $danger-outline-hover-color;
+      }
     }
   }
   &.warn {
@@ -287,6 +319,7 @@ button {
     &.solid {
       background: $warn-solid-background;
       color: $warn-solid-color;
+
       &:hover {
         background: $warn-solid-background;
       }
@@ -297,15 +330,22 @@ button {
       background: $warn-gradient-background;
     }
     &.outline {
-      border: 1px solid $warn-outline-border-color;
       color: $warn-outline-color;
+      border: 1px solid $warn-outline-border-color;
       background: $warn-outline-background;
+
       &:hover {
         color: $warn-outline-hover-color;
         border: 1px solid $warn-outline-hover-border-color;
       }
     }
     &.basic {
+      color: $warn-outline-color;
+      background: $warn-outline-background;
+
+      &:hover {
+        color: $warn-outline-hover-color;
+      }
     }
   }
   &.info {
@@ -316,6 +356,7 @@ button {
     &.solid {
       background: $info-solid-background;
       color: $info-solid-color;
+
       &:hover {
         background: $info-solid-hover-background;
       }
@@ -326,15 +367,22 @@ button {
       background: $info-gradient-background;
     }
     &.outline {
-      border: 1px solid $info-outline-border-color;
       color: $info-outline-color;
+      border: 1px solid $info-outline-border-color;
       background: $info-outline-background;
+
       &:hover {
         color: $info-outline-hover-color;
         border: 1px solid $info-outline-hover-border-color;
       }
     }
     &.basic {
+      color: $info-outline-color;
+      background: $info-outline-background;
+
+      &:hover {
+        color: $info-outline-hover-color;
+      }
     }
   }
 }
