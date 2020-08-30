@@ -119,14 +119,24 @@ button {
   outline: none;
   transition: 150ms ease-in;
   cursor: pointer;
-  border-radius: 5rem;
   text-transform: uppercase;
 
-  .responsive {
+  &.responsive {
     width: 100%;
   }
 
-  /* SIZES */
+  /* MODE */
+  &.rounded {
+    border-radius: 5rem;
+  }
+  &.square {
+    border-radius: 3px;
+  }
+  &.radius{
+    border-radius: 15px;
+  }
+
+  /* SIZE */
   &.tiny {
     font-size: 0.75rem;
     padding: 0.5625rem 1.0625rem;

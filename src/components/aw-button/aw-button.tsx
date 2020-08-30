@@ -47,7 +47,7 @@ export class AwButton {
   disabled: boolean = false;
 
   // TODO: implement
-  @Prop()
+  @Prop({ attribute: 'fullWidth' })
   fullWidth = false;
 
   // TODO: implement
@@ -61,6 +61,7 @@ export class AwButton {
       [this.mode]: true,
       [this.status]: true,
       disabled: this.disabled,
+      responsive: this.fullWidth,
     };
 
     return (

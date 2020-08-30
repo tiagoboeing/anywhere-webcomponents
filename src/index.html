@@ -10,16 +10,23 @@
     <script nomodule src="/build/anywhere-webcomponents.js"></script>
   </head>
   <body>
-    <h1>anywhere-webcomponents</h1>
+    <h1>Anywhere webcomponents</h1>
     <h2>Buttons</h2>
 
     <div>
       <h3>Sizes</h3>
-      <aw-button label="Primary" id="primary-giant-button" status="primary" size="tiny"></aw-button>
-      <aw-button label="Primary" id="primary-giant-button" status="primary" size="small"></aw-button>
-      <aw-button label="Primary" id="primary-giant-button" status="primary" size="medium"></aw-button>
-      <aw-button label="Primary" id="primary-giant-button" status="primary" size="large"></aw-button>
-      <aw-button label="Primary" id="primary-giant-button" status="primary" size="giant"></aw-button>
+      <aw-button label="Tiny" status="primary" size="tiny"></aw-button>
+      <aw-button label="Small" status="primary" size="small"></aw-button>
+      <aw-button label="Medium" status="primary" size="medium"></aw-button>
+      <aw-button label="Large" status="primary" size="large"></aw-button>
+      <aw-button label="Giant" status="primary" size="giant"></aw-button>
+    </div>
+
+    <div>
+      <h3>Modes</h3>
+      <aw-button label="Rounded" status="primary"></aw-button>
+      <aw-button label="Radius" status="primary" mode="radius"></aw-button>
+      <aw-button label="Square" status="primary" mode="square"></aw-button>
     </div>
 
     <div>
@@ -46,13 +53,18 @@
 
     <div>
       <h3>Outline mode</h3>
-      <aw-button label="Outline" id="primary-outline-button" color="outline" status="primary"></aw-button>
-      <aw-button label="Outline" id="secondary-outline-button" color="outline" status="secondary"></aw-button>
-      <aw-button label="Outline" id="success-outline-button" color="outline" status="success"></aw-button>
-      <aw-button label="Outline" id="danger-outline-button" color="outline" status="danger"></aw-button>
-      <aw-button label="Outline" id="warn-outline-button" color="outline" status="warn"></aw-button>
-      <aw-button label="Outline" id="info-outline-button" color="outline" status="info"></aw-button>
-      <aw-button label="Disabled" id="disabled-outline-button" color="outline" status="info" disabled="true"></aw-button>
+      <aw-button label="Outline" color="outline" status="primary"></aw-button>
+      <aw-button label="Outline" color="outline" status="secondary"></aw-button>
+      <aw-button label="Outline" color="outline" status="success"></aw-button>
+      <aw-button label="Outline" color="outline" status="danger"></aw-button>
+      <aw-button label="Outline" color="outline" status="warn"></aw-button>
+      <aw-button label="Outline" color="outline" status="info"></aw-button>
+      <aw-button label="Disabled" color="outline" status="info" disabled="true"></aw-button>
+    </div>
+
+    <div>
+      <h3>Responsive</h3>
+      <aw-button label="Primary" fullWidth status="primary"></aw-button>
     </div>
   </body>
 </html>
