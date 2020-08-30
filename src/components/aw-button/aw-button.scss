@@ -321,7 +321,7 @@ button {
       color: $warn-solid-color;
 
       &:hover {
-        background: $warn-solid-background;
+        background: $warn-solid-hover-background;
       }
     }
     &.gradient {

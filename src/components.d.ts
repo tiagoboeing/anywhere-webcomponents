@@ -16,6 +16,9 @@ export namespace Components {
           * Boolean to indicate if button is disabled
          */
         "disabled": boolean;
+        /**
+          * If `true` button use `width: 100%`
+         */
         "fullWidth": boolean;
         /**
           * Optional ID to be attached on button
@@ -30,6 +33,9 @@ export namespace Components {
          */
         "mode": AwButtonMode;
         "onlyIcon": boolean;
+        /**
+          * Size of button
+         */
         "size": AwButtonSize;
         /**
           * The status of button (color)
@@ -58,6 +64,9 @@ declare namespace LocalJSX {
           * Boolean to indicate if button is disabled
          */
         "disabled"?: boolean;
+        /**
+          * If `true` button use `width: 100%`
+         */
         "fullWidth"?: boolean;
         /**
           * Optional ID to be attached on button
@@ -72,6 +81,9 @@ declare namespace LocalJSX {
          */
         "mode"?: AwButtonMode;
         "onlyIcon"?: boolean;
+        /**
+          * Size of button
+         */
         "size"?: AwButtonSize;
         /**
           * The status of button (color)

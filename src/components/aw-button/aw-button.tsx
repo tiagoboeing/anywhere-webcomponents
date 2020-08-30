@@ -37,6 +37,9 @@ export class AwButton {
   @Prop({ mutable: true })
   color: AwButtonColor = AwButtonColor.solid;
 
+  /**
+   * Size of button
+   */
   @Prop({ mutable: true })
   size: AwButtonSize = AwButtonSize.large;
 
@@ -46,7 +49,9 @@ export class AwButton {
   @Prop({ attribute: 'disabled', mutable: true })
   disabled: boolean = false;
 
-  // TODO: implement
+  /**
+   * If `true` button use `width: 100%`
+   */
   @Prop({ attribute: 'fullWidth' })
   fullWidth = false;
 
