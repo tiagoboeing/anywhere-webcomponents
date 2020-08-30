@@ -1,75 +1,115 @@
+@import '../../globals/variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-// TODO: move to new folder with variables.scss
-$primary: #2e61ec;
-$primary-hover: #5498ff;
+/*
+Use following syntax:
+status-mode-property (css)
 
-$secondary: #ffffff;
-$secondary-hover: #f0f0f0;
+Example:
+primary (status) - solid (mode) - color (text color)
 
-$success: #14c767;
-$success-hover: #4be091;
+For states (like hover):
+status-mode-hover-property (css)
+-----------------------
+*/
 
-$danger: #e64141;
-$danger-hover: #e77070;
+// Primary
+$primary-solid-background: $primary;
+$primary-solid-color: #ffffff;
+$primary-solid-hover-background: $primary-hover;
 
-$warn: #f39761;
-$warn-hover: #f8b58e;
+$primary-outline-color: $primary;
+$primary-outline-background: #e7ecf9;
+$primary-outline-border-color: $primary;
+$primary-outline-hover-border-color: $primary-hover;
+$primary-outline-hover-color: $primary-hover;
 
-$info: #2ea0ec;
-$info-hover: #5baee5;
+$primary-gradient-color: #ffffff;
+$primary-gradient-background-fallback: $primary;
+$primary-gradient-background: linear-gradient(to right, $primary, #5e89ff);
 
-/* ----------------------- */
+// Secondary
+$secondary-solid-background: $secondary;
+$secondary-solid-color: #5e5e5e;
+$secondary-solid-border-color: #c8c8c8;
+$secondary-solid-hover-background: $secondary-hover;
 
-/* default mode */
-$default-primary-color: #ffffff;
-$default-primary-background: $primary;
-$default-primary-background-hover: $primary-hover;
+$secondary-outline-color: #c8c8c8;
+$secondary-outline-border-color: #c8c8c8;
+$secondary-outline-background: $secondary;
+$secondary-outline-hover-color: #9e9e9e;
+$secondary-outline-hover-border-color: #9e9e9e;
 
-$default-secondary-color: #5e5e5e;
-$default-secondary-border-color: #c8c8c8;
-$default-secondary-background: $secondary;
-$default-secondary-background-hover: $secondary-hover;
+$secondary-gradient-color: #5e5e5e;
+$secondary-gradient-border-color: #c8c8c8;
+$secondary-gradient-background-fallback: $secondary;
+$secondary-gradient-background: linear-gradient(to right, $secondary, #e5e5e5);
 
-$default-success-color: #ffffff;
-$default-success-background: $success;
-$default-success-background-hover: $success-hover;
+// success
+$success-solid-background: $success;
+$success-solid-color: #ffffff;
+$success-solid-hover-background: $success-hover;
 
-$default-danger-color: #ffffff;
-$default-danger-background: $danger;
-$default-danger-background-hover: $danger-hover;
+$success-outline-color: $success;
+$success-outline-background: #e7f9f5;
+$success-outline-border-color: $success;
+$success-outline-hover-color: $success-hover;
+$success-outline-hover-border-color: $success-hover;
 
-$default-warn-color: #ffffff;
-$default-warn-background: $warn;
-$default-warn-background-hover: $warn-hover;
+$success-gradient-color: #ffffff;
+$success-gradient-background-fallback: $success;
+$success-gradient-background: linear-gradient(to right, $success, #2cec86);
 
-$default-info-color: #ffffff;
-$default-info-background: $info;
-$default-info-background-hover: $info-hover;
+// danger
+$danger-solid-background: $danger;
+$danger-solid-color: #ffffff;
+$danger-solid-hover-background: $danger-hover;
 
-$default-disabled-color: #a5a5a5;
-$default-disabled-background: #d8d8d8;
+$danger-outline-color: $danger;
+$danger-outline-background: #f9e7e7;
+$danger-outline-border-color: $danger;
+$danger-outline-hover-color: $danger-hover;
+$danger-outline-hover-border-color: $danger-hover;
 
-/* outline mode */
-$outline-primary-color: $primary;
-$outline-primary-color-hover: $primary-hover;
+$danger-gradient-color: #ffffff;
+$danger-gradient-background-fallback: $danger;
+$danger-gradient-background: linear-gradient(to right, $danger, #ff6767);
 
-$outline-secondary-color: $secondary;
-$outline-secondary-color-hover: $secondary-hover;
+// warn
+$warn-solid-background: $warn;
+$warn-solid-color: #ffffff;
+$warn-solid-hover-background: $warn-hover;
 
-$outline-success-color: $success;
-$outline-success-color-hover: $success-hover;
+$warn-outline-color: $warn;
+$warn-outline-border-color: $warn;
+$warn-outline-background: #f9ebe7;
+$warn-outline-hover-color: $warn-hover;
+$warn-outline-hover-border-color: $warn-hover;
 
-$outline-danger-color: $danger;
-$outline-danger-color-hover: $danger-hover;
+$warn-gradient-color: #ffffff;
+$warn-gradient-background-fallback: $warn;
+$warn-gradient-background: linear-gradient(to right, $warn, #ff7423);
 
-$outline-warn-color: $warn;
-$outline-warn-color-hover: $warn-hover;
+// info
+$info-solid-background: $info;
+$info-solid-color: #ffffff;
+$info-solid-hover-background: $info-hover;
 
-$outline-info-color: $info;
-$outline-info-color-hover: $info-hover;
+$info-outline-color: $info;
+$info-outline-border-color: $info;
+$info-outline-background: #e7f5f9;
+$info-outline-hover-color: $info-hover;
+$info-outline-hover-border-color: $info-hover;
 
-$outline-disabled-color: $default-disabled-color;
+$info-gradient-color: #ffffff;
+$info-gradient-background-fallback: $info;
+$info-gradient-background: linear-gradient(to right, $info, #6abff8);
+
+%disabled {
+  background: $disabled !important;
+  color: #a5a5a5 !important;
+  border-color: $disabled !important;
+}
 
 button {
   font-family: 'Open Sans', sans-serif;
@@ -82,120 +122,209 @@ button {
   border-radius: 5rem;
   text-transform: uppercase;
 
-  /* default mode */
-  &.default {
-    &.primary {
-      background: $default-primary-background;
-      color: $default-primary-color;
-    }
-    &.primary:hover {
-      background: $default-primary-background-hover;
-    }
-
-    &.secondary {
-      box-shadow: inset 0px 0px 0px 1px $default-secondary-border-color;
-      background: $default-secondary-background;
-      color: $default-secondary-color;
-    }
-    &.secondary:hover {
-      background: $default-secondary-background-hover;
-    }
-
-    &.success {
-      background: $default-success-background;
-      color: $default-success-color;
-    }
-    &.success:hover {
-      background: $default-success-background-hover;
-    }
-
-    &.danger {
-      background: $default-danger-background;
-      color: $default-danger-color;
-    }
-    &.danger:hover {
-      background: $default-danger-background-hover;
-    }
-
-    &.warn {
-      background: $default-warn-background;
-      color: $default-warn-color;
-    }
-    &.warn:hover {
-      background: $default-warn-background-hover;
-    }
-
-    &.info {
-      background: $default-info-background;
-      color: $default-info-color;
-    }
-    &.info:hover {
-      background: $default-info-background-hover;
-    }
-
-    &:disabled {
-      color: $default-disabled-color;
-      background: $default-disabled-background;
-
-      &:hover {
-        background: $default-disabled-background;
-      }
-    }
+  .responsive {
+    width: 100%;
   }
 
-  /* outline mode */
-  &.outline {
-    background: unset;
-    border: none;
+  /* SIZES */
+  &.tiny {
+    font-size: 0.75rem;
+    padding: 0.5625rem 1.0625rem;
+  }
+  &.small {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+  }
+  &.medium {
+    font-size: 0.875rem;
+    padding: 1rem 1.8rem;
+  }
+  &.large {
+    font-size: 0.9375rem;
+    padding: 1.125rem 2rem;
+  }
+  &.giant {
+    font-size: 1.125rem;
+    padding: 1.3125rem 2.5rem;
+  }
 
-    &.primary {
-      color: $outline-primary-color;
-    }
-    &.primary:hover {
-      color: $outline-primary-color-hover;
-    }
-
-    &.secondary {
-      color: $outline-secondary-color;
-    }
-    &.secondary:hover {
-      color: $outline-secondary-color-hover;
-    }
-
-    &.success {
-      color: $outline-success-color;
-    }
-    &.success:hover {
-      color: $outline-success-color-hover;
-    }
-
-    &.danger {
-      color: $outline-danger-color;
-    }
-    &.danger:hover {
-      color: $outline-danger-color-hover;
+  /* STATUS */
+  &.primary {
+    &.disabled {
+      @extend %disabled;
     }
 
-    &.warn {
-      color: $outline-warn-color;
+    &.solid {
+      background: $primary-solid-background;
+      color: $primary-solid-color;
+      &:hover {
+        background: $primary-solid-hover-background;
+      }
     }
-    &.warn:hover {
-      color: $outline-warn-color-hover;
+    &.gradient {
+      color: $primary-gradient-color;
+      background-color: $primary-gradient-background-fallback;
+      background: $primary-gradient-background;
     }
 
-    &.info {
-      color: $outline-info-color;
+    &.outline {
+      color: $primary-outline-color;
+      background: $primary-outline-background;
+      border: 1px solid $primary-outline-border-color;
+      &:hover {
+        color: $primary-outline-hover-color;
+        border-color: $primary-outline-hover-border-color;
+      }
     }
-    &.info:hover {
-      color: $outline-info-color-hover;
+    &.basic {
+    }
+  }
+  &.secondary {
+    &.disabled {
+      @extend %disabled;
     }
 
-    &:disabled {
-      color: $outline-disabled-color;
+    &.solid {
+      box-shadow: inset 0px 0px 0px 1px $secondary-solid-border-color;
+      background: $secondary-solid-background;
+      color: $secondary-solid-color;
+      &:hover {
+        background: $secondary-solid-hover-background;
+      }
+    }
+    &.gradient {
+      color: $secondary-gradient-color;
+      box-shadow: inset 0px 0px 0px 1px $secondary-gradient-border-color;
+      background-color: $secondary-gradient-background-fallback;
+      background: $secondary-gradient-background;
+    }
+    &.outline {
+      background: $secondary-outline-background;
+      border: 1px solid $secondary-outline-border-color;
+      color: $secondary-outline-color;
 
       &:hover {
-        color: $outline-disabled-color;
+        border: 1px solid $secondary-outline-hover-border-color;
+        color: $secondary-outline-hover-color;
       }
+    }
+    &.basic {
+    }
+  }
+  &.success {
+    &.disabled {
+      @extend %disabled;
+    }
+
+    &.solid {
+      color: $success-solid-color;
+      background: $success-solid-background;
+      &:hover {
+        background: $success-solid-hover-background;
+      }
+    }
+    &.gradient {
+      color: $success-gradient-color;
+      background-color: $success-gradient-background-fallback;
+      background: $success-gradient-background;
+    }
+    &.outline {
+      background: $success-outline-background;
+      border: 1px solid $success-outline-border-color;
+      color: $success-outline-color;
+      &:hover {
+        border: 1px solid $success-outline-hover-border-color;
+        color: $success-outline-hover-color;
+      }
+    }
+    &.basic {
+    }
+  }
+  &.danger {
+    &.disabled {
+      @extend %disabled;
+    }
+
+    &.solid {
+      background: $danger-solid-background;
+      color: $danger-solid-color;
+      &:hover {
+        background: $danger-solid-hover-background;
+      }
+    }
+    &.gradient {
+      color: $danger-gradient-color;
+      background-color: $danger-gradient-background-fallback;
+      background: $danger-gradient-background;
+    }
+    &.outline {
+      background: $danger-outline-background;
+      border: 1px solid $danger-outline-border-color;
+      color: $danger-outline-color;
+      &:hover {
+        color: $danger-outline-hover-color;
+        border: 1px solid $danger-outline-hover-border-color;
+      }
+    }
+    &.basic {
+    }
+  }
+  &.warn {
+    &.disabled {
+      @extend %disabled;
+    }
+
+    &.solid {
+      background: $warn-solid-background;
+      color: $warn-solid-color;
+      &:hover {
+        background: $warn-solid-background;
+      }
+    }
+    &.gradient {
+      color: $warn-gradient-color;
+      background-color: $warn-gradient-background-fallback;
+      background: $warn-gradient-background;
+    }
+    &.outline {
+      border: 1px solid $warn-outline-border-color;
+      color: $warn-outline-color;
+      background: $warn-outline-background;
+      &:hover {
+        color: $warn-outline-hover-color;
+        border: 1px solid $warn-outline-hover-border-color;
+      }
+    }
+    &.basic {
+    }
+  }
+  &.info {
+    &.disabled {
+      @extend %disabled;
+    }
+
+    &.solid {
+      background: $info-solid-background;
+      color: $info-solid-color;
+      &:hover {
+        background: $info-solid-hover-background;
+      }
+    }
+    &.gradient {
+      color: $info-gradient-color;
+      background-color: $info-gradient-background-fallback;
+      background: $info-gradient-background;
+    }
+    &.outline {
+      border: 1px solid $info-outline-border-color;
+      color: $info-outline-color;
+      background: $info-outline-background;
+      &:hover {
+        color: $info-outline-hover-color;
+        border: 1px solid $info-outline-hover-border-color;
+      }
+    }
+    &.basic {
     }
   }
 }
