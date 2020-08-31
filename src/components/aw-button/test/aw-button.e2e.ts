@@ -1,5 +1,4 @@
 import { newE2EPage } from '@stencil/core/testing';
-import { AwButton } from '../aw-button';
 
 describe('aw-button', () => {
   it('renders', async () => {
@@ -17,7 +16,7 @@ describe('aw-button', () => {
     const element = await page.find('aw-button');
     const button = element.shadowRoot.childNodes[0];
 
-    expect(button).toHaveClasses(['danger', 'default']);
+    expect(button).toHaveClasses(['danger', 'solid', 'large', 'rounded']);
   });
 
   it('outline mode', async () => {
@@ -26,13 +25,13 @@ describe('aw-button', () => {
       <aw-button label="New button"
         id="my-button"
         status="danger"
-        mode="outline">
+        color="outline">
       </aw-button>
     `);
 
     const element = await page.find('aw-button');
     const button = element.shadowRoot.childNodes[0];
 
-    expect(button).toHaveClasses(['danger', 'outline']);
+    expect(button).toHaveClasses(['danger', 'outline', 'large', 'rounded']);
   });
 });
