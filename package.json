@@ -1,6 +1,6 @@
 {
   "name": "anywhere-webcomponents",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "homepage": "https://github.com/tiagoboeing/anywhere-webcomponents#readme",
   "description": "A UI based on web components to use in anywhere",
   "main": "dist/index.js",
