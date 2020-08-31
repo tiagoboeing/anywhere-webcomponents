@@ -51,12 +51,6 @@ npm test
 
 When creating new component tags, use the `aw-` preffix.
 
-## Using this component
-
-There are three strategies we recommend for using web components built with Stencil.
-
-The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
 ## Components status
 
 See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
