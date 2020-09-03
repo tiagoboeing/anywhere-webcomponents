@@ -23,7 +23,7 @@
     "test.coverage": "stencil test --spec --e2e --coverage",
     "generate": "stencil generate",
     "changelog": "auto-changelog",
-    "changelog.debug": "auto-changelog --template json --output changelog-data.json "
+    "changelog.debug": "auto-changelog --template json --output changelog-data.json"
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
