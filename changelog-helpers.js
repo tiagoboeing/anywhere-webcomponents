@@ -1,32 +1,13 @@
 module.exports = function (Handlebars) {
-  Handlebars.registerHelper('merges', function (context, options) {
-    const gitLog = context.data?.root?.releases;
-
-    let finalChangelog = '';
-    const items = buildChangelog(gitLog);
-    const releases = parseForTemplate(items);
-
-    releases.forEach(el => {
-      finalChangelog += `## ${el.release} \n`;
-      finalChangelog += `${el.niceDate} \n\n`;
-
-      if (el.breaks?.length > 0) {
-        finalChangelog += `### Breaking changes \n\n`;
-        finalChangelog += el.breaks.map(item => `- ${item}`).join('\n');
-      }
-
-      if (el.features?.length > 0) {
-        finalChangelog += `### Features \n\n`;
-        finalChangelog += el.features.map(item => `- ${item}`).join('\n');
-      }
-
-      if (el.fixes?.length > 0) {
-        finalChangelog += `### Fixes \n\n`;
-        finalChangelog += el.fixes.map(item => `- ${item}`).join('\n');
-      }
-    });
-
-    return finalChangelog;
+  Handlebars.registerHelper('changelog', function (
+    {
+      data: {
+        root: { releases },
+      },
+    },
+    _options,
+  ) {
+    return createChangelog(releases);
   });
 };
 
@@ -104,4 +85,32 @@ const buildChangelog = (releases = []) => {
     });
   });
   return changelog;
+};
+
+const createChangelog = gitLog => {
+  let finalChangelog = '';
+  const items = buildChangelog(gitLog);
+  const releases = parseForTemplate(items);
+
+  releases.forEach(el => {
+    finalChangelog += `\n\n ## ${el.release} \n`;
+    finalChangelog += `${el.niceDate} \n\n`;
+
+    if (el.breaks?.length > 0) {
+      finalChangelog += `### Breaking changes \n\n`;
+      finalChangelog += el.breaks.map(item => `- ${item}`).join('\n');
+    }
+
+    if (el.features?.length > 0) {
+      finalChangelog += `### Features \n\n`;
+      finalChangelog += el.features.map(item => `- ${item}`).join('\n');
+    }
+
+    if (el.fixes?.length > 0) {
+      finalChangelog += `### Fixes \n\n`;
+      finalChangelog += el.fixes.map(item => `- ${item}`).join('\n');
+    }
+  });
+
+  return finalChangelog;
 };
