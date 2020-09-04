@@ -32,6 +32,9 @@ export namespace Components {
           * Mode of button (like square or rounded)
          */
         "mode": AwButtonMode;
+        /**
+          * If `true` button removes label
+         */
         "onlyIcon": boolean;
         /**
           * Size of button
@@ -80,6 +83,9 @@ declare namespace LocalJSX {
           * Mode of button (like square or rounded)
          */
         "mode"?: AwButtonMode;
+        /**
+          * If `true` button removes label
+         */
         "onlyIcon"?: boolean;
         /**
           * Size of button

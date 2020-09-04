@@ -1,4 +1,5 @@
-@import '../../globals/variables.scss';
+@import '../../global/variables.scss';
+@import '../../assets/fontawesome/css/all.css';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /*
@@ -120,6 +121,12 @@ button {
   transition: 150ms ease-in;
   cursor: pointer;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: 8px;
+  }
 
   &.responsive {
     width: 100%;
@@ -132,7 +139,7 @@ button {
   &.square {
     border-radius: 3px;
   }
-  &.radius{
+  &.radius {
     border-radius: 15px;
   }
 

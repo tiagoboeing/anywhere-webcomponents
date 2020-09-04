@@ -55,7 +55,9 @@ export class AwButton {
   @Prop({ attribute: 'fullWidth' })
   fullWidth = false;
 
-  // TODO: implement
+  /**
+   * If `true` button removes label
+   */
   @Prop()
   onlyIcon = false;
 
@@ -72,7 +74,8 @@ export class AwButton {
     return (
       <Host>
         <button type="button" id={this.id} class={classList} disabled={this.disabled}>
-          {this.label}
+          <i class="far fa-paper-plane"></i>
+          {!this.onlyIcon ? this.label : null}
         </button>
       </Host>
     );
