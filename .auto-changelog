@@ -1,0 +1,16 @@
+{
+  "package": false,
+  "unreleased": true,
+  "commitLimit": false,
+  "template": "changelog-template.hbs",
+  "mergePattern": "/([^docs])/",
+  "replaceText": {
+    "[Ff]eature: ": "",
+    "[Ff]ix: ": "",
+    "[Bb]reak: ": "",
+    "[Dd]ocs: ": "",
+    "(#.{0,4})\\s": ""
+  },
+  "handlebarsSetup": "changelog-helpers.js",
+  "sortCommits": "date"
+}
