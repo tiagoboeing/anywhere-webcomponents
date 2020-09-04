@@ -3,14 +3,8 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'anywhere-webcomponents',
+  globalStyle: 'src/global/variables.scss',
   taskQueue: 'async',
-  testing: {
-    /**
-     * Gitlab CI doesn't allow sandbox, therefor this parameters must be passed to your Headless Chrome
-     * before it can run your tests
-     */
-    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
-  },
   outputTargets: [
     {
       type: 'dist',
@@ -33,4 +27,11 @@ export const config: Config = {
     },
   ],
   plugins: [sass()],
+  testing: {
+    /**
+     * Gitlab CI doesn't allow sandbox, therefor this parameters must be passed to your Headless Chrome
+     * before it can run your tests
+     */
+    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+  },
 };
