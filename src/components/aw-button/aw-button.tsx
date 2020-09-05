@@ -17,7 +17,7 @@ export class AwButton {
    * Text to show inside button
    */
   @Prop({ mutable: true })
-  label: string;
+  label!: string;
 
   /**
    * The status of button (color)
