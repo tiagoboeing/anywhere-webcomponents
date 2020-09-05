@@ -1,5 +1,11 @@
 import { Component, h, Host, Prop } from '@stencil/core';
-import { AwButtonStatus, AwButtonMode, AwButtonColor, AwButtonSize } from './aw-button.model';
+import styled from 'styled-stencil';
+import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from './aw-button.model';
+
+const StyledIcon = styled.span`
+  display: flex;
+  flex-direction: row-reverse;
+`;
 
 @Component({
   tag: 'aw-button',
@@ -61,6 +67,12 @@ export class AwButton {
   @Prop()
   onlyIcon = false;
 
+  /**
+   * Position of icon
+   */
+  @Prop()
+  iconMode: AwButtonIconMode = AwButtonIconMode.left;
+
   render() {
     const classList = {
       [this.size]: true,
@@ -74,8 +86,10 @@ export class AwButton {
     return (
       <Host>
         <button type="button" id={this.id} class={classList} disabled={this.disabled}>
-          <i class="far fa-paper-plane"></i>
-          {!this.onlyIcon ? this.label : null}
+          <StyledIcon position={this.iconMode}>
+            <i class="far fa-paper-plane"></i>
+            {!this.onlyIcon ? this.label : null}
+          </StyledIcon>
         </button>
       </Host>
     );

@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
-    "@types/jest": "^26.0.10"
+    "@types/jest": "^26.0.10",
+    "styled-stencil": "^0.1.27",
+    "styled-stencils": "^0.1.31"
   },
   "license": "MIT",
   "bugs": {

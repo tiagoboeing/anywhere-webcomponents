@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AwButtonColor, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
+import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwButton {
         /**
@@ -20,6 +20,10 @@ export namespace Components {
           * If `true` button use `width: 100%`
          */
         "fullWidth": boolean;
+        /**
+          * Position of icon
+         */
+        "iconMode": AwButtonIconMode;
         /**
           * Optional ID to be attached on button
          */
@@ -71,6 +75,10 @@ declare namespace LocalJSX {
           * If `true` button use `width: 100%`
          */
         "fullWidth"?: boolean;
+        /**
+          * Position of icon
+         */
+        "iconMode"?: AwButtonIconMode;
         /**
           * Optional ID to be attached on button
          */
