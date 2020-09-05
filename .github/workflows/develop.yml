@@ -18,6 +18,8 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
+      - run: test -f dist/anywhere-webcomponents/anywhere-webcomponents.js && echo "Entry file exists!! 😀"
+
         env:
           CI: true
 
@@ -27,9 +29,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
           aws-region: sa-east-1
-
-      - name: Verify by entry file
-        run: test -f dist/anywhere-webcomponents/anywhere-webcomponents.js && echo "Entry file exists!! 😀"
 
       - name: Copy files to S3
         run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/develop --delete
