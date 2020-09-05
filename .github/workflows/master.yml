@@ -1,0 +1,36 @@
+name: Deploy (develop)
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy_CDN:
+    name: Build and distribute
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+      - run: ./scripts/check-file.sh
+        env:
+          CI: true
+          FILE: ./dist/anywhere-webcomponents/anywhere-webcomponents.js
+
+      - name: Configure AWS credentials for CDN account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
+          aws-region: sa-east-1
+
+      - name: Copy files to S3
+        run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/${{ GITHUB_REF }} --delete
+      - name: Invalidate cache on CloudFront
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "/anywhere-webcomponents/${{ GITHUB_REF }}/*"

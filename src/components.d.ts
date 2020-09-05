@@ -5,35 +5,42 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AwButtonStatus } from "./components/aw-button/aw-button.model";
+import { AwButtonColor, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwButton {
         /**
+          * Colors of button (like gradient)
+         */
+        "color": AwButtonColor;
+        /**
+          * Boolean to indicate if button is disabled
+         */
+        "disabled": boolean;
+        /**
+          * If `true` button use `width: 100%`
+         */
+        "fullWidth": boolean;
+        /**
           * Optional ID to be attached on button
          */
-        "identifier": string;
+        "id": string;
         /**
           * Text to show inside button
          */
         "label": string;
         /**
+          * Mode of button (like square or rounded)
+         */
+        "mode": AwButtonMode;
+        "onlyIcon": boolean;
+        /**
+          * Size of button
+         */
+        "size": AwButtonSize;
+        /**
           * The status of button (color)
          */
         "status": AwButtonStatus;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
 }
 declare global {
@@ -43,49 +50,48 @@ declare global {
         prototype: HTMLAwButtonElement;
         new (): HTMLAwButtonElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "aw-button": HTMLAwButtonElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface AwButton {
         /**
+          * Colors of button (like gradient)
+         */
+        "color"?: AwButtonColor;
+        /**
+          * Boolean to indicate if button is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * If `true` button use `width: 100%`
+         */
+        "fullWidth"?: boolean;
+        /**
           * Optional ID to be attached on button
          */
-        "identifier"?: string;
+        "id"?: string;
         /**
           * Text to show inside button
          */
-        "label"?: string;
+        "label": string;
+        /**
+          * Mode of button (like square or rounded)
+         */
+        "mode"?: AwButtonMode;
+        "onlyIcon"?: boolean;
+        /**
+          * Size of button
+         */
+        "size"?: AwButtonSize;
         /**
           * The status of button (color)
          */
         "status"?: AwButtonStatus;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "aw-button": AwButton;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -93,7 +99,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }
