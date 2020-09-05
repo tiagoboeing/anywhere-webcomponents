@@ -2,7 +2,7 @@ name: Automatic generate changelog
 
 on:
   push:
-    branches: [develop, master, tags]
+    branches: [master, tags]
 
 jobs:
   generate_CHANGELOG:
