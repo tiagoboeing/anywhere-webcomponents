@@ -21,7 +21,7 @@ The design system and specifications still are open but should be inspired in [N
 Now you can test components in a HTML page importing via script from CDN. **(ATTENTION!! Not use for production!)**
 
 ```html
-<script src="https://cdn.tiagoboeing.com/anywhere-webcomponents/master/anywhere-webcomponents.js"></script>
+<script src="https://cdn.tiagoboeing.com/anywhere-webcomponents/master/anywhere-webcomponents/anywhere-webcomponents.js"></script>
 <aw-button label="Primary" mode="square" color="outline" status="success"></aw-button>
 ```
 
