@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-      - run: test -f dist/anywhere-webcomponents/anywhere-webcomponents.js && echo "Entry file exists!! 😀"
+      - run: scripts/entry-file
 
         env:
           CI: true
