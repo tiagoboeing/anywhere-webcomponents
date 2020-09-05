@@ -2,7 +2,7 @@ name: Deploy to CDN
 
 on:
   push:
-    branches: [master]
+    branches: [master, tags]
 
 jobs:
   deploy_CDN:
@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Log environments
+        run: |
+          echo "Logging GitHub environments"
+          echo "GITHUB_REPOSITORY_NAME_SLUG" $GITHUB_REPOSITORY_NAME_SLUG
+          echo "GITHUB_REF" $GITHUB_REF
+          echo "GITHUB_REF_NAME" $GITHUB_REF_NAME
+          echo "GITHUB_REF_NAME_SLUG" $GITHUB_REF_NAME_SLUG
+          echo "GITHUB_REF_SLUG" $GITHUB_REF_SLUG
+
       - uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -31,6 +40,6 @@ jobs:
           aws-region: sa-east-1
 
       - name: Copy files to S3
-        run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/$GITHUB_REF_NAME --delete
+        run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/$GITHUB_REF_NAME_SLUG --delete
       - name: Invalidate cache on CloudFront
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "/anywhere-webcomponents/$GITHUB_REF_NAME/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "/anywhere-webcomponents/$GITHUB_REF_NAME_SLUG/*"
