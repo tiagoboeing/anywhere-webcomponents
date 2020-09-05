@@ -5,6 +5,17 @@ export const config: Config = {
   namespace: 'anywhere-webcomponents',
   globalStyle: 'src/global/variables.scss',
   taskQueue: 'async',
+  buildEs5: true,
+  extras: {
+    cssVarsShim: true,
+    dynamicImportShim: true,
+    shadowDomShim: true,
+    safari10: true,
+    scriptDataOpts: true,
+    appendChildSlotFix: false,
+    cloneNodeFix: false,
+    slotChildNodesFix: true,
+  },
   outputTargets: [
     {
       type: 'dist',

@@ -5,8 +5,8 @@ on:
     branches: [develop]
 
 jobs:
-  deploy_CDN:
-    name: Build and distribute
+  generate_CHANGELOG:
+    name: Generate and commit changelog
     runs-on: ubuntu-latest
 
     steps:

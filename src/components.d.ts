@@ -86,7 +86,7 @@ declare namespace LocalJSX {
         /**
           * Text to show inside button
          */
-        "label"?: string;
+        "label": string;
         /**
           * Mode of button (like square or rounded)
          */

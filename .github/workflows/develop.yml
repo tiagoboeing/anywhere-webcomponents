@@ -18,8 +18,10 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
+      - run: ./scripts/check-file.sh
         env:
           CI: true
+          FILE: ./dist/anywhere-webcomponents/anywhere-webcomponents.js
 
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
