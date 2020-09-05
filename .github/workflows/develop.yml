@@ -28,6 +28,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
           aws-region: sa-east-1
 
+      - name: Verify by entry file
+        run: echo "Verifying by entry file..."
+          echo dist/anywhere-webcomponents/anywhere-webcomponents.js
       - name: Copy files to S3
         run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/develop --delete
       - name: Invalidate cache on CloudFront
