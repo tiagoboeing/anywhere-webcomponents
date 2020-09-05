@@ -21,7 +21,7 @@ jobs:
       - run: ./scripts/check-file.sh
         env:
           CI: true
-          FILE: ./../dist/anywhere-webcomponents/anywhere-webcomponents.js
+          FILE: ./dist/anywhere-webcomponents/anywhere-webcomponents.js
 
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
