@@ -42,7 +42,7 @@
     "auto-changelog": "^2.2.0",
     "jest": "26.4.2",
     "jest-cli": "26.4.2",
-    "puppeteer": "2.0.0",
+    "puppeteer": "5.2.1",
     "puppeteer-core": "^5.2.1"
   }
 }
