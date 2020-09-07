@@ -48,9 +48,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
           aws-region: sa-east-1
-        run: |
-          aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/${GITHUB_REF##*/} --delete
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DIST_ID }} --paths "/anywhere-webcomponents/${GITHUB_REF##*/}/*"
 
       - name: Copy to S3
       - run: aws s3 sync dist s3://cdn.tiagoboeing.com/anywhere-webcomponents/${GITHUB_REF##*/} --delete
