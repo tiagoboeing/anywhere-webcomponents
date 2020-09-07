@@ -2,7 +2,7 @@ name: Deploy to CDN
 
 on:
   push:
-    branches: [master, tags]
+    branches: [master, develop, tags]
 
 jobs:
   deploy_CDN:
