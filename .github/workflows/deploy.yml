@@ -35,13 +35,9 @@ jobs:
           FILE: ./dist/anywhere-webcomponents/anywhere-webcomponents.js
 
       - name: NPM Publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          node-version: 14
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-
       - if: steps.publish.type != 'none'
         run: |
           echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
