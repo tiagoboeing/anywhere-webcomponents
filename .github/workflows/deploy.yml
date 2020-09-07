@@ -39,7 +39,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
         if: steps.publish.type != 'none'
-        run: |
+      - run: |
           echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
 
       - name: CDN deploy
