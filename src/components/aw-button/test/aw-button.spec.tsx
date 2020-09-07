@@ -10,7 +10,9 @@ describe('aw-button', () => {
     expect(page.root).toEqualHtml(`
       <aw-button>
         <mock:shadow-root>
-          <button type="button" class="large primary rounded solid"></button>
+          <button type="button" class="large primary rounded solid">
+            <span></span>
+          </button>
         </mock:shadow-root>
       </aw-button>
     `);
@@ -25,7 +27,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button>
           <mock:shadow-root>
-            <button type="button" class="rounded large primary solid"></button>
+            <button type="button" class="rounded large primary solid">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -39,7 +43,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button mode="radius">
           <mock:shadow-root>
-            <button type="button" class="radius large primary solid"></button>
+            <button type="button" class="radius large primary solid">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -53,7 +59,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button mode="square">
           <mock:shadow-root>
-            <button type="button" class="square large primary solid"></button>
+            <button type="button" class="square large primary solid">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -69,7 +77,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button>
           <mock:shadow-root>
-            <button type="button" class="solid large primary rounded"></button>
+            <button type="button" class="solid large primary rounded">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -83,7 +93,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button color="outline">
           <mock:shadow-root>
-            <button type="button" class="outline large primary rounded"></button>
+            <button type="button" class="outline large primary rounded">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -97,7 +109,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button color="gradient">
           <mock:shadow-root>
-            <button type="button" class="gradient large primary rounded"></button>
+            <button type="button" class="gradient large primary rounded">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -111,7 +125,9 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button color="basic">
           <mock:shadow-root>
-            <button type="button" class="basic large primary rounded"></button>
+            <button type="button" class="basic large primary rounded">
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -127,7 +143,9 @@ describe('aw-button', () => {
       expect(withModeSpecified.root).toEqualHtml(`
         <aw-button status="danger" disabled="true">
           <mock:shadow-root>
-            <button type="button" class="solid large rounded danger disabled" disabled></button>
+            <button type="button" class="solid large rounded danger disabled" disabled>
+              <span></span>
+            </button>
           </mock:shadow-root>
         </aw-button>
       `);
