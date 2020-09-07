@@ -33,6 +33,6 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
         with:
-          path: ./
+          path: .
 
       - run: echo "package.json version ${{steps.package-version.outputs.current-version}}"
