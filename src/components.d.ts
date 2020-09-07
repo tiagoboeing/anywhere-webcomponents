@@ -20,6 +20,7 @@ export namespace Components {
           * If `true` button use `width: 100%`
          */
         "fullWidth": boolean;
+        "icon": string;
         /**
           * Position of icon
          */
@@ -75,6 +76,7 @@ declare namespace LocalJSX {
           * If `true` button use `width: 100%`
          */
         "fullWidth"?: boolean;
+        "icon"?: string;
         /**
           * Position of icon
          */
@@ -91,6 +93,10 @@ declare namespace LocalJSX {
           * Mode of button (like square or rounded)
          */
         "mode"?: AwButtonMode;
+        /**
+          * Emitted when button is clicked Captured by on-click listener
+         */
+        "onClicked"?: (event: CustomEvent<MouseEvent>) => void;
         /**
           * If `true` button removes label
          */

@@ -1,18 +1,24 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import styled from 'styled-stencil';
+import { Component, h, Host, Prop, EventEmitter, Event } from '@stencil/core';
 import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from './aw-button.model';
 
-const StyledIcon = styled.span`
-  display: flex;
-  flex-direction: row-reverse;
-`;
+// const StyledIcon = styled.span`
+//   display: flex;
+//   flex-direction: row-reverse;
+//   padding: 150px;
+// `;
 
 @Component({
   tag: 'aw-button',
   styleUrl: 'aw-button.scss',
   shadow: true,
+  assetsDirs: ['assets/fontawesome'],
 })
 export class AwButton {
+  /**
+   * Emitted when button is clicked
+   * Captured by on-click listener
+   */
+  @Event() clicked: EventEmitter<MouseEvent>;
   /**
    * Optional ID to be attached on button
    */
@@ -64,14 +70,21 @@ export class AwButton {
   /**
    * If `true` button removes label
    */
-  @Prop()
+  @Prop({ attribute: 'onlyIcon' })
   onlyIcon = false;
 
   /**
    * Position of icon
    */
-  @Prop()
+  @Prop({ attribute: 'iconMode' })
   iconMode: AwButtonIconMode = AwButtonIconMode.left;
+
+  @Prop()
+  icon: string;
+
+  componentDidLoad() {
+    if (this.onlyIcon && !this.icon) throw Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`);
+  }
 
   render() {
     const classList = {
@@ -83,13 +96,18 @@ export class AwButton {
       responsive: this.fullWidth,
     };
 
+    const iconClasses = {
+      'reverse': !!this.icon && this.iconMode === AwButtonIconMode.rigth,
+      'no-margins': this.onlyIcon,
+    };
+
     return (
       <Host>
-        <button type="button" id={this.id} class={classList} disabled={this.disabled}>
-          <StyledIcon position={this.iconMode}>
-            <i class="far fa-paper-plane"></i>
+        <button type="button" id={this.id} class={classList} disabled={this.disabled} onClick={e => this.clicked.emit(e)}>
+          <span class={iconClasses}>
+            {!!this.icon ? <i class={this.icon}></i> : null}
             {!this.onlyIcon ? this.label : null}
-          </StyledIcon>
+          </span>
         </button>
       </Host>
     );
