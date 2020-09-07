@@ -12,9 +12,9 @@ on:
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: "Test event"
+        description: "Version to generate (major|minor...)"
         # Default value if no value is explicitly provided
-        default: "World"
+        default: "minor"
         # Input has to be provided for the workflow to run
         required: true
 
@@ -26,5 +26,5 @@ jobs:
 
     steps:
       # Runs a single command using the runners shell
-      - name: Send greeting
-        run: echo "Hello ${{ github.event.inputs.name }}"
+      - name: Echo version passed
+        run: echo "Generate a ${{ github.event.inputs.name }} version"
