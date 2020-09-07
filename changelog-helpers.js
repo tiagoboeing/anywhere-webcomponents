@@ -112,5 +112,6 @@ const createChangelog = gitLog => {
     }
   });
 
+  console.info('Final changelog', finalChangelog);
   return finalChangelog;
 };
