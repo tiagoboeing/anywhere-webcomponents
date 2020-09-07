@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Config repo
+      - uses: actions/checkout@v2
+
       # Runs a single command using the runners shell
       - name: Echo version passed
         run: echo "Generate a ${{ github.event.inputs.name }} version"
