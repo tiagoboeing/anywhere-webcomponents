@@ -14,7 +14,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: "Version to generate (major|minor...)"
         # Default value if no value is explicitly provided
-        default: "minor"
+        default: "snapshot"
         # Input has to be provided for the workflow to run
         required: true
 
@@ -28,3 +28,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Echo version passed
         run: echo "Generate a ${{ github.event.inputs.name }} version"
+
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+        run: |
+          echo "package.json version ${{steps.package-version.outputs.current-version}}"
