@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: "14.x"
       - run: npm install -g auto-changelog
-      - run: npm run changelog --if-present
+      - run: npm run changelog
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
