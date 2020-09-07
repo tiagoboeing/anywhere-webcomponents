@@ -35,7 +35,7 @@
     "url": "https://github.com/tiagoboeing/anywhere-webcomponents/issues"
   },
   "repository": {
-    "url": "https://github.com/tiagoboeing/anywhere-webcomponents"
+    "url": "git+https://github.com/tiagoboeing/anywhere-webcomponents.git"
   },
   "devDependencies": {
     "@types/jest": "^26.0.13",
@@ -45,5 +45,11 @@
     "jest-cli": "26.4.2",
     "puppeteer": "5.2.1",
     "puppeteer-core": "^5.2.1"
-  }
+  },
+  "keywords": [
+    "Web",
+    "components",
+    "anywhere",
+    "StencilJS"
+  ]
 }
