@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AwButtonColor, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
+import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwButton {
         /**
@@ -20,6 +20,11 @@ export namespace Components {
           * If `true` button use `width: 100%`
          */
         "fullWidth": boolean;
+        "icon": string;
+        /**
+          * Position of icon
+         */
+        "iconMode": AwButtonIconMode;
         /**
           * Optional ID to be attached on button
          */
@@ -32,6 +37,9 @@ export namespace Components {
           * Mode of button (like square or rounded)
          */
         "mode": AwButtonMode;
+        /**
+          * If `true` button removes label
+         */
         "onlyIcon": boolean;
         /**
           * Size of button
@@ -68,6 +76,11 @@ declare namespace LocalJSX {
           * If `true` button use `width: 100%`
          */
         "fullWidth"?: boolean;
+        "icon"?: string;
+        /**
+          * Position of icon
+         */
+        "iconMode"?: AwButtonIconMode;
         /**
           * Optional ID to be attached on button
          */
@@ -80,6 +93,13 @@ declare namespace LocalJSX {
           * Mode of button (like square or rounded)
          */
         "mode"?: AwButtonMode;
+        /**
+          * Emitted when button is clicked Captured by on-click listener
+         */
+        "onClicked"?: (event: CustomEvent<MouseEvent>) => void;
+        /**
+          * If `true` button removes label
+         */
         "onlyIcon"?: boolean;
         /**
           * Size of button

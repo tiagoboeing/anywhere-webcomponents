@@ -37,7 +37,11 @@ export const config: Config = {
       ],
     },
   ],
-  plugins: [sass()],
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/global/variables.scss'],
+    }),
+  ],
   testing: {
     /**
      * Gitlab CI doesn't allow sandbox, therefor this parameters must be passed to your Headless Chrome

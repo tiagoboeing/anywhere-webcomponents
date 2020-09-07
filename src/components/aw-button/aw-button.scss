@@ -1,4 +1,5 @@
 @import '../../global/variables.scss';
+@import '../../assets/fontawesome/css/all.css';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /*
@@ -120,6 +121,33 @@ button {
   transition: 150ms ease-in;
   cursor: pointer;
   text-transform: uppercase;
+  align-items: center;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    i {
+      margin: 0 8px 0 0;
+    }
+
+    /** when icon mode is defined to right position */
+    &.reverse {
+      flex-direction: row-reverse;
+
+      i {
+        margin: 0 0 0 8px;
+      }
+    }
+
+    /** when onlyIcon attribute is true */
+    &.no-margins {
+      * {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
 
   &.responsive {
     width: 100%;
@@ -132,7 +160,7 @@ button {
   &.square {
     border-radius: 3px;
   }
-  &.radius{
+  &.radius {
     border-radius: 15px;
   }
 
@@ -140,22 +168,27 @@ button {
   &.tiny {
     font-size: 0.75rem;
     padding: 0.5625rem 1.0625rem;
+    height: 35px;
   }
   &.small {
     font-size: 0.875rem;
     padding: 0.75rem 1.5rem;
+    height: 43px;
   }
   &.medium {
     font-size: 0.875rem;
     padding: 1rem 1.8rem;
+    height: 51px;
   }
   &.large {
     font-size: 0.9375rem;
     padding: 1.125rem 2rem;
+    height: 59px;
   }
   &.giant {
     font-size: 1.125rem;
     padding: 1.3125rem 2.5rem;
+    height: 67px;
   }
 
   /* STATUS */
