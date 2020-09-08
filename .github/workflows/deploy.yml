@@ -42,9 +42,6 @@ jobs:
           tag_name: v%s
           tag_message: v%s
           commit_pattern: ^[Rr]elease (\\S+)
-          commit_user: GitHub Workflow # if not provided will extract from the repo
-          commit_email: contato@tiagoboeing.com # if not provided will extract from the repo
-          publish_with: npm # options are `yarn`, `npm` or `skip`
         env: # More info about the environment variables in the README
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # You need to set this in your repo settings
