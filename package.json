@@ -47,8 +47,7 @@
     "puppeteer-core": "^5.2.1"
   },
   "keywords": [
-    "Web",
-    "components",
+    "Webcomponents",
     "anywhere",
     "StencilJS"
   ]
