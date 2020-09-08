@@ -35,18 +35,23 @@ jobs:
           CI: true
           FILE: ./dist/anywhere-webcomponents/anywhere-webcomponents.js
 
-      - name: Archive production artifacts
+      - name: Archive dist folder
         uses: actions/upload-artifact@v2
         with:
           name: dist-without-markdown
           path: |
-            dist
-            !dist/**/*.md
+            !src
+            !node_modules
+            !scripts
+            !screenshot
+            !assets
+            !www
+
       - name: Archive code coverage results
         uses: actions/upload-artifact@v2
         with:
           name: code-coverage-report
-          path: output/test/code-coverage.html
+          path: coverage/lcov-report/index.html
 
   deploy:
     name: Distribute to NPM and CDN
