@@ -25,35 +25,52 @@ Now you can test components in a HTML page importing via script from CDN. **(ATT
 <aw-button label="Primary" mode="square" color="outline" status="success"></aw-button>
 ```
 
-## Developing
-
-- Clone this repo
-- Access directory and run:
+### Angular applications
 
 ```bash
-npm install
-npm start
+npm i @tiagoboeing/anywhere-webcomponents
 ```
 
-To build the component for production, run:
+In your `app.module.ts` declare `CUSTOM_ELEMENTS_SCHEMA`:
 
-```bash
-npm run build
+```ts
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]   // <-- declare this
+})
+export class AppModule { }
 ```
 
-To run the unit tests for the components, run:
+And in `main.ts` end of file, add following imports:
 
-```bash
-npm test
+```ts
+import { applyPolyfills, defineCustomElements } from '@tiagoboeing/anywhere-webcomponents/loader';
+
+defineCustomElements();
+
+// for IE support (optional)
+applyPolyfills().then(() => {
+  defineCustomElements()
+})
 ```
-
-## Naming Components
-
-When creating new component tags, use the `aw-` preffix.
 
 ## Components status
 
 See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
+
+## I want contribute
+
+View [contribution guide](CONTRIBUTING.md).
 
 ## Contributors ✨
 
