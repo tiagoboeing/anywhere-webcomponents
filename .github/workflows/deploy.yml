@@ -51,6 +51,7 @@ jobs:
 
       # Auto changelog
       - name: Generate auto-changelog command
+        uses: actions/setup-node@v1
       - run: npm run changelog
 
       - name: Commit auto-changelog changes
