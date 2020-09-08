@@ -40,8 +40,8 @@ jobs:
         with:
           name: dist-without-markdown
           path: |
-            ~/dist
-            ~/loader
+            dist/**
+            loader/**
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v2
