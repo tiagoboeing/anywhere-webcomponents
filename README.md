@@ -18,6 +18,24 @@ The design system and specifications still are open but should be inspired in [N
 
 ## Using components
 
+### NPM
+
+Install dependency:
+
+```bash
+npm i @tiagoboeing/anywhere-webcomponents
+```
+
+And import `anywhere-webcomponents.js`:
+
+```js
+<script src="@tiagoboeing/anywhere-webcomponents/dist/anywhere-webcomponents/anywhere-webcomponents.js"></script>
+```
+
+For use in frameworks, [see the Stencil page](https://stenciljs.com/docs/overview).
+
+### Via CDN (release candidate)
+
 Now you can test components in a HTML page importing via script from CDN. **(ATTENTION!! Not use for production!)**
 
 ```html
