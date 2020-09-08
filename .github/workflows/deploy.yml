@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [master, develop]
+    branches: [master]
 
 jobs:
   deploy:
@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: "14.x"
       - run: npm ci
+      - run: npm install -g auto-changelog
       - run: npm run build --if-present
       - run: npm test
       - run: ./scripts/check-file.sh
@@ -34,13 +35,33 @@ jobs:
           CI: true
           FILE: ./dist/anywhere-webcomponents/anywhere-webcomponents.js
 
-      - name: NPM Publish
-        uses: JS-DevTools/npm-publish@v1
+      # NPM PUBLISH
+      - name: Publish to NPM if version has been updated
+        uses: pascalgn/npm-publish-action@51fdb4531e99aac1873764ef7271af448dc42ab4
         with:
-          token: ${{ secrets.NPM_TOKEN }}
-        if: steps.publish.type != 'none'
-      - run: |
-          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
+          tag_name: "v%s"
+          tag_message: "v%s"
+          commit_pattern: "^[Rr]elease (\\S+)"
+          commit_user: "Auto committer" # if not provided will extract from the repo
+          commit_email: "contato@tiagoboeing.com" # if not provided will extract from the repo
+          publish_with: "npm" # options are `yarn`, `npm` or `skip`
+        env: # More info about the environment variables in the README
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # You need to set this in your repo settings
+
+      # Auto changelog
+      - name: Generate auto-changelog command
+      - run: npm run changelog
+
+      - name: Commit auto-changelog changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: GitHub Workflow
+          author_email: contato@tiagoboeing.com
+          message: "[Automatic] Changelog generated"
+          add: "CHANGELOG.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
