@@ -40,18 +40,14 @@ jobs:
         with:
           name: dist-without-markdown
           path: |
-            !src
-            !node_modules
-            !scripts
-            !screenshot
-            !assets
-            !www
+            ~/dist
+            ~/loader
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v2
         with:
           name: code-coverage-report
-          path: coverage/lcov-report/index.html
+          path: coverage
 
   deploy:
     name: Distribute to NPM and CDN
