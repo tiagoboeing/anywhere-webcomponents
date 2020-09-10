@@ -96,17 +96,17 @@ const createChangelog = gitLog => {
     finalChangelog += `\n\n ## ${el.release} \n`;
     finalChangelog += `${el.niceDate} \n\n`;
 
-    if (el.breaks?.length > 0) {
+    if (el.breaks && el.breaks.length > 0) {
       finalChangelog += `### Breaking changes \n\n`;
       finalChangelog += el.breaks.map(item => `- ${item}`).join('\n');
     }
 
-    if (el.features?.length > 0) {
+    if (el.features && el.features.length > 0) {
       finalChangelog += `### Features \n\n`;
       finalChangelog += el.features.map(item => `- ${item}`).join('\n');
     }
 
-    if (el.fixes?.length > 0) {
+    if (el.fixes && el.fixes.length > 0) {
       finalChangelog += `### Fixes \n\n`;
       finalChangelog += el.fixes.map(item => `- ${item}`).join('\n');
     }
