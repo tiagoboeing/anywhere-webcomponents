@@ -78,9 +78,9 @@ jobs:
           npm run changelog
           if ! git diff --no-ext-diff --quiet --exit-code; then
             git add .
-            git config --local user.email "tip@gha"
-            git config --local user.name "GHA"
-            git commit -a -m "update"
+            git config --local user.email "contato@tiagoboeing.com"
+            git config --local user.name "[Automatic] GitHub Actions"
+            git commit -a -m "[Automatic] Generate CHANGELOG.md"
             git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
             eval `ssh-agent -t 60 -s`
             echo "$GHA_DEPLOY_KEY" | ssh-add -
