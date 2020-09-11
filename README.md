@@ -16,7 +16,7 @@ The design system and specifications still are open but should be inspired in [N
 
 [Write a comment about Design System, give your feedback!](https://xd.adobe.com/view/f4f56bbd-7e99-41dd-97c4-59e9d0075a73-a1a6/grid)
 
-## Using components
+## How to install
 
 ### NPM
 

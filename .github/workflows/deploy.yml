@@ -49,9 +49,9 @@ jobs:
           tag_name: v%s
           tag_message: v%s
           commit_pattern: ^[Rr]elease (\\S+)
-        env: # More info about the environment variables in the README
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # You need to set this in your repo settings
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically generated
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Configure AWS credentials for CDN account
         uses: aws-actions/configure-aws-credentials@v1
