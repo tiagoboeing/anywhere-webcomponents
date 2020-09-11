@@ -35,7 +35,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-      - run: ./scripts/check-file.sh
+      - run: sh ./scripts/check-file.sh
       - run: npm install -g auto-changelog
         env:
           CI: true
@@ -60,7 +60,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
           aws-region: sa-east-1
       - name: Deploy CDN
-        run: ./scripts/deploy.sh
+        run: sh ./scripts/deploy.sh
 
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
