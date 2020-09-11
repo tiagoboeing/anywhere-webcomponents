@@ -68,6 +68,8 @@ jobs:
       # Auto changelog
       - name: Generate auto-changelog command
         uses: actions/setup-node@v1
+        with:
+          node-version: "14.1.x"
       - run: npm run changelog
       - name: Commit auto-changelog changes
         uses: EndBug/add-and-commit@v4
