@@ -61,6 +61,8 @@ jobs:
           aws-region: sa-east-1
       - name: Deploy CDN
         run: sh ./scripts/deploy.sh
+        env:
+          AWS_CLOUDFRONT_DIST_ID: ${{ secrets.AWS_CLOUDFRONT_DIST_ID }}
 
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
