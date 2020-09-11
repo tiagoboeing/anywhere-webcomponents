@@ -70,17 +70,22 @@ jobs:
           node-version: "14.x"
 
       # Auto changelog
-      - name: Generate auto-changelog command
+      - name: Execute auto-changelog
         uses: actions/setup-node@v1
         with:
           node-version: "14.1.x"
-      - run: npm run changelog
-      - name: Commit auto-changelog changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: GitHub Workflow
-          author_email: contato@tiagoboeing.com
-          message: "[Automatic] Changelog generated"
-          add: "CHANGELOG.md"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run changelog
+          if ! git diff --no-ext-diff --quiet --exit-code; then
+            git add .
+            git config --local user.email "tip@gha"
+            git config --local user.name "GHA"
+            git commit -a -m "update"
+            git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
+            eval `ssh-agent -t 60 -s`
+            echo "$GHA_DEPLOY_KEY" | ssh-add -
+            mkdir -p ~/.ssh/
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            git push
+            ssh-agent -k
+          fi
