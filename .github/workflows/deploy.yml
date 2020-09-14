@@ -76,10 +76,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14.1.x"
-        run: npm run changelog
 
       - name: Commit changelog
         run: |
+          npm run changelog
           git add .
           git config --local user.email "contato@tiagoboeing.com"
           git config --local user.name "[Automatic] GitHub Actions"
