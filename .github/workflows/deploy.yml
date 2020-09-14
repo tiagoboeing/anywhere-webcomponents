@@ -66,15 +66,18 @@ jobs:
           AWS_CLOUDFRONT_DIST_ID: ${{ secrets.AWS_CLOUDFRONT_DIST_ID }}
 
       - uses: actions/checkout@v2
+      - run: |
+          git fetch --prune --unshallow --tags
+          git status
+          git tag
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: "14.1.x"
 
       - name: Commit changelog
         run: |
-          git fetch --prune --unshallow --tags
-          git status
-          git tag
           npm run changelog
           if ! git diff --no-ext-diff --quiet --exit-code; then
             git add .
@@ -82,10 +85,5 @@ jobs:
             git config --local user.name "[Automatic] GitHub Actions"
             git commit -a -m "[Automatic] Generate CHANGELOG.md"
             git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
-            eval `ssh-agent -t 60 -s`
-            echo "$GHA_DEPLOY_KEY" | ssh-add -
-            mkdir -p ~/.ssh/
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
             git push
-            ssh-agent -k
           fi
