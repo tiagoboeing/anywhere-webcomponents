@@ -79,6 +79,7 @@ jobs:
           node-version: "14.1.x"
 
       - name: Commit changelog
+        continue-on-error: true
         run: |
           npm run changelog
           git add .
