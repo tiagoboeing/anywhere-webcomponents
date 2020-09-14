@@ -43,12 +43,13 @@ jobs:
 
       # NPM PUBLISH
       - name: Publish to NPM if version has been updated
-        uses: pascalgn/npm-publish-action@51fdb4531e99aac1873764ef7271af448dc42ab4
+        uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
         continue-on-error: true
         with:
           tag_name: "v%s"
           tag_message: "v%s"
           commit_pattern: "^[Rr]elease (\\S+)"
+          workspace: "."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically generated
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
