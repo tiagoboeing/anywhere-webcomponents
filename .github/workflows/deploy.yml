@@ -66,12 +66,13 @@ jobs:
           AWS_CLOUDFRONT_DIST_ID: ${{ secrets.AWS_CLOUDFRONT_DIST_ID }}
 
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           git fetch --prune --unshallow --tags
           git status
           git tag
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: actions/setup-node@v1
         with:
           node-version: "14.1.x"
