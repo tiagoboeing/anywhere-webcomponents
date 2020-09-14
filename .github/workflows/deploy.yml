@@ -46,9 +46,9 @@ jobs:
         uses: pascalgn/npm-publish-action@51fdb4531e99aac1873764ef7271af448dc42ab4
         continue-on-error: true
         with:
-          tag_name: v%s
-          tag_message: v%s
-          commit_pattern: ^[Rr]elease (\\S+)
+          tag_name: "v%s"
+          tag_message: "v%s"
+          commit_pattern: "^[Rr]elease (\\S+)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically generated
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
