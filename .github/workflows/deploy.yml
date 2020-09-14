@@ -78,6 +78,10 @@ jobs:
       - name: Commit changelog
         run: |
           npm run changelog
+          echo "Show git status"
+          git status
+          echo "Show git tags"
+          git tag
           if ! git diff --no-ext-diff --quiet --exit-code; then
             git add .
             git config --local user.email "contato@tiagoboeing.com"
