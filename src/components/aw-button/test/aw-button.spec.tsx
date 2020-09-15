@@ -305,18 +305,22 @@ describe('aw-button', () => {
       });
 
       it('Event Emitter', async () => {
+        const spy = jest.spyOn(AwButton.prototype, 'handleClickEvent');
         const mock = jest.fn();
 
         const comp = await newSpecPage({
           components: [AwButton],
           html: '<aw-button status="danger" label="My button"></aw-button>',
+          supportsShadowDom: true,
         });
 
         comp.doc.addEventListener('clicked', mock());
         comp.root.click();
+
         await comp.waitForChanges();
 
-        expect(mock).toBeCalledTimes(1);
+        expect(spy).toBeCalledTimes(1);
+        // expect(comp.rootInstance.handleClickEvent()).toEqual('test');
       });
 
       it('Single click', async () => {
