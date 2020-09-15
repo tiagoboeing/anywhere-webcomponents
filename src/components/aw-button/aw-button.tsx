@@ -1,12 +1,6 @@
 import { Component, h, Host, Prop, EventEmitter, Event } from '@stencil/core';
 import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from './aw-button.model';
 
-// const StyledIcon = styled.span`
-//   display: flex;
-//   flex-direction: row-reverse;
-//   padding: 150px;
-// `;
-
 @Component({
   tag: 'aw-button',
   styleUrl: 'aw-button.scss',
@@ -16,9 +10,14 @@ import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonSt
 export class AwButton {
   /**
    * Emitted when button is clicked
-   * Captured by on-click listener
+   * Captured by onClick listener.
+   * > Note: if button was disabled event can't be dispatch
    */
-  @Event() clicked: EventEmitter<MouseEvent>;
+  @Event({
+    bubbles: true,
+    composed: true,
+  })
+  clicked: EventEmitter<UIEvent>;
   /**
    * Optional ID to be attached on button
    */
@@ -117,7 +116,13 @@ export class AwButton {
 
     return (
       <Host>
-        <button type="button" id={this.id} class={classList} disabled={this.disabled} onClick={e => this.clicked.emit(e)}>
+        <button
+          type="button"
+          id={this.id}
+          class={classList}
+          disabled={this.disabled}
+          onClick={(e: UIEvent) => this.clicked.emit(e)}
+        >
           <span class={iconClasses}>
             {!!this.icon && <i class={this.icon}></i>}
             {!this.onlyIcon && this.label}

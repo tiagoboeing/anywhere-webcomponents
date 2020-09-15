@@ -108,9 +108,9 @@ declare namespace LocalJSX {
          */
         "mode"?: AwButtonMode;
         /**
-          * Emitted when button is clicked Captured by on-click listener
+          * Emitted when button is clicked Captured by onClick listener. > Note: if button was disabled event can't be dispatch
          */
-        "onClicked"?: (event: CustomEvent<MouseEvent>) => void;
+        "onClicked"?: (event: CustomEvent<UIEvent>) => void;
         /**
           * If `true` button removes label
          */
