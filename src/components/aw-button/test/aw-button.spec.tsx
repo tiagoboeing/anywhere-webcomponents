@@ -151,4 +151,100 @@ describe('aw-button', () => {
       `);
     });
   });
+
+  describe('Icon', () => {
+    it('When "onlyIcon" property is true a "icon" should be passed', async () => {
+      await expect(
+        newSpecPage({
+          components: [AwButton],
+          html: `<aw-button status="danger" onlyIcon="true"></aw-button>`,
+        }),
+      ).rejects.toThrow(new Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`));
+    });
+
+    it('Icon defined and onlyIcon true', async () => {
+      const comp = await newSpecPage({
+        components: [AwButton],
+        html: `<aw-button status="danger" icon="far fa-airplane" onlyIcon="true"></aw-button>`,
+      });
+
+      expect(comp.root).toEqualHtml(`
+        <aw-button status="danger" onlyIcon="true" icon="far fa-airplane">
+          <mock:shadow-root>
+            <button type="button" class="solid large rounded danger">
+              <span class="no-margins">
+                <i class="fa-airplane far"></i>
+              </span>
+            </button>
+          </mock:shadow-root>
+        </aw-button>
+      `);
+    });
+
+    describe('iconMode with label', () => {
+      it('Left', async () => {
+        const compWithoutIconMode = await newSpecPage({
+          components: [AwButton],
+          html: `<aw-button status="danger" icon="far fa-airplane" label="My button"></aw-button>`,
+        });
+        const compWithIconMode = await newSpecPage({
+          components: [AwButton],
+          html: `<aw-button status="danger" icon="far fa-airplane" iconMode="left" label="My button"></aw-button>`,
+        });
+
+        const resultHtml = `
+          <aw-button status="danger" icon="far fa-airplane" iconMode="left" label="My button">
+          <mock:shadow-root>
+            <button type="button" class="solid large rounded danger">
+              <span>
+                <i class="far fa-airplane"></i>
+                My button
+              </span>
+            </button>
+          </mock:shadow-root>
+        </aw-button>
+        `;
+
+        expect(compWithoutIconMode.root).toEqualHtml(resultHtml);
+        expect(compWithIconMode.root).toEqualHtml(resultHtml);
+      });
+
+      it('Right', async () => {
+        const comp = await newSpecPage({
+          components: [AwButton],
+          html: `<aw-button status="danger" icon="far fa-airplane" iconMode="right" label="My button"></aw-button>`,
+        });
+
+        const resultHtml = `
+          <aw-button status="danger" icon="far fa-airplane" iconMode="right" label="My button">
+          <mock:shadow-root>
+            <button type="button" class="solid large rounded danger">
+              <span class="reverse">
+                <i class="far fa-airplane"></i>
+                My button
+              </span>
+            </button>
+          </mock:shadow-root>
+        </aw-button>
+        `;
+
+        expect(comp.root).toEqualHtml(resultHtml);
+      });
+    });
+
+    describe('Click event', () => {
+      it('Click on button', async () => {
+        const mockCallBack = jest.fn();
+        const comp = await newSpecPage({
+          components: [AwButton],
+          html: `<aw-button status="danger" icon="far fa-airplane" clicked="${mockCallBack}" iconMode="right" label="My button"></aw-button>`,
+        });
+
+        comp.doc.onclick(new MouseEvent('click'));
+        comp.root.click();
+
+        expect(mockCallBack.mock.calls.length).toEqual(1);
+      });
+    });
+  });
 });

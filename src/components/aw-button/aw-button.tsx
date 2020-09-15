@@ -79,11 +79,25 @@ export class AwButton {
   @Prop({ attribute: 'iconMode' })
   iconMode: AwButtonIconMode = AwButtonIconMode.left;
 
+  /**
+   * Icon class from FontAwesome 5 Free
+   * Allows to use: brands, regular, solid
+   * Example: 'far fa-paper-plane'
+   */
   @Prop()
   icon: string;
 
+  /**
+   * Add a loading indicator to button
+   * You need add a manual control to remove loading
+   */
+  @Prop({ mutable: true })
+  loading = false;
+
   componentDidLoad() {
-    if (this.onlyIcon && !this.icon) throw Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`);
+    if (this.onlyIcon && !this.icon) {
+      throw new Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`);
+    }
   }
 
   render() {
@@ -105,8 +119,8 @@ export class AwButton {
       <Host>
         <button type="button" id={this.id} class={classList} disabled={this.disabled} onClick={e => this.clicked.emit(e)}>
           <span class={iconClasses}>
-            {!!this.icon ? <i class={this.icon}></i> : null}
-            {!this.onlyIcon ? this.label : null}
+            {!!this.icon && <i class={this.icon}></i>}
+            {!this.onlyIcon && this.label}
           </span>
         </button>
       </Host>

@@ -20,6 +20,9 @@ export namespace Components {
           * If `true` button use `width: 100%`
          */
         "fullWidth": boolean;
+        /**
+          * Icon class from FontAwesome 5 Free Allows to use: brands, regular, solid Example: 'far fa-paper-plane'
+         */
         "icon": string;
         /**
           * Position of icon
@@ -33,6 +36,10 @@ export namespace Components {
           * Text to show inside button
          */
         "label": string;
+        /**
+          * Add a loading indicator to button You need add a manual control to remove loading
+         */
+        "loading": boolean;
         /**
           * Mode of button (like square or rounded)
          */
@@ -76,6 +83,9 @@ declare namespace LocalJSX {
           * If `true` button use `width: 100%`
          */
         "fullWidth"?: boolean;
+        /**
+          * Icon class from FontAwesome 5 Free Allows to use: brands, regular, solid Example: 'far fa-paper-plane'
+         */
         "icon"?: string;
         /**
           * Position of icon
@@ -89,6 +99,10 @@ declare namespace LocalJSX {
           * Text to show inside button
          */
         "label": string;
+        /**
+          * Add a loading indicator to button You need add a manual control to remove loading
+         */
+        "loading"?: boolean;
         /**
           * Mode of button (like square or rounded)
          */
