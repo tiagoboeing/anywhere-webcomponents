@@ -19,8 +19,8 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e --coverage",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "test": "stencil test --spec --e2e --coverage --verbose",
+    "test.watch": "stencil test --spec --e2e --coverage --watchAll --verbose",
     "test.coverage": "stencil test --spec --e2e --coverage",
     "generate": "stencil generate",
     "changelog": "auto-changelog",

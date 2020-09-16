@@ -20,6 +20,9 @@ export namespace Components {
           * If `true` button use `width: 100%`
          */
         "fullWidth": boolean;
+        /**
+          * Icon class from FontAwesome 5 Free Allows to use: brands, regular, solid Example: 'far fa-paper-plane'
+         */
         "icon": string;
         /**
           * Position of icon
@@ -33,6 +36,10 @@ export namespace Components {
           * Text to show inside button
          */
         "label": string;
+        /**
+          * Add a loading indicator to button You need add a manual control to remove loading
+         */
+        "loading": boolean;
         /**
           * Mode of button (like square or rounded)
          */
@@ -76,6 +83,9 @@ declare namespace LocalJSX {
           * If `true` button use `width: 100%`
          */
         "fullWidth"?: boolean;
+        /**
+          * Icon class from FontAwesome 5 Free Allows to use: brands, regular, solid Example: 'far fa-paper-plane'
+         */
         "icon"?: string;
         /**
           * Position of icon
@@ -90,13 +100,17 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
+          * Add a loading indicator to button You need add a manual control to remove loading
+         */
+        "loading"?: boolean;
+        /**
           * Mode of button (like square or rounded)
          */
         "mode"?: AwButtonMode;
         /**
-          * Emitted when button is clicked Captured by on-click listener
+          * Emitted when button is clicked Captured by onClick listener. > Note: if button was disabled event can't be dispatch
          */
-        "onClicked"?: (event: CustomEvent<MouseEvent>) => void;
+        "onClicked"?: (event: CustomEvent<UIEvent>) => void;
         /**
           * If `true` button removes label
          */

@@ -34,4 +34,24 @@ describe('aw-button', () => {
 
     expect(button).toHaveClasses(['danger', 'outline', 'large', 'rounded']);
   });
+
+  describe('Event Emitter', () => {
+    it('click', async () => {
+      const page = await newE2EPage();
+
+      await page.setContent(`
+      <aw-button label="New button"
+        id="my-button"
+        status="danger"
+        color="outline">
+      </aw-button>
+    `);
+
+      const button = await page.find('aw-button');
+      // await button.click();
+      button.isVisible();
+
+      expect(button).not.toBeNull();
+    });
+  });
 });

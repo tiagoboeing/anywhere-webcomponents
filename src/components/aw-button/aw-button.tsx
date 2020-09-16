@@ -1,11 +1,11 @@
-import { Component, h, Host, Prop, EventEmitter, Event } from '@stencil/core';
-import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from './aw-button.model';
-
-// const StyledIcon = styled.span`
-//   display: flex;
-//   flex-direction: row-reverse;
-//   padding: 150px;
-// `;
+import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import {
+  AwButtonColor,
+  AwButtonIconMode,
+  AwButtonMode,
+  AwButtonSize,
+  AwButtonStatus,
+} from './aw-button.model';
 
 @Component({
   tag: 'aw-button',
@@ -16,9 +16,14 @@ import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonSt
 export class AwButton {
   /**
    * Emitted when button is clicked
-   * Captured by on-click listener
+   * Captured by onClick listener.
+   * > Note: if button was disabled event can't be dispatch
    */
-  @Event() clicked: EventEmitter<MouseEvent>;
+  @Event({
+    bubbles: true,
+    composed: true,
+  })
+  clicked: EventEmitter<UIEvent>;
   /**
    * Optional ID to be attached on button
    */
@@ -79,11 +84,25 @@ export class AwButton {
   @Prop({ attribute: 'iconMode' })
   iconMode: AwButtonIconMode = AwButtonIconMode.left;
 
+  /**
+   * Icon class from FontAwesome 5 Free
+   * Allows to use: brands, regular, solid
+   * Example: 'far fa-paper-plane'
+   */
   @Prop()
   icon: string;
 
+  /**
+   * Add a loading indicator to button
+   * You need add a manual control to remove loading
+   */
+  @Prop({ mutable: true })
+  loading = false;
+
   componentDidLoad() {
-    if (this.onlyIcon && !this.icon) throw Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`);
+    if (this.onlyIcon && !this.icon) {
+      throw new Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`);
+    }
   }
 
   render() {
@@ -103,10 +122,16 @@ export class AwButton {
 
     return (
       <Host>
-        <button type="button" id={this.id} class={classList} disabled={this.disabled} onClick={e => this.clicked.emit(e)}>
+        <button
+          type="button"
+          id={this.id}
+          class={classList}
+          disabled={this.disabled}
+          onClick={e => this.clicked.emit(e)}
+        >
           <span class={iconClasses}>
-            {!!this.icon ? <i class={this.icon}></i> : null}
-            {!this.onlyIcon ? this.label : null}
+            {!!this.icon && <i class={this.icon}></i>}
+            {!this.onlyIcon && this.label}
           </span>
         </button>
       </Host>
