@@ -2,7 +2,10 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <title>Anywhere Webcomponents showcase</title>
     <link href="./styles.css" rel="stylesheet" type="text/css" />
 
@@ -15,19 +18,7 @@
 
     <div>
       <h3>Sizes</h3>
-      <script>
-        function test(event) {
-          console.log(event);
-        }
-      </script>
-      <aw-button label="Tiny" status="primary" size="tiny" id="button" clicked={(event) => console.log(event)}></aw-button>
-      <!-- <script>
-        const todoListElement = document.getElementById('button');
-        todoListElement.addEventListener('clicked', event => {
-          console.log(event);
-        });
-      </script> -->
-
+      <aw-button label="Tiny" status="primary" size="tiny" id="button"></aw-button>
       <aw-button label="Small" status="primary" size="small"></aw-button>
       <aw-button label="Medium" status="primary" size="medium"></aw-button>
       <aw-button label="Large" status="primary" size="large"></aw-button>
@@ -49,7 +40,13 @@
       <aw-button label="Danger" id="danger-button" color="gradient" status="danger"></aw-button>
       <aw-button label="Warn" id="warn-button" color="gradient" status="warn"></aw-button>
       <aw-button label="Info" id="info-button" color="gradient" status="info"></aw-button>
-      <aw-button label="Disabled" id="disabled-button" color="gradient" status="info" disabled="true"></aw-button>
+      <aw-button
+        label="Disabled"
+        id="disabled-button"
+        color="gradient"
+        status="info"
+        disabled="true"
+      ></aw-button>
     </div>
 
     <div>
