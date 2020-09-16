@@ -1,7 +1,11 @@
 
 
 ## Unreleased 
-14 September 2020 
+16 September 2020 
+
+### Features 
+
+- Added unit tests and E2E to button component (#12)
 
 ## v0.3.0-0 
 7 September 2020 
