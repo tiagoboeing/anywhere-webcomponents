@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, EventEmitter, Event } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import {
   AwButtonColor,
   AwButtonIconMode,
@@ -105,10 +105,6 @@ export class AwButton {
     }
   }
 
-  handleClickEvent(event: UIEvent) {
-    this.clicked.emit(event);
-  }
-
   render() {
     const classList = {
       [this.size]: true,
@@ -131,7 +127,7 @@ export class AwButton {
           id={this.id}
           class={classList}
           disabled={this.disabled}
-          onClick={this.handleClickEvent}
+          onClick={e => this.clicked.emit(e)}
         >
           <span class={iconClasses}>
             {!!this.icon && <i class={this.icon}></i>}
