@@ -3,7 +3,6 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'anywhere-webcomponents',
-  globalStyle: 'src/global/variables.scss',
   taskQueue: 'async',
   buildEs5: true,
   extras: {
@@ -37,9 +36,10 @@ export const config: Config = {
       ],
     },
   ],
+  globalStyle: 'src/scss/global.scss',
   plugins: [
     sass({
-      injectGlobalPaths: ['src/global/variables.scss'],
+      injectGlobalPaths: ['src/scss/injected.scss'],
     }),
   ],
   testing: {

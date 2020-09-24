@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :host {
+  @extend %comp-host;
+
   /*
   Use following syntax:
   status-mode-property (css)

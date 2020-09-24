@@ -1,0 +1,7 @@
+:host([hidden]) {
+  display: none;
+}
+
+:host([theme='light']) {
+  @include lightThemeVariables();
+}

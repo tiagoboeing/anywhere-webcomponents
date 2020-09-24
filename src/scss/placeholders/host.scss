@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+%comp-host {
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}

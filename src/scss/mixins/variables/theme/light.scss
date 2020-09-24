@@ -1,0 +1,21 @@
+@mixin lightThemeVariables() {
+  $primary: #2e61ec;
+  $primary-hover: #5498ff;
+
+  $secondary: #ffffff;
+  $secondary-hover: #f0f0f0;
+
+  $success: #14c767;
+  $success-hover: #4be091;
+
+  $danger: #e64141;
+  $danger-hover: #e77070;
+
+  $warn: #f39761;
+  $warn-hover: #f8b58e;
+
+  $info: #2ea0ec;
+  $info-hover: #5baee5;
+
+  $disabled: #e4e7ed;
+}
