@@ -1,20 +1,20 @@
 @mixin lightThemeVariables() {
-  $primary: #2e61ec;
+  $primary: $blue-50;
   $primary-hover: #5498ff;
 
   $secondary: #ffffff;
   $secondary-hover: #f0f0f0;
 
-  $success: #14c767;
+  $success: $green-50;
   $success-hover: #4be091;
 
-  $danger: #e64141;
+  $danger: $red-50;
   $danger-hover: #e77070;
 
-  $warn: #f39761;
+  $warn: $orange-50;
   $warn-hover: #f8b58e;
 
-  $info: #2ea0ec;
+  $info: $lightblue-50;
   $info-hover: #5baee5;
 
   $disabled: #e4e7ed;

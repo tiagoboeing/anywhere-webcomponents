@@ -1,9 +1,13 @@
-@import '../../global/variables.scss';
 @import '../../assets/fontawesome/css/all.css';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+// TODO: remove
+$secondary: #ffffff;
+$secondary-hover: #f0f0f0;
+
 :host {
   @extend %comp-host;
+  @import '../../scss/includes/components';
 
   /*
   Use following syntax:
@@ -18,19 +22,19 @@
   */
 
   // Primary
-  $primary-solid-background: $primary;
+  $primary-solid-background: $blue-50;
   $primary-solid-color: #ffffff;
-  $primary-solid-hover-background: $primary-hover;
+  $primary-solid-hover-background: $blue-60;
 
-  $primary-outline-color: $primary;
+  $primary-outline-color: $blue-50;
   $primary-outline-background: #e7ecf9;
-  $primary-outline-border-color: $primary;
-  $primary-outline-hover-border-color: $primary-hover;
-  $primary-outline-hover-color: $primary-hover;
+  $primary-outline-border-color: $blue-50;
+  $primary-outline-hover-border-color: $blue-60;
+  $primary-outline-hover-color: $blue-60;
 
   $primary-gradient-color: #ffffff;
-  $primary-gradient-background-fallback: $primary;
-  $primary-gradient-background: linear-gradient(to right, $primary, #799cfd);
+  $primary-gradient-background-fallback: $blue-50;
+  $primary-gradient-background: linear-gradient(to right, $blue-50, #799cfd);
 
   // Secondary
   $secondary-solid-background: $secondary;
@@ -50,69 +54,69 @@
   $secondary-gradient-background: linear-gradient(to right, $secondary, #e5e5e5);
 
   // success
-  $success-solid-background: $success;
+  $success-solid-background: $green-50;
   $success-solid-color: #ffffff;
-  $success-solid-hover-background: $success-hover;
+  $success-solid-hover-background: $green-60;
 
-  $success-outline-color: $success;
+  $success-outline-color: $green-50;
   $success-outline-background: #e7f9f5;
-  $success-outline-border-color: $success;
-  $success-outline-hover-color: $success-hover;
-  $success-outline-hover-border-color: $success-hover;
+  $success-outline-border-color: $green-50;
+  $success-outline-hover-color: $green-60;
+  $success-outline-hover-border-color: $green-60;
 
   $success-gradient-color: #ffffff;
-  $success-gradient-background-fallback: $success;
-  $success-gradient-background: linear-gradient(to right, $success, #2cec86);
+  $success-gradient-background-fallback: $green-50;
+  $success-gradient-background: linear-gradient(to right, $green-50, #2cec86);
 
   // danger
-  $danger-solid-background: $danger;
+  $danger-solid-background: $red-50;
   $danger-solid-color: #ffffff;
-  $danger-solid-hover-background: $danger-hover;
+  $danger-solid-hover-background: $red-70;
 
-  $danger-outline-color: $danger;
+  $danger-outline-color: $red-50;
   $danger-outline-background: #f9e7e7;
-  $danger-outline-border-color: $danger;
-  $danger-outline-hover-color: $danger-hover;
-  $danger-outline-hover-border-color: $danger-hover;
+  $danger-outline-border-color: $red-50;
+  $danger-outline-hover-color: $red-70;
+  $danger-outline-hover-border-color: $red-70;
 
   $danger-gradient-color: #ffffff;
-  $danger-gradient-background-fallback: $danger;
-  $danger-gradient-background: linear-gradient(to right, $danger, #ff6767);
+  $danger-gradient-background-fallback: $red-50;
+  $danger-gradient-background: linear-gradient(to right, $red-50, #ff6767);
 
   // warn
-  $warn-solid-background: $warn;
+  $warn-solid-background: $orange-50;
   $warn-solid-color: #ffffff;
-  $warn-solid-hover-background: $warn-hover;
+  $warn-solid-hover-background: $orange-70;
 
-  $warn-outline-color: $warn;
-  $warn-outline-border-color: $warn;
+  $warn-outline-color: $orange-50;
+  $warn-outline-border-color: $orange-50;
   $warn-outline-background: #f9ebe7;
-  $warn-outline-hover-color: $warn-hover;
-  $warn-outline-hover-border-color: $warn-hover;
+  $warn-outline-hover-color: $orange-70;
+  $warn-outline-hover-border-color: $orange-70;
 
   $warn-gradient-color: #ffffff;
-  $warn-gradient-background-fallback: $warn;
-  $warn-gradient-background: linear-gradient(to right, #ff7423, $warn);
+  $warn-gradient-background-fallback: $orange-50;
+  $warn-gradient-background: linear-gradient(to right, #ff7423, $orange-50);
 
   // info
-  $info-solid-background: $info;
+  $info-solid-background: $lightblue-50;
   $info-solid-color: #ffffff;
-  $info-solid-hover-background: $info-hover;
+  $info-solid-hover-background: $lightblue-70;
 
-  $info-outline-color: $info;
-  $info-outline-border-color: $info;
+  $info-outline-color: $lightblue-50;
+  $info-outline-border-color: $lightblue-50;
   $info-outline-background: #e7f5f9;
-  $info-outline-hover-color: $info-hover;
-  $info-outline-hover-border-color: $info-hover;
+  $info-outline-hover-color: $lightblue-70;
+  $info-outline-hover-border-color: $lightblue-70;
 
   $info-gradient-color: #ffffff;
-  $info-gradient-background-fallback: $info;
-  $info-gradient-background: linear-gradient(to right, $info, #6abff8);
+  $info-gradient-background-fallback: $lightblue-50;
+  $info-gradient-background: linear-gradient(to right, $lightblue-50, #6abff8);
 
   %disabled {
-    background: $disabled !important;
+    background: $gray-50 !important;
     color: #a5a5a5 !important;
-    border-color: $disabled !important;
+    border-color: $gray-50 !important;
   }
 
   @mixin active($border-color) {
