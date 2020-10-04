@@ -1,8 +1,8 @@
 @mixin componentStatus() {
-  $primary: 'primary';
-  $secondary: 'secondary';
-  $success: 'success';
-  $danger: 'danger';
-  $warn: 'warn';
-  $info: 'info';
+  --status-primary: 'primary';
+  --status-secondary: 'secondary';
+  --status-success: 'success';
+  --status-danger: 'danger';
+  --status-warn: 'warn';
+  --status-info: 'info';
 }

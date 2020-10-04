@@ -3,5 +3,9 @@
 }
 
 :host([theme='light']) {
-  @include lightThemeVariables();
+  @include componentLightThemeVars();
+}
+
+:host([theme='dark']) {
+  // TODO: create dark variables
 }

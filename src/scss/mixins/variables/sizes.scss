@@ -1,7 +1,7 @@
 @mixin componentSizes() {
-  $tiny: 'tiny';
-  $small: 'small';
-  $medium: 'medium';
-  $large: 'large';
-  $giant: 'giant';
+  --size-tiny: 'tiny';
+  --size-small: 'small';
+  --size-medium: 'medium';
+  --size-large: 'large';
+  --size-giant: 'giant';
 }
