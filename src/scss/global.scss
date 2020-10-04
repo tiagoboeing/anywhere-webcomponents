@@ -1,3 +1,6 @@
 :root {
+  @include componentSizes();
+  @include componentStatus();
+  @include componentModes();
   @include lightThemeVariables();
 }

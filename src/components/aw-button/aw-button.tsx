@@ -107,7 +107,6 @@ export class AwButton {
 
   render() {
     const classList = {
-      [this.size]: true,
       [this.color]: true,
       [this.mode]: true,
       [this.status]: true,

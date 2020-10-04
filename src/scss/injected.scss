@@ -1,4 +1,7 @@
 @import './colors/colors.scss';
-@import './mixins/utilities.scss';
+@import './mixins/variables/sizes.scss';
+@import './mixins/variables/modes.scss';
+@import './mixins/variables/status.scss';
 @import './mixins/variables/theme/light.scss';
 @import './placeholders/host.scss';
+@import './mixins/utilities.scss';

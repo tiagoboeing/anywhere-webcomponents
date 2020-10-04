@@ -3,7 +3,7 @@
   $primary-hover: #5498ff;
 
   $secondary: #ffffff;
-  $secondary-hover: #f0f0f0;
+  $secondary-hover: $gray-100;
 
   $success: $green-50;
   $success-hover: #4be091;
@@ -17,5 +17,5 @@
   $info: $lightblue-50;
   $info-hover: #5baee5;
 
-  $disabled: #e4e7ed;
+  $disabled: $gray-50;
 }

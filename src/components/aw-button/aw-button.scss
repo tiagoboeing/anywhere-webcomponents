@@ -1,15 +1,9 @@
-@import '../../assets/fontawesome/css/all.css';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import '../../scss/includes/components';
 
 // TODO: remove
 $secondary: #ffffff;
-$secondary-hover: #f0f0f0;
 
-:host {
-  @extend %comp-host;
-  @import '../../scss/includes/components';
-
-  /*
+/*
   Use following syntax:
   status-mode-property (css)
 
@@ -21,421 +15,301 @@ $secondary-hover: #f0f0f0;
   -----------------------
   */
 
-  // Primary
-  $primary-solid-background: $blue-50;
-  $primary-solid-color: #ffffff;
-  $primary-solid-hover-background: $blue-60;
+:host {
+  @extend %component-host;
 
-  $primary-outline-color: $blue-50;
-  $primary-outline-background: #e7ecf9;
-  $primary-outline-border-color: $blue-50;
-  $primary-outline-hover-border-color: $blue-60;
-  $primary-outline-hover-color: $blue-60;
+  --primary-solid-background: #{$blue-50};
+  --primary-solid-color: #ffffff;
+  --primary-solid-hover-background: #{$blue-60};
+  --secondary-solid-background: #{$secondary};
+  --secondary-solid-color: #5e5e5e;
+  --secondary-solid-border-color: #c8c8c8;
+  --secondary-solid-hover-background: #{$gray-100};
+  --success-solid-background: #{$green-50};
+  --success-solid-color: #ffffff;
+  --success-solid-hover-background: #{$green-60};
+  --danger-solid-background: #{$red-50};
+  --danger-solid-color: #ffffff;
+  --danger-solid-hover-background: #{$red-70};
+  --warn-solid-background: #{$orange-50};
+  --warn-solid-color: #ffffff;
+  --warn-solid-hover-background: #{$orange-70};
+  --info-solid-background: #{$lightblue-50};
+  --info-solid-color: #ffffff;
+  --info-solid-hover-background: #{$lightblue-70};
 
-  $primary-gradient-color: #ffffff;
-  $primary-gradient-background-fallback: $blue-50;
-  $primary-gradient-background: linear-gradient(to right, $blue-50, #799cfd);
+  --primary-gradient-color: #ffffff;
+  --primary-gradient-background-fallback: #{$blue-50};
+  --primary-gradient-background: linear-gradient(to right, #{$blue-50}, #799cfd);
+  --secondary-gradient-color: #5e5e5e;
+  --secondary-gradient-border-color: #c8c8c8;
+  --secondary-gradient-background-fallback: #{$secondary};
+  --secondary-gradient-background: linear-gradient(to right, #{$secondary}, #e5e5e5);
+  --success-gradient-color: #ffffff;
+  --success-gradient-background-fallback: #{$green-50};
+  --success-gradient-background: linear-gradient(to right, #{$green-50}, #2cec86);
+  --danger-gradient-color: #ffffff;
+  --danger-gradient-background-fallback: #{$red-50};
+  --danger-gradient-background: linear-gradient(to right, #{$red-50}, #ff6767);
+  --warn-gradient-color: #ffffff;
+  --warn-gradient-background-fallback: #{$orange-50};
+  --warn-gradient-background: linear-gradient(to right, #ff7423, #{$orange-50});
+  --info-gradient-color: #ffffff;
+  --info-gradient-background-fallback: #{$lightblue-50};
+  --info-gradient-background: linear-gradient(to right, #{$lightblue-50}, #6abff8);
 
-  // Secondary
-  $secondary-solid-background: $secondary;
-  $secondary-solid-color: #5e5e5e;
-  $secondary-solid-border-color: #c8c8c8;
-  $secondary-solid-hover-background: $secondary-hover;
+  --primary-outline-color: #{$blue-50};
+  --primary-outline-background: #e7ecf9;
+  --primary-outline-border-color: #{$blue-50};
+  --primary-outline-hover-border-color: #{$blue-60};
+  --primary-outline-hover-color: #{$blue-60};
+  --secondary-outline-color: #c8c8c8;
+  --secondary-outline-border-color: #c8c8c8;
+  --secondary-outline-background: #{$secondary};
+  --secondary-outline-hover-color: #9e9e9e;
+  --secondary-outline-hover-border-color: #9e9e9e;
+  --success-outline-color: #{$green-50};
+  --success-outline-background: #e7f9f5;
+  --success-outline-border-color: #{$green-50};
+  --success-outline-hover-color: #{$green-60};
+  --success-outline-hover-border-color: #{$green-60};
+  --danger-outline-color: #{$red-50};
+  --danger-outline-background: #f9e7e7;
+  --danger-outline-border-color: #{$red-50};
+  --danger-outline-hover-color: #{$red-70};
+  --danger-outline-hover-border-color: #{$red-70};
+  --warn-outline-color: #{$orange-50};
+  --warn-outline-border-color: #{$orange-50};
+  --warn-outline-background: #f9ebe7;
+  --warn-outline-hover-color: #{$orange-70};
+  --warn-outline-hover-border-color: #{$orange-70};
+  --info-outline-color: #{$lightblue-50};
+  --info-outline-border-color: #{$lightblue-50};
+  --info-outline-background: #e7f5f9;
+  --info-outline-hover-color: #{$lightblue-70};
+  --info-outline-hover-border-color: #{$lightblue-70};
+}
 
-  $secondary-outline-color: #c8c8c8;
-  $secondary-outline-border-color: #c8c8c8;
-  $secondary-outline-background: $secondary;
-  $secondary-outline-hover-color: #9e9e9e;
-  $secondary-outline-hover-border-color: #9e9e9e;
+:host([disabled]),
+:host([disabled]) button {
+  @extend %disabled;
+  pointer-events: none;
+}
 
-  $secondary-gradient-color: #5e5e5e;
-  $secondary-gradient-border-color: #c8c8c8;
-  $secondary-gradient-background-fallback: $secondary;
-  $secondary-gradient-background: linear-gradient(to right, $secondary, #e5e5e5);
+// sizes
+:host([size='tiny']) button {
+  font-size: 0.75rem;
+  padding: 0.5625rem 1.0625rem;
+  height: 35px;
+}
 
-  // success
-  $success-solid-background: $green-50;
-  $success-solid-color: #ffffff;
-  $success-solid-hover-background: $green-60;
+:host([size='small']) button {
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  height: 43px;
+}
 
-  $success-outline-color: $green-50;
-  $success-outline-background: #e7f9f5;
-  $success-outline-border-color: $green-50;
-  $success-outline-hover-color: $green-60;
-  $success-outline-hover-border-color: $green-60;
+:host([size='medium']) button {
+  font-size: 0.875rem;
+  padding: 1rem 1.8rem;
+  height: 51px;
+}
 
-  $success-gradient-color: #ffffff;
-  $success-gradient-background-fallback: $green-50;
-  $success-gradient-background: linear-gradient(to right, $green-50, #2cec86);
+:host([size='large']) button {
+  font-size: 0.9375rem;
+  padding: 1.125rem 2rem;
+  height: 59px;
+}
 
-  // danger
-  $danger-solid-background: $red-50;
-  $danger-solid-color: #ffffff;
-  $danger-solid-hover-background: $red-70;
+:host([size='giant']) button {
+  font-size: 1.125rem;
+  padding: 1.3125rem 2.5rem;
+  height: 67px;
+}
 
-  $danger-outline-color: $red-50;
-  $danger-outline-background: #f9e7e7;
-  $danger-outline-border-color: $red-50;
-  $danger-outline-hover-color: $red-70;
-  $danger-outline-hover-border-color: $red-70;
-
-  $danger-gradient-color: #ffffff;
-  $danger-gradient-background-fallback: $red-50;
-  $danger-gradient-background: linear-gradient(to right, $red-50, #ff6767);
-
-  // warn
-  $warn-solid-background: $orange-50;
-  $warn-solid-color: #ffffff;
-  $warn-solid-hover-background: $orange-70;
-
-  $warn-outline-color: $orange-50;
-  $warn-outline-border-color: $orange-50;
-  $warn-outline-background: #f9ebe7;
-  $warn-outline-hover-color: $orange-70;
-  $warn-outline-hover-border-color: $orange-70;
-
-  $warn-gradient-color: #ffffff;
-  $warn-gradient-background-fallback: $orange-50;
-  $warn-gradient-background: linear-gradient(to right, #ff7423, $orange-50);
-
-  // info
-  $info-solid-background: $lightblue-50;
-  $info-solid-color: #ffffff;
-  $info-solid-hover-background: $lightblue-70;
-
-  $info-outline-color: $lightblue-50;
-  $info-outline-border-color: $lightblue-50;
-  $info-outline-background: #e7f5f9;
-  $info-outline-hover-color: $lightblue-70;
-  $info-outline-hover-border-color: $lightblue-70;
-
-  $info-gradient-color: #ffffff;
-  $info-gradient-background-fallback: $lightblue-50;
-  $info-gradient-background: linear-gradient(to right, $lightblue-50, #6abff8);
-
-  %disabled {
-    background: $gray-50 !important;
-    color: #a5a5a5 !important;
-    border-color: $gray-50 !important;
+@mixin handle-solid-style($status) {
+  background: var(--#{$status}-solid-background);
+  color: var(--#{$status}-solid-color);
+  @if $status == secondary {
+    box-shadow: inset 0px 0px 0px 1px var(--#{$status}-solid-border-color);
   }
 
-  @mixin active($border-color) {
-    &:active {
-      box-shadow: 0 0 2px 4px $border-color;
-      background: #2cec86;
-    }
+  &:hover {
+    background: var(--#{$status}-solid-hover-background);
+  }
+}
+
+@mixin handle-gradient-style($status) {
+  color: var(--#{$status}-gradient-color);
+  background-color: var(--#{$status}-gradient-background-fallback);
+  background: var(--#{$status}-gradient-background);
+  @if $status == secondary {
+    box-shadow: inset 0px 0px 0px 1px var(--#{$status}-gradient-border-color);
+  }
+}
+
+@mixin handle-outline-style($status, $use-border: true) {
+  color: var(--#{$status}-outline-color);
+  background: var(--#{$status}-outline-background);
+  @if $use-border == true {
+    border: 1px solid var(--#{$status}-outline-border-color);
   }
 
-  button {
-    font-family: 'Open Sans', sans-serif;
-    border: none;
-    padding: 18px 25px;
-    font-size: 15px;
-    outline: none;
-    transition: 150ms ease-in;
-    cursor: pointer;
-    text-transform: uppercase;
+  &:hover {
+    color: var(--#{$status}-outline-hover-color);
+    border-color: var(--#{$status}-outline-hover-border-color);
+  }
+}
+
+@mixin active($border-color) {
+  &:active {
+    box-shadow: 0 0 2px 4px $border-color;
+    background: #2cec86;
+  }
+}
+
+%disabled {
+  background: $gray-50 !important;
+  color: #a5a5a5 !important;
+  border-color: $gray-50 !important;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  padding: 18px 25px;
+  font-size: 15px;
+  outline: none;
+  transition: 150ms ease-in;
+  cursor: pointer;
+  text-transform: uppercase;
+  align-items: center;
+
+  span {
+    display: flex;
     align-items: center;
 
-    span {
-      display: flex;
-      align-items: center;
+    i {
+      margin: 0 8px 0 0;
+    }
+
+    /** when icon mode is defined to right position */
+    &.reverse {
+      flex-direction: row-reverse;
 
       i {
-        margin: 0 8px 0 0;
-      }
-
-      /** when icon mode is defined to right position */
-      &.reverse {
-        flex-direction: row-reverse;
-
-        i {
-          margin: 0 0 0 8px;
-        }
-      }
-
-      /** when onlyIcon attribute is true */
-      &.no-margins {
-        * {
-          margin-left: 0;
-          margin-right: 0;
-        }
+        margin: 0 0 0 8px;
       }
     }
 
-    &.responsive {
-      width: 100%;
-    }
-
-    /* MODE */
-    &.rounded {
-      border-radius: 5rem;
-    }
-    &.square {
-      border-radius: 3px;
-    }
-    &.radius {
-      border-radius: 15px;
-    }
-
-    /* SIZE */
-    &.tiny {
-      font-size: 0.75rem;
-      padding: 0.5625rem 1.0625rem;
-      height: 35px;
-    }
-    &.small {
-      font-size: 0.875rem;
-      padding: 0.75rem 1.5rem;
-      height: 43px;
-    }
-    &.medium {
-      font-size: 0.875rem;
-      padding: 1rem 1.8rem;
-      height: 51px;
-    }
-    &.large {
-      font-size: 0.9375rem;
-      padding: 1.125rem 2rem;
-      height: 59px;
-    }
-    &.giant {
-      font-size: 1.125rem;
-      padding: 1.3125rem 2.5rem;
-      height: 67px;
-    }
-
-    /* STATUS */
-    &.primary {
-      &.disabled {
-        @extend %disabled;
-      }
-
-      button {
-        background: orange !important;
-        @include active($primary-gradient-background);
-      }
-
-      &.solid {
-        background: $primary-solid-background;
-        color: $primary-solid-color;
-
-        &:hover {
-          background: $primary-solid-hover-background;
-        }
-      }
-      &.gradient {
-        color: $primary-gradient-color;
-        background-color: $primary-gradient-background-fallback;
-        background: $primary-gradient-background;
-      }
-
-      &.outline {
-        color: $primary-outline-color;
-        background: $primary-outline-background;
-        border: 1px solid $primary-outline-border-color;
-
-        &:hover {
-          color: $primary-outline-hover-color;
-          border-color: $primary-outline-hover-border-color;
-        }
-      }
-      &.basic {
-        color: $primary-outline-color;
-        background: $primary-outline-background;
-
-        &:hover {
-          color: $primary-outline-hover-color;
-          border-color: $primary-outline-hover-border-color;
-        }
+    /** when onlyIcon attribute is true */
+    &.no-margins {
+      * {
+        margin-left: 0;
+        margin-right: 0;
       }
     }
-    &.secondary {
-      &.disabled {
-        @extend %disabled;
-      }
+  }
 
-      &.solid {
-        box-shadow: inset 0px 0px 0px 1px $secondary-solid-border-color;
-        background: $secondary-solid-background;
-        color: $secondary-solid-color;
+  &.responsive {
+    width: 100%;
+  }
 
-        &:hover {
-          background: $secondary-solid-hover-background;
-        }
-      }
-      &.gradient {
-        color: $secondary-gradient-color;
-        box-shadow: inset 0px 0px 0px 1px $secondary-gradient-border-color;
-        background-color: $secondary-gradient-background-fallback;
-        background: $secondary-gradient-background;
-      }
-      &.outline {
-        background: $secondary-outline-background;
-        border: 1px solid $secondary-outline-border-color;
-        color: $secondary-outline-color;
+  /* MODE */
+  &.rounded {
+    border-radius: 5rem;
+  }
+  &.square {
+    border-radius: 3px;
+  }
+  &.radius {
+    border-radius: 15px;
+  }
 
-        &:hover {
-          border: 1px solid $secondary-outline-hover-border-color;
-          color: $secondary-outline-hover-color;
-        }
-      }
-      &.basic {
-        background: $secondary-outline-background;
-        color: $secondary-outline-color;
-
-        &:hover {
-          color: $secondary-outline-hover-color;
-        }
-      }
+  /* STATUS */
+  &.primary {
+    &.solid {
+      @include handle-solid-style(primary);
     }
-    &.success {
-      &.disabled {
-        @extend %disabled;
-      }
-
-      &.solid {
-        color: $success-solid-color;
-        background: $success-solid-background;
-
-        &:hover {
-          background: $success-solid-hover-background;
-        }
-      }
-      &.gradient {
-        color: $success-gradient-color;
-        background-color: $success-gradient-background-fallback;
-        background: $success-gradient-background;
-      }
-      &.outline {
-        background: $success-outline-background;
-        border: 1px solid $success-outline-border-color;
-        color: $success-outline-color;
-
-        &:hover {
-          border: 1px solid $success-outline-hover-border-color;
-          color: $success-outline-hover-color;
-        }
-      }
-      &.basic {
-        background: $success-outline-background;
-        color: $success-outline-color;
-
-        &:hover {
-          color: $success-outline-hover-color;
-        }
-      }
+    &.gradient {
+      @include handle-gradient-style(primary);
     }
-    &.danger {
-      &.disabled {
-        @extend %disabled;
-      }
-
-      &.solid {
-        background: $danger-solid-background;
-        color: $danger-solid-color;
-
-        &:hover {
-          background: $danger-solid-hover-background;
-        }
-      }
-      &.gradient {
-        color: $danger-gradient-color;
-        background-color: $danger-gradient-background-fallback;
-        background: $danger-gradient-background;
-      }
-      &.outline {
-        background: $danger-outline-background;
-        border: 1px solid $danger-outline-border-color;
-        color: $danger-outline-color;
-
-        &:hover {
-          color: $danger-outline-hover-color;
-          border: 1px solid $danger-outline-hover-border-color;
-        }
-      }
-      &.basic {
-        background: $danger-outline-background;
-        color: $danger-outline-color;
-
-        &:hover {
-          color: $danger-outline-hover-color;
-        }
-      }
+    &.outline {
+      @include handle-outline-style(primary);
     }
-    &.warn {
-      &.disabled {
-        @extend %disabled;
-      }
-
-      &.solid {
-        background: $warn-solid-background;
-        color: $warn-solid-color;
-
-        &:hover {
-          background: $warn-solid-hover-background;
-        }
-      }
-      &.gradient {
-        color: $warn-gradient-color;
-        background-color: $warn-gradient-background-fallback;
-        background: $warn-gradient-background;
-      }
-      &.outline {
-        color: $warn-outline-color;
-        border: 1px solid $warn-outline-border-color;
-        background: $warn-outline-background;
-
-        &:hover {
-          color: $warn-outline-hover-color;
-          border: 1px solid $warn-outline-hover-border-color;
-        }
-      }
-      &.basic {
-        color: $warn-outline-color;
-        background: $warn-outline-background;
-
-        &:hover {
-          color: $warn-outline-hover-color;
-        }
-      }
+    &.basic {
+      @include handle-outline-style(primary, false);
     }
-    &.info {
-      &.disabled {
-        @extend %disabled;
-      }
+  }
+  &.secondary {
+    &.solid {
+      @include handle-solid-style(secondary);
+    }
+    &.gradient {
+      @include handle-gradient-style(secondary);
+    }
+    &.outline {
+      @include handle-outline-style(secondary);
+    }
+    &.basic {
+      @include handle-outline-style(secondary, false);
+    }
+  }
+  &.success {
+    &.solid {
+      @include handle-solid-style(success);
+    }
+    &.gradient {
+      @include handle-gradient-style(success);
+    }
+    &.outline {
+      @include handle-outline-style(success);
+    }
+    &.basic {
+      @include handle-outline-style(success, false);
+    }
+  }
+  &.danger {
+    &.solid {
+      @include handle-solid-style(danger);
+    }
+    &.gradient {
+      @include handle-gradient-style(danger);
+    }
+    &.outline {
+      @include handle-outline-style(danger);
+    }
+    &.basic {
+      @include handle-outline-style(danger, false);
+    }
+  }
+  &.warn {
+    &.solid {
+      @include handle-solid-style(warn);
+    }
+    &.gradient {
+      @include handle-gradient-style(warn);
+    }
+    &.outline {
+      @include handle-outline-style(warn);
+    }
+    &.basic {
+      @include handle-outline-style(warn, false);
+    }
+  }
 
-      &.solid {
-        background: $info-solid-background;
-        color: $info-solid-color;
-
-        &:hover {
-          background: $info-solid-hover-background;
-        }
-      }
-      &.gradient {
-        color: $info-gradient-color;
-        background-color: $info-gradient-background-fallback;
-        background: $info-gradient-background;
-      }
-      &.outline {
-        color: $info-outline-color;
-        border: 1px solid $info-outline-border-color;
-        background: $info-outline-background;
-
-        &:hover {
-          color: $info-outline-hover-color;
-          border: 1px solid $info-outline-hover-border-color;
-        }
-      }
-      &.basic {
-        color: $info-outline-color;
-        background: $info-outline-background;
-
-        &:hover {
-          color: $info-outline-hover-color;
-        }
-      }
+  &.info {
+    &.solid {
+      @include handle-solid-style(info);
+    }
+    &.gradient {
+      @include handle-gradient-style(info);
+    }
+    &.outline {
+      @include handle-outline-style(info);
+    }
+    &.basic {
+      @include handle-outline-style(info, false);
     }
   }
 }
