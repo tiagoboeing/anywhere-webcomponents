@@ -1,0 +1,40 @@
+@mixin componentLightThemeVars() {
+  --primary: #{$blue-50};
+  --primary-gradient-1: #{$blue-50};
+  --primary-gradient-2: #{$blue-70};
+  --primary-text-color: #{$white-100};
+  --primary-hover: #{$blue-60};
+
+  --secondary: #{$white-100};
+  --secondary-gradient-1: #{$white-100};
+  --secondary-gradient-2: #{$gray-50};
+  --secondary-text-color: #{$gray-10};
+  --secondary-hover: #{$gray-100};
+  --secondary-hover-border: #{$gray-20};
+
+  --success: #{$green-50};
+  --success-gradient-1: #{$green-50};
+  --success-gradient-2: #{$green-80};
+  --success-text-color: #{$white-100};
+  --success-hover: #{$green-60};
+
+  --danger: #{$red-50};
+  --danger-gradient-1: #{$red-50};
+  --danger-gradient-2: #{$red-80};
+  --danger-text-color: #{$white-100};
+  --danger-hover: #{$red-70};
+
+  --warn: #{$orange-50};
+  --warn-gradient-1: #{$orange-50};
+  --warn-gradient-2: #{$orange-70};
+  --warn-text-color: #{$white-100};
+  --warn-hover: #{$orange-70};
+
+  --info: #{$lightblue-50};
+  --info-gradient-1: #{$lightblue-50};
+  --info-gradient-2: #{$lightblue-80};
+  --info-text-color: #{$white-100};
+  --info-hover: #{$lightblue-70};
+
+  --disabled: #{$gray-50};
+}

@@ -16,7 +16,7 @@ describe('aw-button', () => {
     const element = await page.find('aw-button');
     const button = element.shadowRoot.childNodes[0];
 
-    expect(button).toHaveClasses(['danger', 'solid', 'large', 'rounded']);
+    expect(button).toHaveClasses(['danger', 'solid', 'rounded']);
   });
 
   it('outline mode', async () => {
@@ -32,6 +32,6 @@ describe('aw-button', () => {
     const element = await page.find('aw-button');
     const button = element.shadowRoot.childNodes[0];
 
-    expect(button).toHaveClasses(['danger', 'outline', 'large', 'rounded']);
+    expect(button).toHaveClasses(['danger', 'outline', 'rounded']);
   });
 });

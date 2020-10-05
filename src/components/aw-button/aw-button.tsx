@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import { AnywhereTheme } from '../interfaces';
 import {
   AwButtonColor,
   AwButtonIconMode,
@@ -11,7 +12,6 @@ import {
   tag: 'aw-button',
   styleUrl: 'aw-button.scss',
   shadow: true,
-  assetsDirs: ['assets/fontawesome'],
 })
 export class AwButton {
   /**
@@ -29,6 +29,8 @@ export class AwButton {
    */
   @Prop({ attribute: 'id', mutable: false, reflect: true })
   id: string;
+
+  @Prop({ reflect: true }) theme: AnywhereTheme = 'light';
 
   /**
    * Text to show inside button
@@ -107,7 +109,6 @@ export class AwButton {
 
   render() {
     const classList = {
-      [this.size]: true,
       [this.color]: true,
       [this.mode]: true,
       [this.status]: true,
