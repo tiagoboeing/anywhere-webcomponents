@@ -76,10 +76,10 @@ $secondary: #ffffff;
   --primary-outline-hover-border-color: var(--primary-hover);
   --primary-outline-hover-color: var(--primary-hover);
   --secondary-outline-color: var(--secondary-text-color);
-  --secondary-outline-border-color: #c8c8c8;
+  --secondary-outline-border-color: var(--secondary-text-color);
   --secondary-outline-background: var(--secondary);
-  --secondary-outline-hover-color: #9e9e9e;
-  --secondary-outline-hover-border-color: #9e9e9e;
+  --secondary-outline-hover-color: var(--secondary-hover-border);
+  --secondary-outline-hover-border-color: var(--secondary-hover-border);
   --success-outline-color: var(--success);
   --success-outline-background: #e7f9f5;
   --success-outline-border-color: var(--success);
@@ -140,37 +140,52 @@ $secondary: #ffffff;
 }
 
 @mixin handle-solid-style($status) {
-  background: var(--#{$status}-solid-background);
-  color: var(--#{$status}-solid-color);
-  @if $status == var(--status-secondary) {
-    box-shadow: inset 0px 0px 0px 1px var(--#{$status}-solid-border-color);
-  }
+  &.solid {
+    background: var(--#{$status}-solid-background);
+    color: var(--#{$status}-solid-color);
+    @if $status == var(--status-secondary) {
+      box-shadow: inset 0px 0px 0px 1px var(--#{$status}-solid-border-color);
+    }
 
-  &:hover {
-    background: var(--#{$status}-solid-hover-background);
+    &:hover {
+      background: var(--#{$status}-solid-hover-background);
+    }
   }
 }
 
 @mixin handle-gradient-style($status) {
-  color: var(--#{$status}-gradient-color);
-  background-color: var(--#{$status}-gradient-background-fallback);
-  background: var(--#{$status}-gradient-background);
-  @if $status == var(--status-secondary) {
-    box-shadow: inset 0px 0px 0px 1px var(--#{$status}-gradient-border-color);
+  &.gradient {
+    color: var(--#{$status}-gradient-color);
+    background-color: var(--#{$status}-gradient-background-fallback);
+    background: var(--#{$status}-gradient-background);
+    @if $status == var(--status-secondary) {
+      box-shadow: inset 0px 0px 0px 1px var(--#{$status}-gradient-border-color);
+    }
   }
 }
 
 @mixin handle-outline-style($status, $use-border: true) {
-  color: var(--#{$status}-outline-color);
-  background: var(--#{$status}-outline-background);
-  @if $use-border == true {
-    border: 1px solid var(--#{$status}-outline-border-color);
+  $mode: 'basic';
+  @if $use-border {
+    $mode: 'outline';
   }
 
-  &:hover {
-    color: var(--#{$status}-outline-hover-color);
-    border-color: var(--#{$status}-outline-hover-border-color);
+  &.#{$mode} {
+    color: var(--#{$status}-outline-color);
+    background: var(--#{$status}-outline-background);
+    @if $use-border == true {
+      border: 1px solid var(--#{$status}-outline-border-color);
+    }
+
+    &:hover {
+      color: var(--#{$status}-outline-hover-color);
+      border-color: var(--#{$status}-outline-hover-border-color);
+    }
   }
+}
+
+@mixin handle-basic-style($style) {
+  @include handle-outline-style($style, false);
 }
 
 @mixin active($border-color) {
@@ -216,6 +231,7 @@ button {
 
     /** when onlyIcon attribute is true */
     &.no-margins {
+      height: 20px;
       * {
         margin-left: 0;
         margin-right: 0;
@@ -239,89 +255,43 @@ button {
   }
 
   /* STATUS */
+
   &.primary {
-    &.solid {
-      @include handle-solid-style(primary);
-    }
-    &.gradient {
-      @include handle-gradient-style(primary);
-    }
-    &.outline {
-      @include handle-outline-style(primary);
-    }
-    &.basic {
-      @include handle-outline-style(primary, false);
-    }
+    @include handle-solid-style(primary);
+    @include handle-gradient-style(primary);
+    @include handle-outline-style(primary);
+    @include handle-basic-style(primary);
   }
+
   &.secondary {
-    &.solid {
-      @include handle-solid-style(secondary);
-    }
-    &.gradient {
-      @include handle-gradient-style(secondary);
-    }
-    &.outline {
-      @include handle-outline-style(secondary);
-    }
-    &.basic {
-      @include handle-outline-style(secondary, false);
-    }
+    @include handle-solid-style(secondary);
+    @include handle-gradient-style(secondary);
+    @include handle-outline-style(secondary);
+    @include handle-basic-style(secondary);
   }
   &.success {
-    &.solid {
-      @include handle-solid-style(success);
-    }
-    &.gradient {
-      @include handle-gradient-style(success);
-    }
-    &.outline {
-      @include handle-outline-style(success);
-    }
-    &.basic {
-      @include handle-outline-style(success, false);
-    }
+    @include handle-solid-style(success);
+    @include handle-gradient-style(success);
+    @include handle-outline-style(success);
+    @include handle-basic-style(success);
   }
   &.danger {
-    &.solid {
-      @include handle-solid-style(danger);
-    }
-    &.gradient {
-      @include handle-gradient-style(danger);
-    }
-    &.outline {
-      @include handle-outline-style(danger);
-    }
-    &.basic {
-      @include handle-outline-style(danger, false);
-    }
+    @include handle-solid-style(danger);
+    @include handle-gradient-style(danger);
+    @include handle-outline-style(danger);
+    @include handle-basic-style(danger);
   }
   &.warn {
-    &.solid {
-      @include handle-solid-style(warn);
-    }
-    &.gradient {
-      @include handle-gradient-style(warn);
-    }
-    &.outline {
-      @include handle-outline-style(warn);
-    }
-    &.basic {
-      @include handle-outline-style(warn, false);
-    }
+    @include handle-solid-style(warn);
+    @include handle-gradient-style(warn);
+    @include handle-outline-style(warn);
+    @include handle-basic-style(warn);
   }
 
   &.info {
-    &.solid {
-      @include handle-solid-style(info);
-    }
-    &.gradient {
-      @include handle-gradient-style(info);
-    }
-    &.outline {
-      @include handle-outline-style(info);
-    }
-    &.basic {
-      @include handle-outline-style(info, false);
-    }
+    @include handle-solid-style(info);
+    @include handle-gradient-style(info);
+    @include handle-outline-style(info);
+    @include handle-basic-style(info);
   }
 }
