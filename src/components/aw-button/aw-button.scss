@@ -1,8 +1,5 @@
 @import '../../scss/includes/components';
 
-// TODO: remove
-$secondary: #ffffff;
-
 /*
   Use following syntax:
   status-mode-property (css)
@@ -102,7 +99,6 @@ $secondary: #ffffff;
   --info-outline-hover-border-color: var(--info-hover);
 }
 
-:host([disabled]),
 :host([disabled]) button {
   @extend %disabled;
   pointer-events: none;

@@ -7,5 +7,5 @@
 }
 
 :host([theme='dark']) {
-  // TODO: create dark variables
+  @include componentDarkThemeVars();
 }
