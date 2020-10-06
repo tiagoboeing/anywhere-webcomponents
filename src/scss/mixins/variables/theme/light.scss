@@ -1,40 +1,47 @@
 @mixin componentLightThemeVars() {
-  --primary: #{$blue-50};
-  --primary-gradient-1: #{$blue-50};
-  --primary-gradient-2: #{$blue-70};
-  --primary-text-color: #{$white-100};
-  --primary-hover: #{$blue-60};
+  --anywhere-primary: #{$blue-50};
+  --anywhere-primary-towhite: #{$bluegray-50};
+  --anywhere-primary-gradient-1: #{$blue-50};
+  --anywhere-primary-gradient-2: #{$blue-70};
+  --anywhere-primary-text-color: #{$white-100};
+  --anywhere-primary-hover: #{$blue-60};
 
-  --secondary: #{$white-100};
-  --secondary-gradient-1: #{$white-100};
-  --secondary-gradient-2: #{$gray-50};
-  --secondary-text-color: #{$gray-10};
-  --secondary-hover: #{$gray-100};
-  --secondary-hover-border: #{$gray-20};
+  --anywhere-secondary: #{$white-100};
+  --anywhere-secondary-border: #{$gray-40};
+  --anywhere-secondary-gradient-1: #{$white-100};
+  --anywhere-secondary-gradient-2: #{$gray-50};
+  --anywhere-secondary-text-color: #{$gray-10};
+  --anywhere-secondary-hover: #{$gray-100};
+  --anywhere-secondary-hover-border: #{$gray-20};
 
-  --success: #{$green-50};
-  --success-gradient-1: #{$green-50};
-  --success-gradient-2: #{$green-80};
-  --success-text-color: #{$white-100};
-  --success-hover: #{$green-60};
+  --anywhere-success: #{$green-50};
+  --anywhere-success-towhite: #{$greengray-50};
+  --anywhere-success-gradient-1: #{$green-50};
+  --anywhere-success-gradient-2: #{$green-80};
+  --anywhere-success-text-color: #{$white-100};
+  --anywhere-success-hover: #{$green-60};
 
-  --danger: #{$red-50};
-  --danger-gradient-1: #{$red-50};
-  --danger-gradient-2: #{$red-80};
-  --danger-text-color: #{$white-100};
-  --danger-hover: #{$red-70};
+  --anywhere-danger: #{$red-50};
+  --anywhere-danger-towhite: #{$redgray-50};
+  --anywhere-danger-gradient-1: #{$red-50};
+  --anywhere-danger-gradient-2: #{$red-80};
+  --anywhere-danger-text-color: #{$white-100};
+  --anywhere-danger-hover: #{$red-70};
 
-  --warn: #{$orange-50};
-  --warn-gradient-1: #{$orange-50};
-  --warn-gradient-2: #{$orange-70};
-  --warn-text-color: #{$white-100};
-  --warn-hover: #{$orange-70};
+  --anywhere-warn: #{$orange-50};
+  --anywhere-warn-towhite: #{$orangegray-50};
+  --anywhere-warn-gradient-1: #{$orange-50};
+  --anywhere-warn-gradient-2: #{$orange-70};
+  --anywhere-warn-text-color: #{$white-100};
+  --anywhere-warn-hover: #{$orange-70};
 
-  --info: #{$lightblue-50};
-  --info-gradient-1: #{$lightblue-50};
-  --info-gradient-2: #{$lightblue-80};
-  --info-text-color: #{$white-100};
-  --info-hover: #{$lightblue-70};
+  --anywhere-info: #{$lightblue-50};
+  --anywhere-info-towhite: #{$lightbluegray-50};
+  --anywhere-info-gradient-1: #{$lightblue-50};
+  --anywhere-info-gradient-2: #{$lightblue-80};
+  --anywhere-info-text-color: #{$white-100};
+  --anywhere-info-hover: #{$lightblue-70};
 
-  --disabled: #{$gray-50};
+  --anywhere-disabled: #{$gray-50};
+  --anywhere-disabled-text-color: #{$gray-20};
 }

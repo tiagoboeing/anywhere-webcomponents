@@ -1,102 +1,102 @@
 @import '../../scss/includes/components';
 
-/*
-  Use following syntax:
-  status-mode-property (css)
-
-  Example:
-  primary (status) - solid (mode) - color (text color)
-
-  For states (like hover):
-  status-mode-hover-property (css)
-  -----------------------
-  */
-
 :host {
   @extend %component-host;
 
-  --primary-solid-background: var(--primary);
-  --primary-solid-color: var(--primary-text-color);
-  --primary-solid-hover-background: var(--primary-hover);
-  --secondary-solid-background: var(--secondary);
-  --secondary-solid-color: var(--secondary-text-color);
-  --secondary-solid-border-color: #c8c8c8;
-  --secondary-solid-hover-background: var(--secondary-hover);
-  --success-solid-background: var(--success);
-  --success-solid-color: var(--success-text-color);
-  --success-solid-hover-background: var(--success-hover);
-  --danger-solid-background: var(--danger);
-  --danger-solid-color: var(--danger-text-color);
-  --danger-solid-hover-background: var(--danger-hover);
-  --warn-solid-background: var(--warn);
-  --warn-solid-color: var(--warn-text-color);
-  --warn-solid-hover-background: var(--warn-hover);
-  --info-solid-background: var(--info);
-  --info-solid-color: var(--info-text-color);
-  --info-solid-hover-background: var(--info-hover);
+  --primary-solid-background: var(--anywhere-primary);
+  --primary-solid-color: var(--anywhere-primary-text-color);
+  --primary-solid-hover-background: var(--anywhere-primary-hover);
+  --secondary-solid-background: var(--anywhere-secondary);
+  --secondary-solid-color: var(--anywhere-secondary-text-color);
+  --secondary-solid-border-color: var(--anywhere-secondary-border);
+  --secondary-solid-hover-background: var(--anywhere-secondary-hover);
+  --success-solid-background: var(--anywhere-success);
+  --success-solid-color: var(--anywhere-success-text-color);
+  --success-solid-hover-background: var(--anywhere-success-hover);
+  --danger-solid-background: var(--anywhere-danger);
+  --danger-solid-color: var(--anywhere-danger-text-color);
+  --danger-solid-hover-background: var(--anywhere-danger-hover);
+  --warn-solid-background: var(--anywhere-warn);
+  --warn-solid-color: var(--anywhere-warn-text-color);
+  --warn-solid-hover-background: var(--anywhere-warn-hover);
+  --info-solid-background: var(--anywhere-info);
+  --info-solid-color: var(--anywhere-info-text-color);
+  --info-solid-hover-background: var(--anywhere-info-hover);
 
-  --primary-gradient-color: var(--primary-text-color);
-  --primary-gradient-background-fallback: var(--primary);
+  --primary-gradient-color: var(--anywhere-primary-text-color);
+  --primary-gradient-background-fallback: var(--anywhere-primary);
   --primary-gradient-background: linear-gradient(
     to right,
-    var(--primary-gradient-1),
-    var(--primary-gradient-2)
+    var(--anywhere-primary-gradient-1),
+    var(--anywhere-primary-gradient-2)
   );
-  --secondary-gradient-color: var(--secondary-text-color);
-  --secondary-gradient-border-color: #c8c8c8;
-  --secondary-gradient-background-fallback: var(--secondary);
+  --secondary-gradient-color: var(--anywhere-secondary-text-color);
+  --secondary-gradient-border-color: var(--anywhere-secondary-border);
+  --secondary-gradient-background-fallback: var(--anywhere-secondary);
   --secondary-gradient-background: linear-gradient(
     to right,
-    var(--secondary-gradient-1),
-    var(--secondary-gradient-2)
+    var(--anywhere-secondary-gradient-1),
+    var(--anywhere-secondary-gradient-2)
   );
-  --success-gradient-color: var(--success-text-color);
-  --success-gradient-background-fallback: var(--success);
+  --success-gradient-color: var(--anywhere-success-text-color);
+  --success-gradient-background-fallback: var(--anywhere-success);
   --success-gradient-background: linear-gradient(
     to right,
-    var(--success-gradient-1),
-    var(--success-gradient-2)
+    var(--anywhere-success-gradient-1),
+    var(--anywhere-success-gradient-2)
   );
-  --danger-gradient-color: var(--danger-text-color);
-  --danger-gradient-background-fallback: var(--danger);
-  --danger-gradient-background: linear-gradient(to right, var(--danger-gradient-1), var(--danger-gradient-2));
-  --warn-gradient-color: var(--warn-text-color);
-  --warn-gradient-background-fallback: var(--warn);
-  --warn-gradient-background: linear-gradient(to right, var(--warn-gradient-1), var(--warn-gradient-2));
-  --info-gradient-color: var(--info-text-color);
-  --info-gradient-background-fallback: var(--info);
-  --info-gradient-background: linear-gradient(to right, var(--info-gradient-1), var(--info-gradient-2));
+  --danger-gradient-color: var(--anywhere-danger-text-color);
+  --danger-gradient-background-fallback: var(--anywhere-danger);
+  --danger-gradient-background: linear-gradient(
+    to right,
+    var(--anywhere-danger-gradient-1),
+    var(--anywhere-danger-gradient-2)
+  );
+  --warn-gradient-color: var(--anywhere-warn-text-color);
+  --warn-gradient-background-fallback: var(--anywhere-warn);
+  --warn-gradient-background: linear-gradient(
+    to right,
+    var(--anywhere-warn-gradient-1),
+    var(--anywhere-warn-gradient-2)
+  );
+  --info-gradient-color: var(--anywhere-info-text-color);
+  --info-gradient-background-fallback: var(--anywhere-info);
+  --info-gradient-background: linear-gradient(
+    to right,
+    var(--anywhere-info-gradient-1),
+    var(--anywhere-info-gradient-2)
+  );
 
-  --primary-outline-color: var(--primary);
-  --primary-outline-background: #e7ecf9;
-  --primary-outline-border-color: var(--primary);
-  --primary-outline-hover-border-color: var(--primary-hover);
-  --primary-outline-hover-color: var(--primary-hover);
-  --secondary-outline-color: var(--secondary-text-color);
-  --secondary-outline-border-color: var(--secondary-text-color);
-  --secondary-outline-background: var(--secondary);
-  --secondary-outline-hover-color: var(--secondary-hover-border);
-  --secondary-outline-hover-border-color: var(--secondary-hover-border);
-  --success-outline-color: var(--success);
-  --success-outline-background: #e7f9f5;
-  --success-outline-border-color: var(--success);
-  --success-outline-hover-color: var(--success-hover);
-  --success-outline-hover-border-color: var(--success-hover);
-  --danger-outline-color: var(--danger);
-  --danger-outline-background: #f9e7e7;
-  --danger-outline-border-color: var(--danger);
-  --danger-outline-hover-color: var(--danger-hover);
-  --danger-outline-hover-border-color: var(--danger-hover);
-  --warn-outline-color: var(--warn);
-  --warn-outline-border-color: var(--warn);
-  --warn-outline-background: #f9ebe7;
-  --warn-outline-hover-color: var(--warn-hover);
-  --warn-outline-hover-border-color: var(--warn-hover);
-  --info-outline-color: var(--info);
-  --info-outline-border-color: var(--info);
-  --info-outline-background: #e7f5f9;
-  --info-outline-hover-color: var(--info-hover);
-  --info-outline-hover-border-color: var(--info-hover);
+  --primary-outline-color: var(--anywhere-primary);
+  --primary-outline-background: var(--anywhere-primary-towhite);
+  --primary-outline-border-color: var(--anywhere-primary);
+  --primary-outline-hover-border-color: var(--anywhere-primary-hover);
+  --primary-outline-hover-color: var(--anywhere-primary-hover);
+  --secondary-outline-color: var(--anywhere-secondary-text-color);
+  --secondary-outline-border-color: var(--anywhere-secondary-text-color);
+  --secondary-outline-background: var(--anywhere-secondary);
+  --secondary-outline-hover-color: var(--anywhere-secondary-hover-border);
+  --secondary-outline-hover-border-color: var(--anywhere-secondary-hover-border);
+  --success-outline-color: var(--anywhere-success);
+  --success-outline-background: var(--anywhere-success-towhite);
+  --success-outline-border-color: var(--anywhere-success);
+  --success-outline-hover-color: var(--anywhere-success-hover);
+  --success-outline-hover-border-color: var(--anywhere-success-hover);
+  --danger-outline-color: var(--anywhere-danger);
+  --danger-outline-background: var(--anywhere-danger-towhite);
+  --danger-outline-border-color: var(--anywhere-danger);
+  --danger-outline-hover-color: var(--anywhere-danger-hover);
+  --danger-outline-hover-border-color: var(--anywhere-danger-hover);
+  --warn-outline-color: var(--anywhere-warn);
+  --warn-outline-border-color: var(--anywhere-warn);
+  --warn-outline-background: var(--anywhere-warn-towhite);
+  --warn-outline-hover-color: var(--anywhere-warn-hover);
+  --warn-outline-hover-border-color: var(--anywhere-warn-hover);
+  --info-outline-color: var(--anywhere-info);
+  --info-outline-border-color: var(--anywhere-info);
+  --info-outline-background: var(--anywhere-info-towhite);
+  --info-outline-hover-color: var(--anywhere-info-hover);
+  --info-outline-hover-border-color: var(--anywhere-info-hover);
 }
 
 :host([disabled]) button {
@@ -161,12 +161,12 @@
 }
 
 @mixin handle-outline-style($status, $use-border: true) {
-  $mode: 'basic';
+  $color: 'basic';
   @if $use-border {
-    $mode: 'outline';
+    $color: 'outline';
   }
 
-  &.#{$mode} {
+  &.#{$color} {
     color: var(--#{$status}-outline-color);
     background: var(--#{$status}-outline-background);
     @if $use-border == true {
@@ -184,17 +184,10 @@
   @include handle-outline-style($style, false);
 }
 
-@mixin active($border-color) {
-  &:active {
-    box-shadow: 0 0 2px 4px $border-color;
-    background: #2cec86;
-  }
-}
-
 %disabled {
-  background: $gray-50 !important;
-  color: #a5a5a5 !important;
-  border-color: $gray-50 !important;
+  background: var(--anywhere-disabled) !important;
+  color: var(--anywhere-disabled-text-color) !important;
+  border-color: var(--anywhere-disabled) !important;
 }
 
 button {
@@ -251,7 +244,6 @@ button {
   }
 
   /* STATUS */
-
   &.primary {
     @include handle-solid-style(primary);
     @include handle-gradient-style(primary);
