@@ -45,34 +45,3 @@ configureActions({
   // Limit the number of items logged into the actions panel
   limit: 20,
 });
-
-const loader = require('../loader/index.cjs.js');
-// const general_stories = require.context('../general-stories', true, /.\.stories\.js$/);
-const local_stories = require.context('../src', true, /\/[^/ ]+?\/.+\/.+\.stories\.@(js|jsx|ts|tsx)$/);
-const auto_generated_stories = [
-  {
-    name: "ALL COMPONENTS|",
-    components: require.context(
-      "../dist/collection",
-      true,
-      /\/[^/ ]+?\/(?:[^/]+\/)*?([^/]+)\/\1\.js$/
-    ),
-    stories: require.context(
-      "../dist/collection",
-      true,
-      /\/[^/ ]+?\/(?:[^/]+\/)*?([^/]+)\/\1[^/]*?\.stories\.js$/
-    ),
-    notes: require.context("../src", true, /\/[^/ ]+?\/.+\/.+\.md$/)
-  }
-];
-
-const loadStories = () => {
-  loader.defineCustomElements(window);
-  // general_stories.keys().forEach(filename => general_stories(filename));
-  local_stories.keys().forEach(filename => local_stories(filename));
-  auto_generated_stories.forEach(({ name, components, stories, notes }) => {
-    buildStencilStories(name, components, stories, notes);
-  });
-};
-
-configure(loadStories, module);

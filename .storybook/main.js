@@ -1,3 +1,10 @@
+const fs = require('fs');
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
+
+const OUTPUT_DIR = '../dist';
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -12,12 +19,46 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-backgrounds',
   ],
-  webpackFinal: async config => {
-    config.module.rules.push({
-      test: /\.(ts|tsx)$/,
-      loader: require.resolve('babel-loader'),
+
+  async webpackFinal(config) {
+    config.entry.push(path.join(__dirname, OUTPUT_DIR, `index.js`));
+    fs.readdirSync(path.join(__dirname, OUTPUT_DIR, 'collection/components')).map(file => {
+      jsFilePath = path.join(__dirname, OUTPUT_DIR, `collection/components/${file}/${file}.@(js|ts)`);
+      try {
+        if (fs.existsSync(jsFilePath)) {
+          config.entry.push(jsFilePath);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+
+      // Add CSS
+      let cssFilePath = path.join(__dirname, OUTPUT_DIR, `collection/components/${file}/${file}.@(css|scss)`);
+      try {
+        if (fs.existsSync(cssFilePath)) {
+          config.entry.push(cssFilePath);
+        }
+      } catch (err) {
+        console.error(err);
+      }
     });
-    config.resolve.extensions.push('.ts', '.tsx');
+
+    // Add all static files to Storybook
+    config.plugins.push(
+      new CopyPlugin({
+        patterns: [
+          {
+            from: '**/*',
+            to: './',
+            context: 'dist',
+          },
+        ],
+      }),
+    );
+
+    // Write the files to disk and not to memory
+    config.plugins.push(new WriteFilePlugin());
+
     return config;
   },
 };

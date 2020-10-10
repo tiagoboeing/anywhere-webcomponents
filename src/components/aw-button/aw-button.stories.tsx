@@ -1,4 +1,4 @@
-import { action, withActions } from '@storybook/addon-actions';
+import { withActions } from '@storybook/addon-actions';
 import { addDecorator } from '@storybook/html';
 import readme from './readme.md';
 
