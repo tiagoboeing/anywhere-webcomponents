@@ -16,6 +16,7 @@
     "jsx": "react",
     "jsxFactory": "h",
     "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src"

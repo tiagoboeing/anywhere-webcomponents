@@ -1,5 +1,6 @@
 import { withActions } from '@storybook/addon-actions';
-import { addDecorator } from '@storybook/html';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 import {
   AwButtonColor,
   AwButtonIconMode,
@@ -16,11 +17,14 @@ export default {
       `<div style="box-sizing: border-box; padding: 40px;">
         ${Button()}
       </div>`,
+    withTests({ results }),
+    withActions('clicked'),
   ],
   parameters: {
     notes: {
       markdown: readme,
     },
+    jest: ['aw-button.spec.tsx'],
   },
   argTypes: {
     label: {
@@ -153,8 +157,6 @@ export default {
   },
 };
 
-addDecorator(withActions('clicked'));
-
 const Template = ({ label, status, mode, color, size, fullWidth, disabled, onlyIcon, icon, iconMode }) =>
   `<aw-button
     id="my-button"
@@ -177,6 +179,21 @@ export const Success = Template.bind({});
 Success.args = {
   label: 'Success',
   status: AwButtonStatus.success,
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  label: 'Outline',
+  status: AwButtonStatus.success,
+  color: AwButtonColor.outline,
+};
+
+export const Square = Template.bind({});
+Square.args = {
+  label: 'Danger',
+  status: AwButtonStatus.danger,
+  mode: AwButtonMode.square,
+  color: AwButtonColor.gradient,
 };
 
 export const onlyIcon = Template.bind({});

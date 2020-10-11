@@ -1,0 +1,24 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    name: Deploy Storybook to GitHub pages
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Log environments
+
+      - name: npm install, build and test
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.1.x"
+      - run: npm ci
+      - run: npm run deploy --if-present
+        env:
+          CI: true

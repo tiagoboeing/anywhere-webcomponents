@@ -9,7 +9,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withLinks } from '@storybook/addon-links';
 import { addDecorator, addParameters } from '@storybook/html';
 import { themes } from '@storybook/theming';
-import results from '../jest-test-results.json';
+import results from '../.jest-test-results.json';
 
 export const globalTypes = {
   theme: {
@@ -76,7 +76,7 @@ addDecorator(withLinks);
 addDecorator(
   withTests({
     results,
-    filesExt: '.spec.@(ts|tsx)',
+    filesExt: '((\\.spec?)|(\\.test?))?(\\.ts)|(\\.tsx)?$',
   }),
 );
 
