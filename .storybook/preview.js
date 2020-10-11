@@ -11,10 +11,34 @@ import { addDecorator, addParameters } from '@storybook/html';
 import { themes } from '@storybook/theming';
 import results from '../jest-test-results.json';
 
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      items: ['light'],
+    },
+  },
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    defaultValue: 'en',
+    toolbar: {
+      icon: 'globe',
+      items: [{ value: 'en', right: '🇺🇸', title: 'English' }],
+    },
+  },
+};
+
 export const parameters = {
   layout: 'centered',
   docs: {
     theme: themes.dark,
+  },
+  controls: {
+    expanded: true,
   },
   backgrounds: {
     values: [
@@ -32,6 +56,13 @@ export const parameters = {
       { name: 'dark', value: '#555555' },
       { name: 'black', value: '#000000' },
     ],
+  },
+  options: {
+    storySort: {
+      method: '',
+      order: [],
+      locales: '',
+    },
   },
 };
 
