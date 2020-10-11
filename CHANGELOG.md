@@ -1,10 +1,12 @@
 
 
 ## Unreleased 
-16 September 2020 
+11 October 2020 
 
 ### Features 
 
+- Added Storybook, run deploy to GitHub pages via CI and initial showcase (#14)
+- Added SASS structure, colors variables and multiples themes support (#13)
 - Added unit tests and E2E to button component (#12)
 
 ## v0.3.0-0 
