@@ -29,7 +29,7 @@
     "story": "npm-run-all --parallel build:watch storybook",
     "story:test": "npm-run-all test:generate story",
     "storybook": "start-storybook -p 6006 -s dist",
-    "deploy:storybook": "storybook-to-ghpages",
+    "deploy:storybook": "storybook-to-ghpages --ci",
     "deploy": "npm-run-all deploy:storybook"
   },
   "dependencies": {
