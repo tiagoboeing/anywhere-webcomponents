@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Log environments
+        run: |
+          echo "Starting Storybook build"
 
       - name: npm install, build and test
         uses: actions/setup-node@v1
