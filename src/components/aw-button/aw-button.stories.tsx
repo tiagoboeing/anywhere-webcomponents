@@ -1,14 +1,21 @@
 import { withActions } from '@storybook/addon-actions';
 import { addDecorator } from '@storybook/html';
-import { AwButtonColor, AwButtonMode, AwButtonSize, AwButtonStatus } from './aw-button.model';
+import {
+  AwButtonColor,
+  AwButtonIconMode,
+  AwButtonMode,
+  AwButtonSize,
+  AwButtonStatus,
+} from './aw-button.model';
 import readme from './readme.md';
 
 export default {
   title: 'Components/Button',
   decorators: [
-    Button => `<div style="box-sizing: border-box; padding: 40px;">
-    ${Button()}
-  </div>`,
+    Button =>
+      `<div style="box-sizing: border-box; padding: 40px;">
+        ${Button()}
+      </div>`,
   ],
   parameters: {
     notes: {
@@ -76,7 +83,7 @@ export default {
         type: 'select',
         options: Object.keys(AwButtonSize),
       },
-      defaultValue: 'large',
+      defaultValue: AwButtonSize.large,
       table: {
         type: {
           summary: Object.keys(AwButtonSize).join(' | '),
@@ -105,6 +112,22 @@ export default {
       control: 'text',
       defaultValue: 'fas fa-rocket',
     },
+    iconMode: {
+      description: `Position of icon`,
+      defaultValue: AwButtonIconMode.left,
+      control: {
+        type: 'select',
+        options: Object.keys(AwButtonIconMode),
+      },
+      table: {
+        type: {
+          summary: Object.keys(AwButtonIconMode).join(' | '),
+        },
+        defaultValue: {
+          summary: AwButtonIconMode.left,
+        },
+      },
+    },
     disabled: {
       description: 'Boolean to indicate if button is disabled',
       control: 'boolean',
@@ -132,7 +155,7 @@ export default {
 
 addDecorator(withActions('clicked'));
 
-const Template = ({ label, status, mode, color, size, fullWidth, disabled, onlyIcon, icon }) =>
+const Template = ({ label, status, mode, color, size, fullWidth, disabled, onlyIcon, icon, iconMode }) =>
   `<aw-button
     id="my-button"
     ${icon && `icon="${icon}"`}
@@ -143,6 +166,7 @@ const Template = ({ label, status, mode, color, size, fullWidth, disabled, onlyI
     mode=${mode}
     theme="light"
     size=${size}
+    iconMode="${iconMode}"
     ${onlyIcon && 'onlyIcon'}
     ${disabled && 'disabled'}
   ></aw-button>`;
@@ -155,12 +179,24 @@ Success.args = {
   status: AwButtonStatus.success,
 };
 
+export const onlyIcon = Template.bind({});
+onlyIcon.args = {
+  onlyIcon: true,
+};
+
+export const iconOnRight = Template.bind({});
+iconOnRight.args = {
+  iconMode: AwButtonIconMode.right,
+  icon: 'fas fa-check',
+};
+
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   fullWidth: true,
 };
 
-export const onlyIcon = Template.bind({});
-onlyIcon.args = {
-  onlyIcon: true,
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+  icon: null,
 };

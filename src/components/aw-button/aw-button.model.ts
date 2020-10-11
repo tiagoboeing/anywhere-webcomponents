@@ -30,6 +30,5 @@ export enum AwButtonColor {
 
 export enum AwButtonIconMode {
   left = 'left',
-  rigth = 'right',
+  right = 'right',
 }
-
