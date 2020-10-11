@@ -27,3 +27,7 @@ UserInterfaceState.xcuserstate
 
 changelog-data.json
 coverage/
+jest-test-results.json
+.jest-test-results.json
+
+storybook-static

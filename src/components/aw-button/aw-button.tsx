@@ -117,7 +117,7 @@ export class AwButton {
     };
 
     const iconClasses = {
-      'reverse': !!this.icon && this.iconMode === AwButtonIconMode.rigth,
+      'reverse': !!this.icon && this.iconMode === AwButtonIconMode.right,
       'no-margins': this.onlyIcon,
     };
 
