@@ -18,6 +18,10 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
+  "typeRoots": [
+    "node_modules/@types",
+    "./typings.d.ts"
+  ],
   "include": [
     "src"
   ],
