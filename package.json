@@ -29,9 +29,10 @@
     "changelog": "auto-changelog",
     "changelog.debug": "auto-changelog --template json --output changelog-data.json",
     "story": "npm-run-all --parallel build:watch storybook",
-    "story:test": "npm run test:generate && npm run story",
-    "storybook": "start-storybook -p 6006 -s ./dist",
-    "build-storybook": "build-storybook -s ./dist"
+    "story:test": "npm-run-all test:generate story",
+    "storybook": "start-storybook -p 6006 -s dist",
+    "deploy:storybook": "storybook-to-ghpages",
+    "deploy": "npm-run-all deploy:storybook"
   },
   "dependencies": {
     "@stencil/core": "^2.0.3",
@@ -59,6 +60,7 @@
     "@storybook/addon-viewport": "^6.0.26",
     "@storybook/addons": "^6.0.26",
     "@storybook/html": "^6.0.26",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@storybook/theming": "^6.0.26",
     "@types/jest": "^26.0.13",
     "@types/puppeteer": "3.0.1",
