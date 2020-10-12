@@ -1,5 +1,20 @@
 # Contribution guide
 
+To contribute for this project:
+
+1. Use `aw-` preffix in all new components;
+2. Write unit tests;
+3. Doc props and args using TSDoc syntax (read about Stencil for more);
+4. Develop and test Storybook (run `npm run storybook` or `yarn storybook`).
+
+> If you need help, be free for [open a information issue](https://github.com/tiagoboeing/anywhere-webcomponents/issues/new) or contact me.
+
+## Start
+
+Fork this repository and make changes. At end open a pull request for here with `develop` branch as target.
+
+> Any questions, open a issue or send message to [contato@tiagoboeing.com](mailto:contato@tiagoboeing.com)
+
 ## Developing
 
 - Clone this repo
@@ -10,7 +25,7 @@ npm install
 npm start
 ```
 
-To build the component for production, run:
+To build the component on production mode, run:
 
 ```bash
 npm run build
@@ -20,6 +35,10 @@ To run the unit tests for the components, run:
 
 ```bash
 npm test
+
+# or 
+
+npm run test:watch
 ```
 
 ## Naming Components
