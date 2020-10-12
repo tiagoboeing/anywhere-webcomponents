@@ -19,7 +19,9 @@ module.exports = function (Handlebars) {
 const search = (pattern, array) => {
   return array.filter(el => {
     if (el.id) {
-      return el.message.match(pattern) || el.commit.subject.match(pattern) || el.commit.message.match(pattern);
+      return (
+        el.message.match(pattern) || el.commit.subject.match(pattern) || el.commit.message.match(pattern)
+      );
     } else {
       return el.message.match(pattern) || el.subject.match(pattern);
     }
@@ -102,12 +104,12 @@ const createChangelog = gitLog => {
     }
 
     if (el.features?.length > 0) {
-      finalChangelog += `### Features \n\n`;
+      finalChangelog += `\n\n### Features \n\n`;
       finalChangelog += el.features.map(item => `- ${item}`).join('\n');
     }
 
     if (el.fixes?.length > 0) {
-      finalChangelog += `### Fixes \n\n`;
+      finalChangelog += `\n\n### Fixes \n\n`;
       finalChangelog += el.fixes.map(item => `- ${item}`).join('\n');
     }
   });
