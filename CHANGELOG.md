@@ -5,6 +5,7 @@
 
 ### Features 
 
+- Added active style in buttons (#16)
 - Added Storybook, run deploy to GitHub pages via CI and initial showcase (#14)
 - Added SASS structure, colors variables and multiples themes support (#13)
 - Added unit tests and E2E to button component (#12)
