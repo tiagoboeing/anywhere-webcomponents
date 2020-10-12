@@ -7,7 +7,9 @@
 
 - Added Storybook, run deploy to GitHub pages via CI and initial showcase (#14)
 - Added SASS structure, colors variables and multiples themes support (#13)
-- Added unit tests and E2E to button component (#12)
+- Added unit tests and E2E to button component (#12)### Fixes 
+
+- Fixes icon and text position on responsive buttons when `iconMode="right"` (#15)
 
 ## v0.3.0-0 
 7 September 2020 
