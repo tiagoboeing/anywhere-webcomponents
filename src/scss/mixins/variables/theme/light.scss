@@ -1,5 +1,7 @@
 @mixin componentLightThemeVars() {
   --anywhere-primary: #{$blue-50};
+  --anywhere-primary-border-1: #{$white-100};
+  --anywhere-primary-border-2: #{$blue-90};
   --anywhere-primary-towhite: #{$bluegray-50};
   --anywhere-primary-gradient-1: #{$blue-50};
   --anywhere-primary-gradient-2: #{$blue-70};
@@ -7,7 +9,8 @@
   --anywhere-primary-hover: #{$blue-60};
 
   --anywhere-secondary: #{$white-100};
-  --anywhere-secondary-border: #{$gray-40};
+  --anywhere-secondary-border-1: #{$white-100};
+  --anywhere-secondary-border-2: #{$gray-90};
   --anywhere-secondary-gradient-1: #{$white-100};
   --anywhere-secondary-gradient-2: #{$gray-50};
   --anywhere-secondary-text-color: #{$gray-10};
@@ -16,6 +19,8 @@
 
   --anywhere-success: #{$green-50};
   --anywhere-success-towhite: #{$greengray-50};
+  --anywhere-success-border-1: #{$white-100};
+  --anywhere-success-border-2: #{$green-90};
   --anywhere-success-gradient-1: #{$green-50};
   --anywhere-success-gradient-2: #{$green-80};
   --anywhere-success-text-color: #{$white-100};
@@ -23,6 +28,8 @@
 
   --anywhere-danger: #{$red-50};
   --anywhere-danger-towhite: #{$redgray-50};
+  --anywhere-danger-border-1: #{$white-100};
+  --anywhere-danger-border-2: #{$red-90};
   --anywhere-danger-gradient-1: #{$red-50};
   --anywhere-danger-gradient-2: #{$red-80};
   --anywhere-danger-text-color: #{$white-100};
@@ -30,6 +37,8 @@
 
   --anywhere-warn: #{$orange-50};
   --anywhere-warn-towhite: #{$orangegray-50};
+  --anywhere-warn-border-1: #{$white-100};
+  --anywhere-warn-border-2: #{$orange-90};
   --anywhere-warn-gradient-1: #{$orange-50};
   --anywhere-warn-gradient-2: #{$orange-70};
   --anywhere-warn-text-color: #{$white-100};
@@ -37,6 +46,8 @@
 
   --anywhere-info: #{$lightblue-50};
   --anywhere-info-towhite: #{$lightbluegray-50};
+  --anywhere-info-border-1: #{$white-100};
+  --anywhere-info-border-2: #{$lightblue-90};
   --anywhere-info-gradient-1: #{$lightblue-50};
   --anywhere-info-gradient-2: #{$lightblue-80};
   --anywhere-info-text-color: #{$white-100};

@@ -31,7 +31,6 @@
     var(--anywhere-primary-gradient-2)
   );
   --secondary-gradient-color: var(--anywhere-secondary-text-color);
-  --secondary-gradient-border-color: var(--anywhere-secondary-border);
   --secondary-gradient-background-fallback: var(--anywhere-secondary);
   --secondary-gradient-background: linear-gradient(
     to right,
@@ -76,7 +75,9 @@
   --secondary-outline-border-color: var(--anywhere-secondary-text-color);
   --secondary-outline-background: var(--anywhere-secondary);
   --secondary-outline-hover-color: var(--anywhere-secondary-hover-border);
-  --secondary-outline-hover-border-color: var(--anywhere-secondary-hover-border);
+  --secondary-outline-hover-border-color: var(
+    --anywhere-secondary-hover-border
+  );
   --success-outline-color: var(--anywhere-success);
   --success-outline-background: var(--anywhere-success-towhite);
   --success-outline-border-color: var(--anywhere-success);
@@ -146,6 +147,13 @@
     &:hover {
       background: var(--#{$status}-solid-hover-background);
     }
+
+    &:active {
+      background: var(--#{$status}-solid-background) !important;
+      transition: 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      box-shadow: 0 0 1px 3px var(--anywhere-#{$status}-border-1),
+        0 0 0 5px var(--anywhere-#{$status}-border-2);
+    }
   }
 }
 
@@ -156,6 +164,12 @@
     background: var(--#{$status}-gradient-background);
     @if $status == var(--status-secondary) {
       box-shadow: inset 0px 0px 0px 1px var(--#{$status}-gradient-border-color);
+    }
+
+    &:active {
+      transition: 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      box-shadow: 0 0 1px 3px var(--anywhere-#{$status}-border-1),
+        0 0 0 5px var(--anywhere-#{$status}-border-2);
     }
   }
 }
@@ -176,6 +190,11 @@
     &:hover {
       color: var(--#{$status}-outline-hover-color);
       border-color: var(--#{$status}-outline-hover-border-color);
+    }
+
+    &:active {
+      transition: 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      box-shadow: 0 0 2px 3px var(--anywhere-#{$status}-border-2);
     }
   }
 }
