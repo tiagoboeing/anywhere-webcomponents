@@ -5,9 +5,16 @@
 
 ### Features 
 
+- Added active style in buttons (#16)
 - Added Storybook, run deploy to GitHub pages via CI and initial showcase (#14)
 - Added SASS structure, colors variables and multiples themes support (#13)
 - Added unit tests and E2E to button component (#12)
+
+### Fixes 
+
+- Fixes `auto-changelog`, adding break line on sections ([cf26a7f](https://github.com/tiagoboeing/anywhere-webcomponents/commit/cf26a7fc7265ff39194f61cd8ce8f233bc8ca79a))
+- Fixes the repository URL on Storybook page ([3fde5c7](https://github.com/tiagoboeing/anywhere-webcomponents/commit/3fde5c7a0791e660c88845f0af8063f43f1b68e2))
+- Fixes icon and text position on responsive buttons when `iconMode="right"` (#15)
 
 ## v0.3.0-0 
 7 September 2020 

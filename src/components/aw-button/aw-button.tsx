@@ -103,7 +103,9 @@ export class AwButton {
 
   componentDidLoad() {
     if (this.onlyIcon && !this.icon) {
-      throw new Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`);
+      throw new Error(
+        `When 'onlyIcon' property is enabled a 'icon' should be passed!`,
+      );
     }
   }
 

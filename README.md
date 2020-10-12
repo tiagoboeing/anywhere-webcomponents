@@ -4,7 +4,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) ![Deploy](https://github.com/tiagoboeing/anywhere-webcomponents/workflows/Deploy/badge.svg)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[Demo here](https://3fp9w.csb.app/) | [Roadmap](https://github.com/tiagoboeing/anywhere-webcomponents/projects)
+[Demo here](https://anywhere.tiagoboeing.com/) | [Roadmap](https://github.com/tiagoboeing/anywhere-webcomponents/projects)
 
 **This project is a work in progress.** See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
 
