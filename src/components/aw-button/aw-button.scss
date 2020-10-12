@@ -211,6 +211,7 @@ button {
 
     /** when icon mode is defined to right position */
     &.reverse {
+      width: fit-content;
       flex-direction: row-reverse;
 
       i {
