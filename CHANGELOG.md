@@ -3,6 +3,9 @@
 ## Unreleased 
 12 October 2020 
 
+## v0.4.0-0 
+12 October 2020 
+
 ### Features 
 
 - Develop (#17)
