@@ -59,7 +59,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
-          aws-region: sa-east-1
+          aws-region: us-east-1
 
       - name: Deploy CDN
         run: sh ./scripts/deploy.sh
@@ -90,5 +90,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          branch: ${GITHUB_REF##*/}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true

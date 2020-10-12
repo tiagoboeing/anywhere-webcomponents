@@ -21,6 +21,18 @@ jobs:
         with:
           node-version: "14.1.x"
       - run: npm ci
-      - run: npm run deploy --if-present
+      - run: npm run storybook:build
         env:
           CI: true
+
+      - name: Configure AWS credentials for CDN account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy landing page
+        run: sh ./scripts/storybook-deploy.sh
+        env:
+          AWS_CLOUDFRONT_LANDINGPAGE_DIST_ID: ${{ secrets.AWS_CLOUDFRONT_LANDINGPAGE_DIST_ID }}

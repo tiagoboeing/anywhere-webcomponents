@@ -4,8 +4,8 @@ echo "Deploy to CDN"
 
 BUCKET=s3://cdn.tiagoboeing.com/anywhere-webcomponents/
 
-aws s3 sync dist ${BUCKET}${GITHUB_REF##*/}
-aws s3 sync loader ${BUCKET}${GITHUB_REF##*/}/loader/
+aws s3 sync dist ${BUCKET}${GITHUB_REF##*/} --delete
+aws s3 sync loader ${BUCKET}${GITHUB_REF##*/}/loader/ --delete
 
 echo "Copy to S3 concluded"
 echo "Prepare to invalidade cache on CloudFront"

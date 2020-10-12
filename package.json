@@ -29,8 +29,7 @@
     "story": "npm-run-all --parallel build:watch storybook",
     "story:test": "npm-run-all test:generate story",
     "storybook": "start-storybook -p 6006 -s dist",
-    "deploy:storybook": "storybook-to-ghpages --ci",
-    "deploy": "npm-run-all deploy:storybook"
+    "storybook:build": "npm run test && build-storybook -s dist"
   },
   "dependencies": {
     "@stencil/core": "^2.0.3",
