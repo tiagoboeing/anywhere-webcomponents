@@ -1,7 +1,7 @@
 
 
 ## Unreleased 
-18 October 2020 
+19 October 2020 
 
 ### Features 
 
@@ -11,6 +11,7 @@
 
 - Fixes `auto-changelog`, adding break line on sections ([cf26a7f](https://github.com/tiagoboeing/anywhere-webcomponents/commit/cf26a7fc7265ff39194f61cd8ce8f233bc8ca79a))
 - Fixes the repository URL on Storybook page ([3fde5c7](https://github.com/tiagoboeing/anywhere-webcomponents/commit/3fde5c7a0791e660c88845f0af8063f43f1b68e2))
+- Change Storybook default background color to light ([7d51df7](https://github.com/tiagoboeing/anywhere-webcomponents/commit/7d51df7ea16ab7af2264567ad049dab5dc00a242))
 - Fixes icon and text position on responsive buttons when `iconMode="right"` (#15)
 
 ## v0.4.0-0 
