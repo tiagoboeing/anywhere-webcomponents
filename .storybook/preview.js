@@ -41,8 +41,9 @@ export const parameters = {
     expanded: true,
   },
   backgrounds: {
+    default: 'light',
     values: [
-      { name: 'white', value: '#ffffff', default: true },
+      { name: 'white', value: '#ffffff' },
       { name: 'light', value: '#eeeeee' },
       { name: 'gainsboro', value: '#DCDCDC' },
       { name: 'lightgrey', value: '#D3D3D3' },
@@ -65,10 +66,6 @@ export const parameters = {
     },
   },
 };
-
-addParameters({
-  options: {},
-});
 
 addDecorator(withKnobs);
 addDecorator(withA11y);
