@@ -125,18 +125,20 @@ export class AwButton {
 
     return (
       <Host>
-        <button
-          type="button"
-          id={this.id}
-          class={classList}
-          disabled={this.disabled}
-          onClick={e => this.clicked.emit(e)}
-        >
-          <span class={iconClasses}>
-            {!!this.icon && <i class={this.icon}></i>}
-            {!this.onlyIcon && this.label}
-          </span>
-        </button>
+        <aw-loading>
+          <button
+            type="button"
+            id={this.id}
+            class={classList}
+            disabled={this.disabled}
+            onClick={e => this.clicked.emit(e)}
+          >
+            <span class={iconClasses}>
+              {!!this.icon && <i class={this.icon}></i>}
+              {!this.onlyIcon && this.label}
+            </span>
+          </button>
+        </aw-loading>
       </Host>
     );
   }
