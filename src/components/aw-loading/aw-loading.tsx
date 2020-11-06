@@ -8,19 +8,24 @@ import { Component, Host, h, Element } from '@stencil/core';
 export class AwLoading {
   @Element() element: HTMLElement;
 
-  private height = 'auto';
+  // private height = 'auto';
 
   componentDidLoad() {
-    this.height = `${this.element.offsetHeight}`;
+    // this.height = `${this.element.offsetHeight}`;
+
+    // console.log(this.height);
+
+    // console.log(this.element.getElementsByTagName('slot'));
   }
 
   render() {
     return (
       <Host>
-        <slot />
         <div class="loading-wrapper">
           <div class="loading">
-            <div />
+            <div>
+              <slot />
+            </div>
           </div>
         </div>
       </Host>
