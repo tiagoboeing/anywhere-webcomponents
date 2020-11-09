@@ -1,12 +1,12 @@
 import { withActions } from '@storybook/addon-actions';
 import { withTests } from '@storybook/addon-jest';
 import results from '../../../.jest-test-results.json';
+import { AwStatus } from '../../models/status.model';
 import {
   AwButtonColor,
   AwButtonIconMode,
   AwButtonMode,
-  AwButtonSize,
-  AwButtonStatus,
+  AwButtonSize
 } from './aw-button.model';
 import readme from './readme.md';
 
@@ -39,17 +39,17 @@ export default {
       description: 'The status of button (color)',
       table: {
         type: {
-          summary: Object.keys(AwButtonStatus).join(' | '),
+          summary: Object.keys(AwStatus).join(' | '),
         },
         defaultValue: {
-          summary: AwButtonStatus.primary,
+          summary: AwStatus.primary,
         },
       },
       control: {
         type: 'select',
-        options: Object.keys(AwButtonStatus),
+        options: Object.keys(AwStatus),
       },
-      defaultValue: AwButtonStatus.primary,
+      defaultValue: AwStatus.primary,
     },
     mode: {
       description: 'Mode of button (like square or rounded)',
@@ -178,20 +178,20 @@ export const Default = Template.bind({});
 export const Success = Template.bind({});
 Success.args = {
   label: 'Success',
-  status: AwButtonStatus.success,
+  status: AwStatus.success,
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
   label: 'Outline',
-  status: AwButtonStatus.success,
+  status: AwStatus.success,
   color: AwButtonColor.outline,
 };
 
 export const Square = Template.bind({});
 Square.args = {
   label: 'Danger',
-  status: AwButtonStatus.danger,
+  status: AwStatus.danger,
   mode: AwButtonMode.square,
   color: AwButtonColor.gradient,
 };

@@ -1,11 +1,11 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import { AwStatus } from '../../models/status.model';
 import { AnywhereTheme } from '../interfaces';
 import {
   AwButtonColor,
   AwButtonIconMode,
   AwButtonMode,
   AwButtonSize,
-  AwButtonStatus,
 } from './aw-button.model';
 
 @Component({
@@ -42,7 +42,7 @@ export class AwButton {
    * The status of button (color)
    */
   @Prop({ mutable: true })
-  status: AwButtonStatus = AwButtonStatus.primary;
+  status: AwStatus = AwStatus.primary;
 
   /**
    * Mode of button (like square or rounded)

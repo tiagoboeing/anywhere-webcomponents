@@ -1,4 +1,5 @@
-import { Component, Host, h, Element } from '@stencil/core';
+import { Component, Host, h, Element, Prop } from '@stencil/core';
+import { AwStatus } from '../../models/status.model';
 
 @Component({
   tag: 'aw-loading',
@@ -8,26 +9,29 @@ import { Component, Host, h, Element } from '@stencil/core';
 export class AwLoading {
   @Element() element: HTMLElement;
 
-  // private height = 'auto';
+  @Prop({ mutable: true })
+  visible = false;
 
-  componentDidLoad() {
-    // this.height = `${this.element.offsetHeight}`;
+  @Prop({ mutable: true, reflect: true })
+  status = AwStatus.primary;
 
-    // console.log(this.height);
-
-    // console.log(this.element.getElementsByTagName('slot'));
-  }
+  componentDidRender() {}
 
   render() {
+    const classList = {
+      [this.status]: true,
+    };
+
     return (
       <Host>
-        <div class="loading-wrapper">
-          <div class="loading">
-            <div>
-              <slot />
+        <span class="wrapper">
+          <slot />
+          <div class="loading-wrapper">
+            <div class="loading">
+              <div class={classList}></div>
             </div>
           </div>
-        </div>
+        </span>
       </Host>
     );
   }

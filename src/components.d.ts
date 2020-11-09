@@ -6,7 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AnywhereTheme } from "./components/interfaces";
-import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
+import { AwStatus } from "./models/status.model";
+import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwButton {
         /**
@@ -56,10 +57,12 @@ export namespace Components {
         /**
           * The status of button (color)
          */
-        "status": AwButtonStatus;
+        "status": AwStatus;
         "theme": AnywhereTheme;
     }
     interface AwLoading {
+        "status": AwStatus;
+        "visible": boolean;
     }
 }
 declare global {
@@ -133,10 +136,12 @@ declare namespace LocalJSX {
         /**
           * The status of button (color)
          */
-        "status"?: AwButtonStatus;
+        "status"?: AwStatus;
         "theme"?: AnywhereTheme;
     }
     interface AwLoading {
+        "status"?: AwStatus;
+        "visible"?: boolean;
     }
     interface IntrinsicElements {
         "aw-button": AwButton;
