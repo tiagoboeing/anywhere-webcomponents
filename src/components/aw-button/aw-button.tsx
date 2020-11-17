@@ -98,7 +98,8 @@ export class AwButton {
    * Add a loading indicator to button
    * You need add a manual control to remove loading
    */
-  @Prop({ mutable: true })
+
+  @Prop({ mutable: true, reflect: true })
   loading = false;
 
   componentDidLoad() {
@@ -109,12 +110,21 @@ export class AwButton {
     }
   }
 
+  handleEventClick = (event: MouseEvent): void => {
+    if (!this.isDisabled) this.clicked.emit(event);
+  };
+
+  get isDisabled(): boolean {
+    console.log('isDisabled', this.disabled || this.loading);
+    return this.disabled || this.loading;
+  }
+
   render() {
     const classList = {
       [this.color]: true,
       [this.mode]: true,
       [this.status]: true,
-      disabled: this.disabled,
+      disabled: this.isDisabled,
       responsive: this.fullWidth,
     };
 
@@ -125,15 +135,15 @@ export class AwButton {
 
     return (
       <Host>
-        <aw-loading>
+        <aw-loading visible={this.loading}>
           <button
             type="button"
             id={this.id}
             class={classList}
-            disabled={this.disabled}
-            onClick={e => this.clicked.emit(e)}
+            disabled={this.isDisabled}
+            onClick={this.handleEventClick}
           >
-            <span class={iconClasses}>
+            <span class={iconClasses} style={{ pointerEvents: 'none' }}>
               {!!this.icon && <i class={this.icon}></i>}
               {!this.onlyIcon && this.label}
             </span>

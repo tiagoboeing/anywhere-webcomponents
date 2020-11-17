@@ -22,7 +22,7 @@ export class AwLoading {
       [this.status]: true,
     };
 
-    return (
+    return this.visible ? (
       <Host>
         <span class="wrapper">
           <slot />
@@ -33,6 +33,8 @@ export class AwLoading {
           </div>
         </span>
       </Host>
+    ) : (
+      <slot />
     );
   }
 }

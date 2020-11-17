@@ -103,6 +103,7 @@
 :host([disabled]) button {
   @extend %disabled;
   pointer-events: none;
+  cursor: auto;
 }
 
 // sizes
