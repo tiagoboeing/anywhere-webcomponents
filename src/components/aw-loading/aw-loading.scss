@@ -1,7 +1,11 @@
 @import '../../scss/includes/components';
 
+:host {
+  @extend %component-host;
+}
+
 @mixin handle-loading-status($status) {
-  &.#{status} {
+  &.#{$status} {
     border-color: var(--anywhere-#{$status});
   }
 }
@@ -45,7 +49,7 @@
   height: 1rem;
   border-width: 5px solid;
   border-style: solid;
-  border-top-color: transparent;
+  border-top-color: transparent !important;
   border-radius: 50%;
 
   @include handle-loading-status('primary');

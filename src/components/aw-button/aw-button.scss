@@ -100,7 +100,8 @@
   --info-outline-hover-border-color: var(--anywhere-info-hover);
 }
 
-:host([disabled]) button {
+:host([disabled]) button,
+.disabled {
   @extend %disabled;
   pointer-events: none;
   cursor: auto;

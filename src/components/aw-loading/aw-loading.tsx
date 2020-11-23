@@ -24,7 +24,7 @@ export class AwLoading {
 
     return this.visible ? (
       <Host>
-        <span class="wrapper">
+        <span class="wrapper" style={{ position: 'relative' }}>
           <slot />
           <div class="loading-wrapper">
             <div class="loading">

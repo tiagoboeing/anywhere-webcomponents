@@ -8,7 +8,7 @@ describe('aw-loading', () => {
       html: `<aw-loading></aw-loading>`,
     });
     expect(page.root).toEqualHtml(`
-      <aw-loading>
+      <aw-loading status="primary">
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>

@@ -1,4 +1,13 @@
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+} from '@stencil/core';
+import { defaultTheme } from '../../defaultTheme';
 import { AwStatus } from '../../models/status.model';
 import { AnywhereTheme } from '../interfaces';
 import {
@@ -14,6 +23,8 @@ import {
   shadow: true,
 })
 export class AwButton {
+  @Element() element: HTMLElement;
+
   /**
    * Emitted when button is clicked
    * Captured by onClick listener.
@@ -30,7 +41,7 @@ export class AwButton {
   @Prop({ attribute: 'id', mutable: false, reflect: true })
   id: string;
 
-  @Prop({ reflect: true }) theme: AnywhereTheme = 'light';
+  @Prop({ reflect: true }) theme: AnywhereTheme = defaultTheme;
 
   /**
    * Text to show inside button
@@ -115,7 +126,6 @@ export class AwButton {
   };
 
   get isDisabled(): boolean {
-    console.log('isDisabled', this.disabled || this.loading);
     return this.disabled || this.loading;
   }
 
@@ -135,7 +145,7 @@ export class AwButton {
 
     return (
       <Host>
-        <aw-loading visible={this.loading}>
+        <aw-loading status={this.status} visible={this.loading}>
           <button
             type="button"
             id={this.id}
@@ -143,7 +153,7 @@ export class AwButton {
             disabled={this.isDisabled}
             onClick={this.handleEventClick}
           >
-            <span class={iconClasses} style={{ pointerEvents: 'none' }}>
+            <span class={iconClasses}>
               {!!this.icon && <i class={this.icon}></i>}
               {!this.onlyIcon && this.label}
             </span>

@@ -10,9 +10,11 @@ describe('aw-button', () => {
     expect(page.root).toEqualHtml(`
       <aw-button theme="light">
         <mock:shadow-root>
-          <button type="button" class="primary rounded solid">
-            <span></span>
-          </button>
+          <aw-loading status="primary">
+            <button type="button" class="primary rounded solid">
+              <span></span>
+            </button>
+          </aw-loading>
         </mock:shadow-root>
       </aw-button>
     `);
@@ -27,9 +29,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button theme="light">
           <mock:shadow-root>
-            <button type="button" class="rounded primary solid">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="rounded primary solid">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -43,9 +47,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button mode="radius" theme="light">
           <mock:shadow-root>
-            <button type="button" class="radius primary solid">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="radius primary solid">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -59,9 +65,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button mode="square" theme="light">
           <mock:shadow-root>
-            <button type="button" class="square primary solid">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="square primary solid">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -77,9 +85,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button theme="light">
           <mock:shadow-root>
-            <button type="button" class="solid primary rounded">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="solid primary rounded">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -93,9 +103,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button color="outline" theme="light">
           <mock:shadow-root>
-            <button type="button" class="outline primary rounded">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="outline primary rounded">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -109,9 +121,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button color="gradient" theme="light">
           <mock:shadow-root>
-            <button type="button" class="gradient primary rounded">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="gradient primary rounded">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -125,9 +139,11 @@ describe('aw-button', () => {
       expect(page.root).toEqualHtml(`
         <aw-button color="basic" theme="light">
           <mock:shadow-root>
-            <button type="button" class="basic primary rounded">
-              <span></span>
-            </button>
+            <aw-loading status="primary">
+              <button type="button" class="basic primary rounded">
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -147,9 +163,11 @@ describe('aw-button', () => {
           theme="light"
         >
           <mock:shadow-root>
-            <button type="button" class="solid rounded danger disabled" disabled>
-              <span></span>
-            </button>
+            <aw-loading status="danger">
+              <button type="button" class="solid rounded danger disabled" disabled>
+                <span></span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -163,7 +181,11 @@ describe('aw-button', () => {
           components: [AwButton],
           html: `<aw-button status="danger" onlyIcon="true"></aw-button>`,
         }),
-      ).rejects.toThrow(new Error(`When 'onlyIcon' property is enabled a 'icon' should be passed!`));
+      ).rejects.toThrow(
+        new Error(
+          `When 'onlyIcon' property is enabled a 'icon' should be passed!`,
+        ),
+      );
     });
 
     it('Icon defined and onlyIcon true', async () => {
@@ -185,11 +207,13 @@ describe('aw-button', () => {
           theme="light"
         >
           <mock:shadow-root>
-            <button type="button" class="solid rounded danger">
-              <span class="no-margins">
-                <i class="fa-airplane far"></i>
-              </span>
-            </button>
+            <aw-loading status="danger">
+              <button type="button" class="solid rounded danger">
+                <span class="no-margins">
+                  <i class="fa-airplane far"></i>
+                </span>
+              </button>
+            </aw-loading>
           </mock:shadow-root>
         </aw-button>
       `);
@@ -216,7 +240,8 @@ describe('aw-button', () => {
             icon="far fa-airplane"
             iconMode="left"
             label="My button"
-            theme="light">
+            theme="light"
+          >
           </aw-button>`,
         });
 
@@ -229,12 +254,14 @@ describe('aw-button', () => {
             theme="light"
           >
             <mock:shadow-root>
-              <button type="button" class="solid rounded danger">
-                <span>
-                  <i class="far fa-airplane"></i>
-                  My button
-                </span>
-              </button>
+              <aw-loading status="danger">
+                <button type="button" class="solid rounded danger">
+                  <span>
+                    <i class="far fa-airplane"></i>
+                    My button
+                  </span>
+                </button>
+              </aw-loading>
             </mock:shadow-root>
           </aw-button>
         `;
@@ -252,7 +279,8 @@ describe('aw-button', () => {
               icon="far fa-airplane"
               iconMode="right"
               label="My button"
-              theme="light">
+              theme="light"
+            >
             </aw-button>
           `,
         });
@@ -266,12 +294,14 @@ describe('aw-button', () => {
             theme="light"
           >
             <mock:shadow-root>
-              <button type="button" class="solid rounded danger">
-                <span class="reverse">
-                  <i class="far fa-airplane"></i>
-                  My button
-                </span>
-              </button>
+              <aw-loading status="danger">
+                <button type="button" class="solid rounded danger">
+                  <span class="reverse">
+                    <i class="far fa-airplane"></i>
+                    My button
+                  </span>
+                </button>
+              </aw-loading>
             </mock:shadow-root>
         </aw-button>
         `;
@@ -303,11 +333,13 @@ describe('aw-button', () => {
             theme="light"
           >
             <mock:shadow-root>
-              <button type="button" class="solid rounded danger">
-                <span>
-                  My button
-                </span>
-              </button>
+              <aw-loading status="danger">
+                <button type="button" class="solid rounded danger">
+                  <span>
+                    My button
+                  </span>
+                </button>
+              </aw-loading>
             </mock:shadow-root>
         </aw-button>
         `);
@@ -329,6 +361,38 @@ describe('aw-button', () => {
 
         expect(mock).toHaveBeenCalledTimes(1);
       });
+    });
+  });
+
+  describe('Loading spinner', () => {
+    it('Should toggle button to disabled state when loading is true', async () => {
+      const comp = await newSpecPage({
+        components: [AwButton],
+        html: `
+            <aw-button
+              label="My button"
+              loading
+            >
+            </aw-button>
+          `,
+      });
+      expect(comp.root).toEqualHtml(`
+          <aw-button
+            label="My button"
+            theme="light"
+            loading
+          >
+            <mock:shadow-root>
+              <aw-loading status="primary" visible>
+                <button type="button" class="solid rounded primary disabled" disabled>
+                  <span>
+                  My button
+                  </span>
+                </button>
+              </aw-loading>
+            </mock:shadow-root>
+        </aw-button>
+        `);
     });
   });
 });
