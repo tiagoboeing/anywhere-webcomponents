@@ -16,6 +16,15 @@
         "ideas",
         "design"
       ]
+    },
+    {
+      "login": "lucassouzamatos",
+      "name": "lucas souza matos",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/20645254?v=4",
+      "profile": "https://github.com/lucassouzamatos",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
