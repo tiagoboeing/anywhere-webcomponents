@@ -6,7 +6,7 @@ import {
   AwButtonColor,
   AwButtonIconMode,
   AwButtonMode,
-  AwButtonSize
+  AwButtonSize,
 } from './aw-button.model';
 import readme from './readme.md';
 
@@ -154,10 +154,27 @@ export default {
         },
       },
     },
+    loading: {
+      description: 'If `true` add a loading spinner with status color to button',
+      control: 'boolean',
+      defaultValue: false,
+    },
   },
 };
 
-const Template = ({ label, status, mode, color, size, fullWidth, disabled, onlyIcon, icon, iconMode }) =>
+const Template = ({
+  label,
+  status,
+  mode,
+  color,
+  size,
+  fullWidth,
+  disabled,
+  onlyIcon,
+  icon,
+  iconMode,
+  loading,
+}) =>
   `<aw-button
     id="my-button"
     ${icon && `icon="${icon}"`}
@@ -171,6 +188,7 @@ const Template = ({ label, status, mode, color, size, fullWidth, disabled, onlyI
     iconMode="${iconMode}"
     ${onlyIcon && 'onlyIcon'}
     ${disabled && 'disabled'}
+    ${loading && 'loading'}
   ></aw-button>`;
 
 export const Default = Template.bind({});
@@ -215,5 +233,11 @@ FullWidth.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
+  icon: null,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
   icon: null,
 };
