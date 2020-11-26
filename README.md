@@ -101,6 +101,25 @@ applyPolyfills().then(() => {
 })
 ```
 
+### React applications
+
+```bash
+yarn add @tiagoboeing/anywhere-webcomponents
+```
+
+In your `src/index.js` or `src/index.tsx` (typescript project) file, add following imports preferably before of the React Render:
+
+```js
+import { applyPolyfills, defineCustomElements } from '@tiagoboeing/anywhere-webcomponents/loader';
+
+defineCustomElements();
+
+// for IE support (optional)
+applyPolyfills().then(() => {
+  defineCustomElements()
+})
+```
+
 ## Components status
 
 See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
