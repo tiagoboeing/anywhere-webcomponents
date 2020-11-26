@@ -7,7 +7,7 @@ import { configureActions } from '@storybook/addon-actions';
 import { withTests } from '@storybook/addon-jest';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withLinks } from '@storybook/addon-links';
-import { addDecorator, addParameters } from '@storybook/html';
+import { addDecorator } from '@storybook/html';
 import { themes } from '@storybook/theming';
 import results from '../.jest-test-results.json';
 
