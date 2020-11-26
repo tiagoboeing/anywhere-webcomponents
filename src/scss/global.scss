@@ -1,9 +1,10 @@
+@import './injected.scss';
+
 :root {
   text-rendering: optimizeLegibility;
 
   @include componentLightThemeVars();
   @include componentDarkThemeVars();
-  @include componentSizes();
   @include componentStatus();
   @include componentModes();
 }
