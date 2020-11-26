@@ -16,6 +16,14 @@ The design system and specifications still are open but should be inspired in [N
 
 [Write a comment about Design System, give your feedback!](https://xd.adobe.com/view/f4f56bbd-7e99-41dd-97c4-59e9d0075a73-a1a6/grid)
 
+## Browser Support
+
+| Chrome | New Edge (Chromium) | Safari | Firefox | Older Edge        | IE                |
+| ------ | ------------------- | ------ | ------- | ----------------- | ----------------- |
+| 60+    | 79+                 | 10.1+  | 63+     | 16-18 (polyfills) | >= 11 (polyfills) |
+
+> [See complete docs](https://stenciljs.com/docs/browser-support)
+
 ## How to install
 
 ### NPM
@@ -83,6 +91,25 @@ export class AppModule { }
 And in `main.ts` end of file, add following imports:
 
 ```ts
+import { applyPolyfills, defineCustomElements } from '@tiagoboeing/anywhere-webcomponents/loader';
+
+defineCustomElements();
+
+// for IE support (optional)
+applyPolyfills().then(() => {
+  defineCustomElements()
+})
+```
+
+### React applications
+
+```bash
+yarn add @tiagoboeing/anywhere-webcomponents
+```
+
+In your `src/index.js` or `src/index.tsx` (typescript project) file, add following imports preferably before of the React Render:
+
+```js
 import { applyPolyfills, defineCustomElements } from '@tiagoboeing/anywhere-webcomponents/loader';
 
 defineCustomElements();

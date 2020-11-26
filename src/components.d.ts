@@ -6,7 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AnywhereTheme } from "./components/interfaces";
-import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize, AwButtonStatus } from "./components/aw-button/aw-button.model";
+import { AwStatus } from "./models/status.model";
+import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwButton {
         /**
@@ -56,8 +57,12 @@ export namespace Components {
         /**
           * The status of button (color)
          */
-        "status": AwButtonStatus;
+        "status": AwStatus;
         "theme": AnywhereTheme;
+    }
+    interface AwLoading {
+        "status": AwStatus;
+        "visible": boolean;
     }
 }
 declare global {
@@ -67,8 +72,15 @@ declare global {
         prototype: HTMLAwButtonElement;
         new (): HTMLAwButtonElement;
     };
+    interface HTMLAwLoadingElement extends Components.AwLoading, HTMLStencilElement {
+    }
+    var HTMLAwLoadingElement: {
+        prototype: HTMLAwLoadingElement;
+        new (): HTMLAwLoadingElement;
+    };
     interface HTMLElementTagNameMap {
         "aw-button": HTMLAwButtonElement;
+        "aw-loading": HTMLAwLoadingElement;
     }
 }
 declare namespace LocalJSX {
@@ -124,11 +136,16 @@ declare namespace LocalJSX {
         /**
           * The status of button (color)
          */
-        "status"?: AwButtonStatus;
+        "status"?: AwStatus;
         "theme"?: AnywhereTheme;
+    }
+    interface AwLoading {
+        "status"?: AwStatus;
+        "visible"?: boolean;
     }
     interface IntrinsicElements {
         "aw-button": AwButton;
+        "aw-loading": AwLoading;
     }
 }
 export { LocalJSX as JSX };
@@ -136,6 +153,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
+            "aw-loading": LocalJSX.AwLoading & JSXBase.HTMLAttributes<HTMLAwLoadingElement>;
         }
     }
 }

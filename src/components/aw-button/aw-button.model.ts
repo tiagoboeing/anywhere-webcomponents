@@ -1,12 +1,3 @@
-export enum AwButtonStatus {
-  primary = 'primary',
-  secondary = 'secondary',
-  success = 'success',
-  danger = 'danger',
-  warn = 'warn',
-  info = 'info',
-}
-
 export enum AwButtonSize {
   tiny = 'tiny',
   small = 'small',
