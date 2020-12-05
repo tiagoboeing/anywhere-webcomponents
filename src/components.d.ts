@@ -60,6 +60,8 @@ export namespace Components {
         "status": AwStatus;
         "theme": AnywhereTheme;
     }
+    interface AwChip {
+    }
     interface AwLoading {
         "status": AwStatus;
         "visible": boolean;
@@ -72,6 +74,12 @@ declare global {
         prototype: HTMLAwButtonElement;
         new (): HTMLAwButtonElement;
     };
+    interface HTMLAwChipElement extends Components.AwChip, HTMLStencilElement {
+    }
+    var HTMLAwChipElement: {
+        prototype: HTMLAwChipElement;
+        new (): HTMLAwChipElement;
+    };
     interface HTMLAwLoadingElement extends Components.AwLoading, HTMLStencilElement {
     }
     var HTMLAwLoadingElement: {
@@ -80,6 +88,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "aw-button": HTMLAwButtonElement;
+        "aw-chip": HTMLAwChipElement;
         "aw-loading": HTMLAwLoadingElement;
     }
 }
@@ -139,12 +148,15 @@ declare namespace LocalJSX {
         "status"?: AwStatus;
         "theme"?: AnywhereTheme;
     }
+    interface AwChip {
+    }
     interface AwLoading {
         "status"?: AwStatus;
         "visible"?: boolean;
     }
     interface IntrinsicElements {
         "aw-button": AwButton;
+        "aw-chip": AwChip;
         "aw-loading": AwLoading;
     }
 }
@@ -153,6 +165,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
+            "aw-chip": LocalJSX.AwChip & JSXBase.HTMLAttributes<HTMLAwChipElement>;
             "aw-loading": LocalJSX.AwLoading & JSXBase.HTMLAttributes<HTMLAwLoadingElement>;
         }
     }
