@@ -62,6 +62,8 @@ Now you can test components in a HTML page importing via script from CDN.
 <aw-button label="Primary" mode="square" color="outline" status="success"></aw-button>
 ```
 
+> Other alternative is use UNPKG, for this, overwrite with the following URL: `https://unpkg.com/@tiagoboeing/anywhere-webcomponents@latest/dist/anywhere-webcomponents/anywhere-webcomponents.js`
+
 ### Angular applications
 
 ```bash
