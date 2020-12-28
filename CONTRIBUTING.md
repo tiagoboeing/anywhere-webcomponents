@@ -1,5 +1,7 @@
 # Contribution guide
 
+> This repository use `git flow` (except for release branches, automated via CI). The default branch is `develop` and pull requests should be opened for him.
+
 To contribute for this project:
 
 1. Use `aw-` preffix in all new components;
