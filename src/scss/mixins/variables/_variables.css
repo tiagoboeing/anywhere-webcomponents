@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 24 Jan 2021 04:09:16 GMT
+ * Generated on Sun, 24 Jan 2021 22:41:42 GMT
  */
 
 :root {
@@ -97,8 +97,57 @@
   --color-font-base: #f84242;
   --color-font-secondary: #14c767;
   --color-font-tertiary: #848c9b;
-  --size-font-small: 0.75rem; /* the small size of the font */
-  --size-font-medium: 1rem; /* the medium size of the font */
-  --size-font-large: 2rem; /* the large size of the font */
-  --size-font-base: 1rem; /* the base size of the font */
+  --font-family-sans-serif-font-1-family: Raleway;
+  --font-family-sans-serif-font-1-weight: 500;
+  --font-family-sans-serif-font-2-family: Merriweather Sans;
+  --font-family-sans-serif-font-2-weight: 400;
+  --font-family-sans-serif-font-3-family: Noto Sans;
+  --font-family-sans-serif-font-3-weight: 500;
+  --font-family-sans-serif-font-4-family: Roboto;
+  --font-family-sans-serif-font-4-weight: 500;
+  --font-family-sans-serif-font-5-family: Arial;
+  --font-family-sans-serif-font-5-weight: 500;
+  --font-family-sans-serif-base: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Raleway", "Merriweather Sans", "Noto Sans", "Roboto", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* default font-family full string */
+  --font-family-serif-font-1-family: Merriweather;
+  --font-family-serif-font-1-weight: 500;
+  --font-family-serif-font-2-family: Libre Baskerville;
+  --font-family-serif-font-2-weight: 500;
+  --font-family-serif-font-3-family: Georgia;
+  --font-family-serif-font-3-weight: 500;
+  --font-family-serif-base: ui-serif, "Merriweather", "Libre Baskerville", Georgia, serif; /* default font-family full string */
+  --font-family-mono-font-1-family: Fira Mono;
+  --font-family-mono-font-1-weight: 500;
+  --font-family-mono-font-2-family: Roboto Mono;
+  --font-family-mono-font-2-weight: 600;
+  --font-family-mono-font-3-family: Oxygen Mono;
+  --font-family-mono-font-3-weight: 500;
+  --font-family-mono-font-4-family: Consolas;
+  --font-family-mono-font-4-weight: 500;
+  --font-family-mono-base: ui-monospace, "Fira Mono", "Roboto Mono", "Oxygen Mono", Consolas, monospace; /* default font-family full string */
+  --font-line-height-xs: 1rem;
+  --font-line-height-sm: 1.25rem;
+  --font-line-height-base: 1.5rem;
+  --font-line-height-lg: 1.75rem;
+  --font-line-height-xl: 1.75rem;
+  --font-line-height-2-x-1: 2rem;
+  --font-line-height-3-x-1: 2.25rem;
+  --font-line-height-4-x-1: 2.5rem;
+  --font-line-height-5-x-1: 3rem;
+  --font-line-height-6-x-1: 3.75rem;
+  --font-line-height-7-x-1: 4.5rem;
+  --font-line-height-8-x-1: 6rem;
+  --font-line-height-9-x-1: 8rem;
+  --font-size-xs: 0.75rem; /* the extra small size */
+  --font-size-sm: 0.875rem; /* the small size */
+  --font-size-base: 1rem; /* the base size */
+  --font-size-lg: 1.125rem; /* the large size */
+  --font-size-xl: 1.25rem; /* the large size */
+  --font-size-2-x-1: 1.5rem;
+  --font-size-3-x-1: 1.875rem;
+  --font-size-4-x-1: 2.25rem;
+  --font-size-5-x-1: 3rem;
+  --font-size-6-x-1: 3.75rem;
+  --font-size-7-x-1: 4.5rem;
+  --font-size-8-x-1: 6rem;
+  --font-size-9-x-1: 8rem;
 }
