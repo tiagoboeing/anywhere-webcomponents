@@ -30,7 +30,7 @@ fix: Commit message (#ID)
 break: Commit message (#ID)
 ```
 
-> Any questions, open a issue or send message to [contato@tiagoboeing.com](mailto:contato@tiagoboeing.com)
+> Any questions, [start a discussion](https://github.com/tiagoboeing/anywhere-webcomponents/discussions/new).
 
 ## Developing
 
