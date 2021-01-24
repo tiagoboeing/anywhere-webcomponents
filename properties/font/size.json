@@ -1,0 +1,34 @@
+{
+  "font": {
+    "size": {
+      "xs": {
+        "value": "0.75rem",
+        "comment": "the extra small size"
+      },
+      "sm": {
+        "value": "0.875rem",
+        "comment": "the small size"
+      },
+      "base": {
+        "value": "1rem",
+        "comment": "the base size"
+      },
+      "lg": {
+        "value": "1.125rem",
+        "comment": "the large size"
+      },
+      "xl": {
+        "value": "1.25rem",
+        "comment": "the large size"
+      },
+      "2x1": { "value": "1.5rem" },
+      "3x1": { "value": "1.875rem" },
+      "4x1": { "value": "2.25rem" },
+      "5x1": { "value": "3rem" },
+      "6x1": { "value": "3.75rem" },
+      "7x1": { "value": "4.5rem" },
+      "8x1": { "value": "6rem" },
+      "9x1": { "value": "8rem" }
+    }
+  }
+}
