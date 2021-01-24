@@ -6,6 +6,7 @@
 ### Features 
 
 - Add instructions for use with UNPKG CDN ([ef7a0e8](https://github.com/tiagoboeing/anywhere-webcomponents/commit/ef7a0e862cfd60b895ce45015189cd0b6653ffc4))
+- Added size, font-weight, font-family and line-height tokens (#29)
 - Create design tokens using style dictionary (#28)
 
 ## v0.5.0 
