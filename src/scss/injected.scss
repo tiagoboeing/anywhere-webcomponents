@@ -1,7 +1,7 @@
-@import './mixins/utilities.scss';
-@import './colors/colors.scss';
-@import './mixins/variables/theme/light.scss';
-@import './mixins/variables/theme/dark.scss';
-@import './mixins/variables/modes.scss';
-@import './mixins/variables/status.scss';
-@import './placeholders/host.scss';
+@import './mixins/utilities';
+@import './mixins/variables/variables';
+@import './mixins/variables/theme/light';
+@import './mixins/variables/theme/dark';
+@import './mixins/variables/modes';
+@import './mixins/variables/status';
+@import './placeholders/host';

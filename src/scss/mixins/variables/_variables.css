@@ -1,0 +1,104 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 24 Jan 2021 04:09:16 GMT
+ */
+
+:root {
+  --color-base-gray-100: #f2f3f5;
+  --color-base-gray-200: #dadce1;
+  --color-base-gray-300: #c1c5cd;
+  --color-base-gray-400: #a8aeb9;
+  --color-base-gray-500: #848c9b;
+  --color-base-gray-600: #5c626c;
+  --color-base-gray-700: #42464d;
+  --color-base-gray-800: #272a2e;
+  --color-base-gray-900: #0d0e0f;
+  --color-base-red-100: #feecec;
+  --color-base-red-200: #fcc6c6;
+  --color-base-red-300: #fba0a0;
+  --color-base-red-400: #fa7a7a;
+  --color-base-red-500: #f84242;
+  --color-base-red-600: #dc3a3a;
+  --color-base-red-700: #c03333;
+  --color-base-red-800: #a52c2c;
+  --color-base-red-900: #892424;
+  --color-base-orange-100: #fef3eb;
+  --color-base-orange-200: #fcdbc4;
+  --color-base-orange-300: #fac39e;
+  --color-base-orange-400: #f8ab77;
+  --color-base-orange-500: #f5873d;
+  --color-base-orange-600: #dc7936;
+  --color-base-orange-700: #c46c30;
+  --color-base-orange-800: #ab5e2a;
+  --color-base-orange-900: #935124;
+  --color-base-yellow-100: #fefaeb;
+  --color-base-yellow-200: #fcf0c4;
+  --color-base-yellow-300: #fbe79d;
+  --color-base-yellow-400: #fadd75;
+  --color-base-yellow-500: #f8cf3b;
+  --color-base-yellow-600: #dfba35;
+  --color-base-yellow-700: #c6a52f;
+  --color-base-yellow-800: #ad9029;
+  --color-base-yellow-900: #947c23;
+  --color-base-green-100: #e7f9ef;
+  --color-base-green-200: #b8eed1;
+  --color-base-green-300: #89e3b3;
+  --color-base-green-400: #5ad794;
+  --color-base-green-500: #14c767;
+  --color-base-green-600: #12b35c;
+  --color-base-green-700: #109f52;
+  --color-base-green-800: #0e8b48;
+  --color-base-green-900: #0c773d;
+  --color-base-keppel-100: #ebf7f6;
+  --color-base-keppel-200: #c3e7e6;
+  --color-base-keppel-300: #9bd8d5;
+  --color-base-keppel-400: #73c9c4;
+  --color-base-keppel-500: #38b2ac;
+  --color-base-keppel-600: #32a09a;
+  --color-base-keppel-700: #2c8e89;
+  --color-base-keppel-800: #277c78;
+  --color-base-keppel-900: #216a67;
+  --color-base-light-blue-100: #edf4ff;
+  --color-base-light-blue-200: #cbe0ff;
+  --color-base-light-blue-300: #a9cbff;
+  --color-base-light-blue-400: #87b6ff;
+  --color-base-light-blue-500: #5498ff;
+  --color-base-light-blue-600: #4b88e5;
+  --color-base-light-blue-700: #4379cc;
+  --color-base-light-blue-800: #3a6ab2;
+  --color-base-light-blue-900: #325b99;
+  --color-base-blue-100: #eaeffd;
+  --color-base-blue-200: #c0cff9;
+  --color-base-blue-300: #96b0f5;
+  --color-base-blue-400: #6c90f1;
+  --color-base-blue-500: #2e61ec;
+  --color-base-blue-600: #2957d4;
+  --color-base-blue-700: #244dbc;
+  --color-base-blue-800: #2043a5;
+  --color-base-blue-900: #1b3a8d;
+  --color-base-purple-100: #f5f0fd;
+  --color-base-purple-200: #e1d4fb;
+  --color-base-purple-300: #cdb8f8;
+  --color-base-purple-400: #b99cf5;
+  --color-base-purple-500: #9c72f2;
+  --color-base-purple-600: #8c66d9;
+  --color-base-purple-700: #7c5bc1;
+  --color-base-purple-800: #6d4fa9;
+  --color-base-purple-900: #5d4491;
+  --color-base-pink-100: #feeef3;
+  --color-base-pink-200: #fccedb;
+  --color-base-pink-300: #fbaec3;
+  --color-base-pink-400: #fa8dab;
+  --color-base-pink-500: #f85d87;
+  --color-base-pink-600: #df5379;
+  --color-base-pink-700: #c64a6c;
+  --color-base-pink-800: #ad415e;
+  --color-base-pink-900: #943751;
+  --color-font-base: #f84242;
+  --color-font-secondary: #14c767;
+  --color-font-tertiary: #848c9b;
+  --size-font-small: 0.75rem; /* the small size of the font */
+  --size-font-medium: 1rem; /* the medium size of the font */
+  --size-font-large: 2rem; /* the large size of the font */
+  --size-font-base: 1rem; /* the base size of the font */
+}
