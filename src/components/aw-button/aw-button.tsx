@@ -38,8 +38,8 @@ export class AwButton {
   /**
    * Optional ID to be attached on button
    */
-  @Prop({ attribute: 'id', mutable: false, reflect: true })
-  id: string;
+  @Prop({ mutable: false, reflect: true })
+  identifier: string;
 
   @Prop({ reflect: true }) theme: AnywhereTheme = defaultTheme;
 
@@ -148,7 +148,7 @@ export class AwButton {
         <aw-loading status={this.status} visible={this.loading}>
           <button
             type="button"
-            id={this.id}
+            id={this.identifier}
             class={classList}
             disabled={this.isDisabled}
             onClick={this.handleEventClick}
