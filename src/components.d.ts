@@ -68,6 +68,7 @@ export namespace Components {
     }
     interface AwLoading {
         "status": AwStatus;
+        "theme": AnywhereTheme;
         "visible": boolean;
     }
 }
@@ -167,6 +168,7 @@ declare namespace LocalJSX {
     }
     interface AwLoading {
         "status"?: AwStatus;
+        "theme"?: AnywhereTheme;
         "visible"?: boolean;
     }
     interface IntrinsicElements {

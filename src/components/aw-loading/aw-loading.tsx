@@ -1,5 +1,7 @@
 import { Component, Host, h, Element, Prop } from '@stencil/core';
+import { defaultTheme } from '../../defaultTheme';
 import { AwStatus } from '../../models/status.model';
+import { AnywhereTheme } from '../interfaces';
 
 @Component({
   tag: 'aw-loading',
@@ -9,11 +11,13 @@ import { AwStatus } from '../../models/status.model';
 export class AwLoading {
   @Element() element: HTMLElement;
 
+  @Prop({ reflect: true }) theme: AnywhereTheme = defaultTheme;
+
   @Prop({ mutable: true })
   visible = false;
 
   @Prop({ mutable: true, reflect: true })
-  status = AwStatus.primary;
+  status: AwStatus = AwStatus.primary;
 
   componentDidRender() {}
 
