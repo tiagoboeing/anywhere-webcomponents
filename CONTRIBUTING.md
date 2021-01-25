@@ -1,5 +1,7 @@
 # Contribution guide
 
+> This repository use `git flow` (except for release branches, automated via CI). The default branch is `develop` and pull requests should be opened for him.
+
 To contribute for this project:
 
 1. Use `aw-` preffix in all new components;
@@ -28,7 +30,7 @@ fix: Commit message (#ID)
 break: Commit message (#ID)
 ```
 
-> Any questions, open a issue or send message to [contato@tiagoboeing.com](mailto:contato@tiagoboeing.com)
+> Any questions, [start a discussion](https://github.com/tiagoboeing/anywhere-webcomponents/discussions/new).
 
 ## Developing
 

@@ -1,3 +1,24 @@
 @function hexToRGB($hex) {
   @return red($hex), green($hex), blue($hex);
 }
+
+/**
+  Generate 10 colors shades
+*/
+@function color-shade($color, $variant) {
+  @return map-get(
+    (
+      50: lighten(saturate($color, 10.4), 37.7),
+      100: lighten(desaturate($color, 10.4), 31.8),
+      200: lighten(desaturate($color, 17), 18.7),
+      300: lighten(desaturate($color, 12.9), 9.1),
+      400: lighten(desaturate($color, 6.6), 4.1),
+      500: $color,
+      600: darken(saturate($color, 12.4), 5.1),
+      700: darken(saturate($color, 24.5), 8.8),
+      800: darken(saturate($color, 23.2), 12.7),
+      900: darken(saturate($color, 16.1), 17),
+    ),
+    $variant
+  );
+}

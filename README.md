@@ -8,7 +8,7 @@
 
 **This project is a work in progress.** See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
 
-The design system and specifications still are open but should be inspired in [Nebular](https://github.com/akveo/nebular) and [Bootstrap](https://github.com/twbs/bootstrap).
+The design system and specifications still are open but should be inspired in [Nebular](https://github.com/akveo/nebular), [Bootstrap](https://github.com/twbs/bootstrap) and [TailWind](https://tailwindcss.com/).
 
 [![](https://i.imgur.com/ojeUYYo.png)](https://3fp9w.csb.app/)
 
@@ -61,6 +61,8 @@ Now you can test components in a HTML page importing via script from CDN.
 <script src="https://cdn.tiagoboeing.com/anywhere-webcomponents/develop/anywhere-webcomponents/anywhere-webcomponents.js"></script>
 <aw-button label="Primary" mode="square" color="outline" status="success"></aw-button>
 ```
+
+> Other alternative is use UNPKG, for this, overwrite with the following URL: `https://unpkg.com/@tiagoboeing/anywhere-webcomponents@latest/dist/anywhere-webcomponents/anywhere-webcomponents.js`
 
 ### Angular applications
 

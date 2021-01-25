@@ -1,0 +1,72 @@
+{
+  "font": {
+    "family": {
+      "sans-serif": {
+        "font1": {
+          "family": { "value": "Raleway" },
+          "weight": { "value": "500" }
+        },
+        "font2": {
+          "family": { "value": "Merriweather Sans" },
+          "weight": { "value": "400" }
+        },
+        "font3": {
+          "family": { "value": "Noto Sans" },
+          "weight": { "value": "500" }
+        },
+        "font4": {
+          "family": { "value": "Roboto" },
+          "weight": { "value": "500" }
+        },
+        "font5": {
+          "family": { "value": "Arial" },
+          "weight": { "value": "500" }
+        },
+        "base": {
+          "value": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Raleway\", \"Merriweather Sans\", \"Noto Sans\", \"Roboto\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "comment": "default font-family full string"
+        }
+      },
+      "serif": {
+        "font1": {
+          "family": { "value": "Merriweather" },
+          "weight": { "value": "500" }
+        },
+        "font2": {
+          "family": { "value": "Libre Baskerville" },
+          "weight": { "value": "500" }
+        },
+        "font3": {
+          "family": { "value": "Georgia" },
+          "weight": { "value": "500" }
+        },
+        "base": {
+          "value": "ui-serif, \"Merriweather\", \"Libre Baskerville\", Georgia, serif",
+          "comment": "default font-family full string"
+        }
+      },
+      "mono": {
+        "font1": {
+          "family": { "value": "Fira Mono" },
+          "weight": { "value": "500" }
+        },
+        "font2": {
+          "family": { "value": "Roboto Mono" },
+          "weight": { "value": "600" }
+        },
+        "font3": {
+          "family": { "value": "Oxygen Mono" },
+          "weight": { "value": "500" }
+        },
+        "font4": {
+          "family": { "value": "Consolas" },
+          "weight": { "value": "500" }
+        },
+        "base": {
+          "value": "ui-monospace, \"Fira Mono\", \"Roboto Mono\", \"Oxygen Mono\", Consolas, monospace",
+          "comment": "default font-family full string"
+        }
+      }
+    }
+  }
+}
