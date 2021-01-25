@@ -10,8 +10,22 @@ import { AwStatus } from "./models/status.model";
 import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize } from "./components/aw-button/aw-button.model";
 export namespace Components {
     interface AwAvatar {
-        "mode": AwChipMode;
-        "src": string;
+        /**
+          * Wrapper heigth in pixels
+         */
+        "height": string;
+        "mode": AwAvatarMode;
+        "overflow": boolean;
+        "status": AwStatus;
+        /**
+          * Add a styled border to component
+         */
+        "styled": boolean;
+        "theme": AnywhereTheme;
+        /**
+          * Wrapper width in pixels
+         */
+        "width": string;
     }
     interface AwButton {
         /**
@@ -106,8 +120,22 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AwAvatar {
-        "mode"?: AwChipMode;
-        "src": string;
+        /**
+          * Wrapper heigth in pixels
+         */
+        "height"?: string;
+        "mode"?: AwAvatarMode;
+        "overflow"?: boolean;
+        "status"?: AwStatus;
+        /**
+          * Add a styled border to component
+         */
+        "styled"?: boolean;
+        "theme"?: AnywhereTheme;
+        /**
+          * Wrapper width in pixels
+         */
+        "width"?: string;
     }
     interface AwButton {
         /**
