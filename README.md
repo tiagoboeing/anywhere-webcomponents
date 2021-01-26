@@ -126,7 +126,7 @@ applyPolyfills().then(() => {
 
 See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
 
-## I want contribute
+## I want to contribute
 
 View [contribution guide](CONTRIBUTING.md).
 
