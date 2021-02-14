@@ -5,6 +5,8 @@
   --anywhere-primary-gradient-2: #{$color-base-blue-300};
   --anywhere-primary-text-color: #ffffff;
   --anywhere-primary-hover: #{$color-base-light-blue-600};
+  --anywhere-primary-border-1: #{$color-base-light-blue-100};
+  --anywhere-primary-border-2: #{$color-base-light-blue-300};
 
   --anywhere-secondary: #ffffff;
   --anywhere-secondary-gradient-1: var(--anywhere-secondary);
@@ -12,6 +14,8 @@
   --anywhere-secondary-text-color: #{$color-base-gray-600};
   --anywhere-secondary-hover: #{$color-base-gray-100};
   --anywhere-secondary-hover-border: #{$color-base-gray-500};
+  --anywhere-secondary-border-1: #{$color-base-gray-100};
+  --anywhere-secondary-border-2: #{$color-base-gray-200};
 
   --anywhere-success: #{$color-base-green-500};
   --anywhere-success-towhite: #{$color-base-green-100};
@@ -19,6 +23,8 @@
   --anywhere-success-gradient-2: #{$color-base-green-300};
   --anywhere-success-text-color: #ffffff;
   --anywhere-success-hover: #{$color-base-green-400};
+  --anywhere-success-border-1: #{$color-base-green-100};
+  --anywhere-success-border-2: #{$color-base-green-300};
 
   --anywhere-danger: #{$color-base-red-500};
   --anywhere-danger-towhite: #{$color-base-red-100};
@@ -26,6 +32,8 @@
   --anywhere-danger-gradient-2: #{$color-base-red-300};
   --anywhere-danger-text-color: #ffffff;
   --anywhere-danger-hover: #{$color-base-red-400};
+  --anywhere-danger-border-1: #{$color-base-red-100};
+  --anywhere-danger-border-2: #{$color-base-red-300};
 
   --anywhere-warn: #{$color-base-orange-500};
   --anywhere-warn-towhite: #{$color-base-orange-100};
@@ -33,6 +41,8 @@
   --anywhere-warn-gradient-2: #{$color-base-orange-300};
   --anywhere-warn-text-color: #ffffff;
   --anywhere-warn-hover: #{$color-base-orange-400};
+  --anywhere-warn-border-1: #{$color-base-orange-100};
+  --anywhere-warn-border-2: #{$color-base-orange-300};
 
   --anywhere-info: #{$color-base-light-blue-500};
   --anywhere-info-towhite: #{$color-base-light-blue-100};
@@ -40,6 +50,8 @@
   --anywhere-info-gradient-2: #{$color-base-light-blue-300};
   --anywhere-info-text-color: #ffffff;
   --anywhere-info-hover: #{$color-base-light-blue-400};
+  --anywhere-info-border-1: #{$color-base-light-blue-100};
+  --anywhere-info-border-2: #{$color-base-light-blue-300};
 
   --anywhere-disabled: #{$color-base-gray-200};
   --anywhere-disabled-text-color: #{$color-base-gray-400};
