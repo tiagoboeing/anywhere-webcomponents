@@ -16,11 +16,61 @@
     <h1>Anywhere webcomponents</h1>
 
     <div>
-      <h2>Chips</h2>
+      <h2>Avatar</h2>
 
-      <aw-avatar width="250" height="100" styled>
-        <img src="https://picsum.photos/200"/>
-      </aw-avatar>
+      <div>
+        <aw-avatar>
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar mode="square">
+          <img src="https://picsum.photos/200"width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar mode="radius">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+      </div>
+
+      <div class="mt">
+        <aw-avatar styled="false">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar mode="square" styled="false">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar mode="square" styled="false">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+      </div>
+
+      <div class="mt">
+        <aw-avatar status="primary">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar status="secondary">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar status="success">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar status="danger">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar status="warn">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+
+        <aw-avatar status="info">
+          <img src="https://picsum.photos/200" width="100%" height="100%"/>
+        </aw-avatar>
+      </div>
 
       <aw-chip></aw-chip>
     </div>

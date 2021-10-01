@@ -9,7 +9,7 @@
 :host {
   @extend %component-host;
 
-  display: block;
+  display: inline-block;
 }
 
 .styled {
@@ -31,7 +31,28 @@
   width: 100%;
   height: 100%;
 
-  &.container {
+  .container {
     overflow: hidden;
+  }
+
+  &.rounded,
+  & > .container {
+    border-radius: 50%;
+  }
+
+  &.square {
+    border-radius: 3px;
+
+    .container {
+      border-radius: 1px;
+    }
+  }
+
+  &.radius {
+    border-radius: 15px;
+
+    .container {
+      border-radius: 11px;
+    }
   }
 }

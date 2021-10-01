@@ -13,10 +13,10 @@ const DIMENSION_UNIT = 'px';
   shadow: true,
 })
 export class AwAvatar {
-  @Prop({ mutable: false })
+  @Prop({ mutable: true, reflect: true })
   mode = AwAvatarMode.rounded;
 
-  @Prop({ reflect: true }) theme: AnywhereTheme = defaultTheme;
+  @Prop({ reflect: true, mutable: true }) theme: AnywhereTheme = defaultTheme;
 
   @Prop({ reflect: true, mutable: true })
   status: AwStatus = AwStatus.primary;
@@ -30,16 +30,16 @@ export class AwAvatar {
   /**
    * Wrapper width in pixels
    */
-  @Prop({ mutable: true, reflect: true })
-  width: string;
+  @Prop({ mutable: true, reflect: false })
+  width = '75';
 
   /**
    * Wrapper heigth in pixels
    */
-  @Prop({ mutable: true, reflect: true })
-  height: string;
+  @Prop({ mutable: true, reflect: false })
+  height = '75';
 
-  @Prop({ mutable: false, reflect: true })
+  @Prop({ mutable: true, reflect: false })
   overflow: boolean = true;
 
   handleContainerArea(dimension: string): string {
@@ -47,16 +47,37 @@ export class AwAvatar {
     return String(withSafeArea);
   }
 
-  buildSafeArea(dimension: string, styled: boolean = this.styled): string {
-    const size = styled ? this.handleContainerArea(this.width) : dimension;
+  buildSafeArea(dimension: SafeArea, styled: boolean = this.styled): SafeArea {
+    let sizes: SafeArea = {
+      width: this.dimensionWithUnit(dimension.width),
+      height: this.dimensionWithUnit(dimension.height),
+    };
+
+    if (!styled) return sizes;
+
+    return {
+      width: this.dimensionWithUnit(this.handleContainerArea(dimension.width)),
+      height: this.dimensionWithUnit(
+        this.handleContainerArea(dimension.height),
+      ),
+    };
+  }
+
+  dimensionWithUnit(size: string): string {
     return `${size}${DIMENSION_UNIT}`;
   }
 
   render() {
     const classList = {
       wrapper: true,
+      [this.mode]: true,
       [`styled ${this.status}`]: this.styled,
     };
+
+    const safeArea: SafeArea = this.buildSafeArea({
+      width: this.width,
+      height: this.height,
+    });
 
     return (
       <Host
@@ -69,8 +90,8 @@ export class AwAvatar {
           <div
             class="container"
             style={{
-              width: this.buildSafeArea(this.width),
-              height: this.buildSafeArea(this.height),
+              width: safeArea.width,
+              height: safeArea.height,
             }}
           >
             <slot />
@@ -79,4 +100,9 @@ export class AwAvatar {
       </Host>
     );
   }
+}
+
+interface SafeArea {
+  width: string;
+  height: string;
 }
