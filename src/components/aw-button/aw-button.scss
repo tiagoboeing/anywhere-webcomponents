@@ -108,31 +108,31 @@
 
 // sizes
 :host([size='tiny']) button {
-  font-size: 0.75rem;
+  font-size: $font-size-xs;
   padding: 0.5625rem 1.0625rem;
   height: 35px;
 }
 
 :host([size='small']) button {
-  font-size: 0.875rem;
+  font-size: $font-size-sm;
   padding: 0.75rem 1.5rem;
   height: 43px;
 }
 
 :host([size='medium']) button {
-  font-size: 0.875rem;
+  font-size: $font-size-sm;
   padding: 1rem 1.8rem;
   height: 51px;
 }
 
 :host([size='large']) button {
-  font-size: 0.9375rem;
+  font-size: $font-size-base;
   padding: 1.125rem 2rem;
   height: 59px;
 }
 
 :host([size='giant']) button {
-  font-size: 1.125rem;
+  font-size: $font-size-lg;
   padding: 1.3125rem 2.5rem;
   height: 67px;
 }
@@ -214,7 +214,7 @@ button {
   font-family: 'Open Sans', sans-serif;
   border: none;
   padding: 18px 25px;
-  font-size: 15px;
+  font-size: $font-size-sm;
   outline: none;
   transition: 150ms ease-in;
   cursor: pointer;
