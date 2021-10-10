@@ -1,4 +1,3 @@
-import { withActions } from '@storybook/addon-actions';
 import { withTests } from '@storybook/addon-jest';
 import results from '../../../.jest-test-results.json';
 import { defaultTheme } from '../../defaultTheme';
@@ -12,8 +11,7 @@ export default {
       `<div style="box-sizing: border-box; padding: 40px;">
         ${Loading()}
       </div>`,
-    withTests({ results }),
-    withActions('clicked'),
+    withTests({ results })
   ],
   parameters: {
     notes: {

@@ -13,10 +13,10 @@ const DIMENSION_UNIT = 'px';
   shadow: true,
 })
 export class AwAvatar {
+  @Prop({ reflect: true, mutable: true }) theme: AnywhereTheme = defaultTheme;
+
   @Prop({ mutable: true, reflect: true })
   mode = AwAvatarMode.rounded;
-
-  @Prop({ reflect: true, mutable: true }) theme: AnywhereTheme = defaultTheme;
 
   @Prop({ reflect: true, mutable: true })
   status: AwStatus = AwStatus.primary;
@@ -38,9 +38,6 @@ export class AwAvatar {
    */
   @Prop({ mutable: true, reflect: false })
   height = '75';
-
-  @Prop({ mutable: true, reflect: false })
-  overflow: boolean = true;
 
   handleContainerArea(dimension: string): string {
     const withSafeArea = parseInt(dimension) - BORDER_SAFE_AREA;

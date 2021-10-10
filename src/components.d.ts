@@ -15,7 +15,6 @@ export namespace Components {
          */
         "height": string;
         "mode": AwAvatarMode;
-        "overflow": boolean;
         "status": AwStatus;
         /**
           * Add a styled border to component
@@ -125,7 +124,6 @@ declare namespace LocalJSX {
          */
         "height"?: string;
         "mode"?: AwAvatarMode;
-        "overflow"?: boolean;
         "status"?: AwStatus;
         /**
           * Add a styled border to component
