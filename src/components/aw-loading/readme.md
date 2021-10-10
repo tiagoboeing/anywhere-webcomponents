@@ -10,6 +10,7 @@
 | Property  | Attribute | Description | Type                                                                                                              | Default            |
 | --------- | --------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------ |
 | `status`  | `status`  |             | `AwStatus.danger \| AwStatus.info \| AwStatus.primary \| AwStatus.secondary \| AwStatus.success \| AwStatus.warn` | `AwStatus.primary` |
+| `theme`   | `theme`   |             | `"dark" \| "light"`                                                                                               | `defaultTheme`     |
 | `visible` | `visible` |             | `boolean`                                                                                                         | `false`            |
 
 
