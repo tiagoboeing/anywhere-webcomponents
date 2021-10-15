@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 01 Oct 2021 22:36:23 GMT
+ * Generated on Fri, 15 Oct 2021 02:33:34 GMT
  */
 
 :root {
@@ -58,6 +58,15 @@
   --color-base-keppel-700: #2c8e89;
   --color-base-keppel-800: #277c78;
   --color-base-keppel-900: #216a67;
+  --color-base-white-blue-100: #d0e9fa;
+  --color-base-white-blue-200: #a2d4f6;
+  --color-base-white-blue-300: #73bff2;
+  --color-base-white-blue-400: #45aaee;
+  --color-base-white-blue-500: #2ea0ec;
+  --color-base-white-blue-600: #288ed1;
+  --color-base-white-blue-700: #237cb7;
+  --color-base-white-blue-800: #1e6a9d;
+  --color-base-white-blue-900: #195883;
   --color-base-light-blue-100: #edf4ff;
   --color-base-light-blue-200: #cbe0ff;
   --color-base-light-blue-300: #a9cbff;
@@ -147,8 +156,4 @@
   --font-size-7x1: 4.5rem;
   --font-size-8x1: 6rem;
   --font-size-9x1: 8rem;
-  --size-font-small: 0.75rem; /* the small size of the font */
-  --size-font-medium: 1rem; /* the medium size of the font */
-  --size-font-large: 2rem; /* the large size of the font */
-  --size-font-base: 1rem; /* the base size of the font */
 }

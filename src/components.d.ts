@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AnywhereTheme } from "./components/interfaces";
 import { AwStatus } from "./models/status.model";
 import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize } from "./components/aw-button/aw-button.model";
+import { AwChipColor, AwChipMode, AwChipSize } from "./components/aw-chip/aw-chip.model";
 export namespace Components {
     interface AwAvatar {
         /**
@@ -78,6 +79,19 @@ export namespace Components {
         "theme": AnywhereTheme;
     }
     interface AwChip {
+        /**
+          * The style of chip, like solid or outline
+         */
+        "color": AwChipColor;
+        /**
+          * Indicates if chip should be closed
+         */
+        "dimissable": boolean;
+        /**
+          * The style of corners, like rounded, square or radius.
+         */
+        "mode": AwChipMode;
+        "size": AwChipSize;
     }
     interface AwLoading {
         "status": AwStatus;
@@ -191,6 +205,19 @@ declare namespace LocalJSX {
         "theme"?: AnywhereTheme;
     }
     interface AwChip {
+        /**
+          * The style of chip, like solid or outline
+         */
+        "color"?: AwChipColor;
+        /**
+          * Indicates if chip should be closed
+         */
+        "dimissable"?: boolean;
+        /**
+          * The style of corners, like rounded, square or radius.
+         */
+        "mode"?: AwChipMode;
+        "size"?: AwChipSize;
     }
     interface AwLoading {
         "status"?: AwStatus;

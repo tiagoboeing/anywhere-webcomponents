@@ -32,7 +32,6 @@ describe('aw-avatar', () => {
       expect(avatar.styled).toBeTruthy();
       expect(avatar.width).toEqual('75');
       expect(avatar.height).toEqual('75');
-      expect(avatar.overflow).toBeTruthy();
     });
   });
 
