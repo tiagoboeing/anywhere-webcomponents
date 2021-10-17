@@ -8,13 +8,13 @@ import { AwChipColor, AwChipMode, AwChipSize } from './aw-chip.model';
 })
 export class AwChip {
   /**
-   * Indicates if chip should be closed
+   * Indicates if chip should be closed.
    */
   @Prop({ mutable: true })
   dimissable = false;
 
   /**
-   * The style of chip, like solid or outline
+   * The style of chip, like solid or outline.
    */
   @Prop({ mutable: true })
   color: AwChipColor = AwChipColor.solid;
@@ -25,6 +25,9 @@ export class AwChip {
   @Prop({ mutable: true })
   mode: AwChipMode = AwChipMode.rounded;
 
+  /**
+   * The size of chip.
+   */
   @Prop({ mutable: true })
   size: AwChipSize = AwChipSize.large;
 
