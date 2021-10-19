@@ -79,18 +79,22 @@ export namespace Components {
         "theme": AnywhereTheme;
     }
     interface AwChip {
+        "avatar": boolean;
         /**
-          * The style of chip, like solid or outline
+          * The style of chip, like solid or outline.
          */
         "color": AwChipColor;
         /**
-          * Indicates if chip should be closed
+          * Indicates if chip should be closed.
          */
         "dimissable": boolean;
         /**
           * The style of corners, like rounded, square or radius.
          */
         "mode": AwChipMode;
+        /**
+          * The size of chip.
+         */
         "size": AwChipSize;
     }
     interface AwLoading {
@@ -205,18 +209,22 @@ declare namespace LocalJSX {
         "theme"?: AnywhereTheme;
     }
     interface AwChip {
+        "avatar"?: boolean;
         /**
-          * The style of chip, like solid or outline
+          * The style of chip, like solid or outline.
          */
         "color"?: AwChipColor;
         /**
-          * Indicates if chip should be closed
+          * Indicates if chip should be closed.
          */
         "dimissable"?: boolean;
         /**
           * The style of corners, like rounded, square or radius.
          */
         "mode"?: AwChipMode;
+        /**
+          * The size of chip.
+         */
         "size"?: AwChipSize;
     }
     interface AwLoading {

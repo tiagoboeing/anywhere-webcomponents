@@ -1,3 +1,5 @@
+@import '../../scss/includes/components';
+
 :host {
   display: block;
 }
@@ -8,5 +10,8 @@
   padding: 3px;
 
   #avatar {
+    ::slotted(aw-avatar) {
+      width: 30px;
+    }
   }
 }
