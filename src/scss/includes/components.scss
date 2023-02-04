@@ -11,5 +11,5 @@
 }
 
 :host([theme='dark']) {
-  @include componentDarkThemeVars();
+  @include componentLightThemeVars();
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+      content="widentifierth=device-widentifierth, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Anywhere Webcomponents showcase</title>
     <link href="./styles.css" rel="stylesheet" type="text/css" />
@@ -14,89 +14,275 @@
   </head>
   <body>
     <h1>Anywhere webcomponents</h1>
-    <h2>Buttons</h2>
 
     <div>
-      <h3>Sizes</h3>
-      <aw-button label="Tiny" status="primary" size="tiny" id="button"></aw-button>
-      <aw-button label="Small" status="primary" size="small"></aw-button>
-      <aw-button label="Medium" status="primary" size="medium"></aw-button>
-      <aw-button label="Large" status="primary" size="large"></aw-button>
-      <aw-button label="Giant" status="primary" size="giant"></aw-button>
+      <h2>Chips</h2>
+
+      <h3>Dimissable</h3>
+
+      <aw-chip label="Advertisement" dimissable>
+        <aw-avatar slot="avatar">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        Label
+      </aw-chip>
+
+      <aw-chip dimissable label="Teste"></aw-chip>
     </div>
 
     <div>
-      <h3>Modes</h3>
-      <aw-button label="Rounded" status="primary"></aw-button>
-      <aw-button label="Radius" status="primary" mode="radius"></aw-button>
-      <aw-button label="Square" status="primary" mode="square"></aw-button>
+      <h2>Avatar</h2>
+
+      <div>
+        <aw-avatar>
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar mode="square">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar mode="radius">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+      </div>
+
+      <div class="mt">
+        <aw-avatar styled="false">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar mode="square" styled="false">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar mode="square" styled="false">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+      </div>
+
+      <div class="mt">
+        <aw-avatar status="primary">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar status="secondary">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar status="success">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar status="danger">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar status="warn">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+
+        <aw-avatar status="info">
+          <img src="https://picsum.photos/200" width="100%" height="100%" />
+        </aw-avatar>
+      </div>
     </div>
 
     <div>
-      <h3>Gradient</h3>
-      <aw-button label="Primary" id="primary-button" color="gradient" status="primary"></aw-button>
-      <aw-button label="Secondary" id="secondary-button" color="gradient" status="secondary"></aw-button>
-      <aw-button label="Success" id="success-button" color="gradient" status="success"></aw-button>
-      <aw-button label="Danger" id="danger-button" color="gradient" status="danger"></aw-button>
-      <aw-button label="Warn" id="warn-button" color="gradient" status="warn"></aw-button>
-      <aw-button label="Info" id="info-button" color="gradient" status="info"></aw-button>
-      <aw-button
-        label="Disabled"
-        id="disabled-button"
-        color="gradient"
-        status="info"
-        disabled="true"
-      ></aw-button>
+      <h2>Loading</h2>
+
+      <aw-loading status="success" visible> My container </aw-loading>
     </div>
 
     <div>
-      <h3>Default mode</h3>
-      <aw-button label="Primary" id="primary-button" status="primary"></aw-button>
-      <aw-button label="Secondary" id="secondary-button" status="secondary"></aw-button>
-      <aw-button label="Success" id="success-button" status="success"></aw-button>
-      <aw-button label="Danger" id="danger-button" status="danger"></aw-button>
-      <aw-button label="Warn" id="warn-button" status="warn"></aw-button>
-      <aw-button label="Info" id="info-button" status="info"></aw-button>
-      <aw-button label="Disabled" id="disabled-button" status="info" disabled="true"></aw-button>
-    </div>
+      <h2>Buttons</h2>
 
-    <div>
-      <h3>Outline mode</h3>
-      <aw-button label="Primary" color="outline" status="primary"></aw-button>
-      <aw-button label="Secondary" color="outline" status="secondary"></aw-button>
-      <aw-button label="Success" color="outline" status="success"></aw-button>
-      <aw-button label="Danger" color="outline" status="danger"></aw-button>
-      <aw-button label="Warn" color="outline" status="warn"></aw-button>
-      <aw-button label="Info" color="outline" status="info"></aw-button>
-      <aw-button label="Disabled" color="outline" disabled="true"></aw-button>
-    </div>
+      <div>
+        <h3>Sizes</h3>
+        <aw-button
+          label="Tiny"
+          status="primary"
+          size="tiny"
+          identifier="button"
+        ></aw-button>
+        <aw-button label="Small" status="primary" size="small"></aw-button>
+        <aw-button label="Medium" status="primary" size="medium"></aw-button>
+        <aw-button label="Large" status="primary" size="large"></aw-button>
+        <aw-button label="Giant" status="primary" size="giant"></aw-button>
+      </div>
 
-    <div>
-      <h3>Basic mode</h3>
-      <aw-button label="Primary" color="basic" status="primary"></aw-button>
-      <aw-button label="Secondary" color="basic" status="secondary"></aw-button>
-      <aw-button label="Success" color="basic" status="success"></aw-button>
-      <aw-button label="Danger" color="basic" status="danger"></aw-button>
-      <aw-button label="Warn" color="basic" status="warn"></aw-button>
-      <aw-button label="Info" color="basic" status="info"></aw-button>
-      <aw-button label="Disabled" color="basic" status="info" disabled="true"></aw-button>
-    </div>
+      <div>
+        <h3>Modes</h3>
+        <aw-button label="Rounded" status="primary"></aw-button>
+        <aw-button label="Radius" status="primary" mode="radius"></aw-button>
+        <aw-button label="Square" status="primary" mode="square"></aw-button>
+      </div>
 
-    <div>
-      <h3>Icon</h3>
-      <aw-button label="Left" status="primary" icon="fas fa-check" iconMode="left"></aw-button>
-      <aw-button label="Right" status="primary" icon="fas fa-check" iconMode="right"></aw-button>
-      <aw-button label="Small" status="primary" icon="fas fa-check" onlyIcon></aw-button>
-    </div>
+      <div>
+        <h3>Gradient</h3>
+        <aw-button
+          label="Primary"
+          identifier="primary-button"
+          color="gradient"
+          status="primary"
+        ></aw-button>
+        <aw-button
+          label="Secondary"
+          identifier="secondary-button"
+          color="gradient"
+          status="secondary"
+        ></aw-button>
+        <aw-button
+          label="Success"
+          identifier="success-button"
+          color="gradient"
+          status="success"
+        ></aw-button>
+        <aw-button
+          label="Danger"
+          identifier="danger-button"
+          color="gradient"
+          status="danger"
+        ></aw-button>
+        <aw-button
+          label="Warn"
+          identifier="warn-button"
+          color="gradient"
+          status="warn"
+        ></aw-button>
+        <aw-button
+          label="Info"
+          identifier="info-button"
+          color="gradient"
+          status="info"
+        ></aw-button>
+        <aw-button
+          label="Disabled"
+          identifier="disabled-button"
+          color="gradient"
+          status="info"
+          disabled="true"
+        ></aw-button>
+      </div>
 
-    <div>
-      <h3>Loading</h3>
-      <aw-button loading label="Left" status="primary" icon="fas fa-check" iconMode="left"></aw-button>
-    </div>
+      <div>
+        <h3>Default mode</h3>
+        <aw-button
+          label="Primary"
+          identifier="primary-button"
+          status="primary"
+        ></aw-button>
+        <aw-button
+          label="Secondary"
+          identifier="secondary-button"
+          status="secondary"
+        ></aw-button>
+        <aw-button
+          label="Success"
+          identifier="success-button"
+          status="success"
+        ></aw-button>
+        <aw-button
+          label="Danger"
+          identifier="danger-button"
+          status="danger"
+        ></aw-button>
+        <aw-button
+          label="Warn"
+          identifier="warn-button"
+          status="warn"
+        ></aw-button>
+        <aw-button
+          label="Info"
+          identifier="info-button"
+          status="info"
+        ></aw-button>
+        <aw-button
+          label="Disabled"
+          identifier="disabled-button"
+          status="info"
+          disabled="true"
+        ></aw-button>
+      </div>
 
-    <div>
-      <h3>Responsive</h3>
-      <aw-button label="Primary" fullWidth color="gradient" status="primary"></aw-button>
+      <div>
+        <h3>Outline mode</h3>
+        <aw-button label="Primary" color="outline" status="primary"></aw-button>
+        <aw-button
+          label="Secondary"
+          color="outline"
+          status="secondary"
+        ></aw-button>
+        <aw-button label="Success" color="outline" status="success"></aw-button>
+        <aw-button label="Danger" color="outline" status="danger"></aw-button>
+        <aw-button label="Warn" color="outline" status="warn"></aw-button>
+        <aw-button label="Info" color="outline" status="info"></aw-button>
+        <aw-button label="Disabled" color="outline" disabled="true"></aw-button>
+      </div>
+
+      <div>
+        <h3>Basic mode</h3>
+        <aw-button label="Primary" color="basic" status="primary"></aw-button>
+        <aw-button
+          label="Secondary"
+          color="basic"
+          status="secondary"
+        ></aw-button>
+        <aw-button label="Success" color="basic" status="success"></aw-button>
+        <aw-button label="Danger" color="basic" status="danger"></aw-button>
+        <aw-button label="Warn" color="basic" status="warn"></aw-button>
+        <aw-button label="Info" color="basic" status="info"></aw-button>
+        <aw-button
+          label="Disabled"
+          color="basic"
+          status="info"
+          disabled="true"
+        ></aw-button>
+      </div>
+
+      <div>
+        <h3>Icon</h3>
+        <aw-button
+          label="Left"
+          status="primary"
+          icon="fas fa-check"
+          iconMode="left"
+        ></aw-button>
+        <aw-button
+          label="Right"
+          status="primary"
+          icon="fas fa-check"
+          iconMode="right"
+        ></aw-button>
+        <aw-button
+          label="Small"
+          status="primary"
+          icon="fas fa-check"
+          onlyIcon
+        ></aw-button>
+      </div>
+
+      <div>
+        <h3>Loading</h3>
+        <aw-button
+          loading
+          label="Left"
+          status="primary"
+          icon="fas fa-check"
+          iconMode="left"
+        ></aw-button>
+      </div>
+
+      <div>
+        <h3>Responsive</h3>
+        <aw-button
+          label="Primary"
+          fullWidth
+          color="gradient"
+          status="primary"
+        ></aw-button>
+      </div>
     </div>
   </body>
 </html>

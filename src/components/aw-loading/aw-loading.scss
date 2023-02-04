@@ -52,12 +52,12 @@
   border-top-color: transparent !important;
   border-radius: 50%;
 
-  @include handle-loading-status('primary');
-  @include handle-loading-status('secondary');
-  @include handle-loading-status('success');
-  @include handle-loading-status('danger');
-  @include handle-loading-status('warn');
-  @include handle-loading-status('info');
+  @include handle-loading-status(primary);
+  @include handle-loading-status(secondary);
+  @include handle-loading-status(success);
+  @include handle-loading-status(danger);
+  @include handle-loading-status(warn);
+  @include handle-loading-status(info);
 }
 .loading div {
   animation: loading 1s linear infinite;

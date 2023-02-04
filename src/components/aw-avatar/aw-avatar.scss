@@ -1,0 +1,58 @@
+@import '../../scss/includes/components';
+
+@mixin handle-styled-status($status) {
+  &.#{$status} {
+    border: 2px solid var(--anywhere-#{$status});
+  }
+}
+
+:host {
+  @extend %component-host;
+
+  display: inline-block;
+}
+
+.styled {
+  border: 2px solid var(--anywhere-primary);
+
+  @include handle-styled-status(primary);
+  @include handle-styled-status(secondary);
+  @include handle-styled-status(success);
+  @include handle-styled-status(danger);
+  @include handle-styled-status(warn);
+  @include handle-styled-status(info);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    overflow: hidden;
+  }
+
+  &.rounded,
+  & > .container {
+    border-radius: 50%;
+  }
+
+  &.square {
+    border-radius: 3px;
+
+    .container {
+      border-radius: 1px;
+    }
+  }
+
+  &.radius {
+    border-radius: 15px;
+
+    .container {
+      border-radius: 11px;
+    }
+  }
+}

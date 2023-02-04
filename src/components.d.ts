@@ -8,7 +8,25 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AnywhereTheme } from "./components/interfaces";
 import { AwStatus } from "./models/status.model";
 import { AwButtonColor, AwButtonIconMode, AwButtonMode, AwButtonSize } from "./components/aw-button/aw-button.model";
+import { AwChipColor, AwChipMode, AwChipSize } from "./components/aw-chip/aw-chip.model";
 export namespace Components {
+    interface AwAvatar {
+        /**
+          * Wrapper heigth in pixels
+         */
+        "height": string;
+        "mode": AwAvatarMode;
+        "status": AwStatus;
+        /**
+          * Add a styled border to component
+         */
+        "styled": boolean;
+        "theme": AnywhereTheme;
+        /**
+          * Wrapper width in pixels
+         */
+        "width": string;
+    }
     interface AwButton {
         /**
           * Colors of button (like gradient)
@@ -33,7 +51,7 @@ export namespace Components {
         /**
           * Optional ID to be attached on button
          */
-        "id": string;
+        "identifier": string;
         /**
           * Text to show inside button
          */
@@ -60,17 +78,50 @@ export namespace Components {
         "status": AwStatus;
         "theme": AnywhereTheme;
     }
+    interface AwChip {
+        "avatar": boolean;
+        /**
+          * The style of chip, like solid or outline.
+         */
+        "color": AwChipColor;
+        /**
+          * Indicates if chip should be closed.
+         */
+        "dimissable": boolean;
+        "label": string;
+        /**
+          * The style of corners, like rounded, square or radius.
+         */
+        "mode": AwChipMode;
+        /**
+          * The size of chip.
+         */
+        "size": AwChipSize;
+    }
     interface AwLoading {
         "status": AwStatus;
+        "theme": AnywhereTheme;
         "visible": boolean;
     }
 }
 declare global {
+    interface HTMLAwAvatarElement extends Components.AwAvatar, HTMLStencilElement {
+    }
+    var HTMLAwAvatarElement: {
+        prototype: HTMLAwAvatarElement;
+        new (): HTMLAwAvatarElement;
+    };
     interface HTMLAwButtonElement extends Components.AwButton, HTMLStencilElement {
     }
     var HTMLAwButtonElement: {
         prototype: HTMLAwButtonElement;
         new (): HTMLAwButtonElement;
+    };
+    interface HTMLAwChipElement extends Components.AwChip, HTMLStencilElement {
+    }
+    var HTMLAwChipElement: {
+        prototype: HTMLAwChipElement;
+        new (): HTMLAwChipElement;
     };
     interface HTMLAwLoadingElement extends Components.AwLoading, HTMLStencilElement {
     }
@@ -79,11 +130,30 @@ declare global {
         new (): HTMLAwLoadingElement;
     };
     interface HTMLElementTagNameMap {
+        "aw-avatar": HTMLAwAvatarElement;
         "aw-button": HTMLAwButtonElement;
+        "aw-chip": HTMLAwChipElement;
         "aw-loading": HTMLAwLoadingElement;
     }
 }
 declare namespace LocalJSX {
+    interface AwAvatar {
+        /**
+          * Wrapper heigth in pixels
+         */
+        "height"?: string;
+        "mode"?: AwAvatarMode;
+        "status"?: AwStatus;
+        /**
+          * Add a styled border to component
+         */
+        "styled"?: boolean;
+        "theme"?: AnywhereTheme;
+        /**
+          * Wrapper width in pixels
+         */
+        "width"?: string;
+    }
     interface AwButton {
         /**
           * Colors of button (like gradient)
@@ -108,7 +178,7 @@ declare namespace LocalJSX {
         /**
           * Optional ID to be attached on button
          */
-        "id"?: string;
+        "identifier"?: string;
         /**
           * Text to show inside button
          */
@@ -139,12 +209,35 @@ declare namespace LocalJSX {
         "status"?: AwStatus;
         "theme"?: AnywhereTheme;
     }
+    interface AwChip {
+        "avatar"?: boolean;
+        /**
+          * The style of chip, like solid or outline.
+         */
+        "color"?: AwChipColor;
+        /**
+          * Indicates if chip should be closed.
+         */
+        "dimissable"?: boolean;
+        "label"?: string;
+        /**
+          * The style of corners, like rounded, square or radius.
+         */
+        "mode"?: AwChipMode;
+        /**
+          * The size of chip.
+         */
+        "size"?: AwChipSize;
+    }
     interface AwLoading {
         "status"?: AwStatus;
+        "theme"?: AnywhereTheme;
         "visible"?: boolean;
     }
     interface IntrinsicElements {
+        "aw-avatar": AwAvatar;
         "aw-button": AwButton;
+        "aw-chip": AwChip;
         "aw-loading": AwLoading;
     }
 }
@@ -152,7 +245,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "aw-avatar": LocalJSX.AwAvatar & JSXBase.HTMLAttributes<HTMLAwAvatarElement>;
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
+            "aw-chip": LocalJSX.AwChip & JSXBase.HTMLAttributes<HTMLAwChipElement>;
             "aw-loading": LocalJSX.AwLoading & JSXBase.HTMLAttributes<HTMLAwLoadingElement>;
         }
     }

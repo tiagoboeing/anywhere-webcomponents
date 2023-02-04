@@ -67,6 +67,17 @@
         "800": { "value": "#277C78" },
         "900": { "value": "#216A67" }
       },
+      "white-blue": {
+        "100": { "value": "#D0E9FA" },
+        "200": { "value": "#A2D4F6" },
+        "300": { "value": "#73BFF2" },
+        "400": { "value": "#45AAEE" },
+        "500": { "value": "#2EA0EC" },
+        "600": { "value": "#288ED1" },
+        "700": { "value": "#237CB7" },
+        "800": { "value": "#1E6A9D" },
+        "900": { "value": "#195883" }
+      },
       "light-blue": {
         "100": { "value": "#EDF4FF" },
         "200": { "value": "#CBE0FF" },
