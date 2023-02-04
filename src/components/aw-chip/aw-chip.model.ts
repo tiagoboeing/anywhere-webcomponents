@@ -16,3 +16,8 @@ export enum AwChipSize {
   large = 'large',
   giant = 'giant',
 }
+
+export enum AwChipAvatarSizes {
+  'width' = '46',
+  'height' = '46',
+}

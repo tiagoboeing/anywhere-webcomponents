@@ -1,12 +1,27 @@
-import { Component, Host, h, Prop } from '@stencil/core'
-import { AwChipColor, AwChipMode, AwChipSize } from './aw-chip.model'
+import {
+  Component,
+  ComponentWillLoad,
+  Element,
+  h,
+  Host,
+  Prop,
+} from '@stencil/core'
+import { AwAvatarMode } from '../aw-avatar/aw-avatar.model'
+import {
+  AwChipAvatarSizes,
+  AwChipColor,
+  AwChipMode,
+  AwChipSize,
+} from './aw-chip.model'
 
 @Component({
   tag: 'aw-chip',
   styleUrl: 'aw-chip.scss',
   shadow: true,
 })
-export class AwChip {
+export class AwChip implements ComponentWillLoad {
+  @Element() host: HTMLDivElement
+
   /**
    * Indicates if chip should be closed.
    */
@@ -34,21 +49,58 @@ export class AwChip {
   @Prop({ mutable: true })
   avatar = false
 
+  @Prop({ mutable: true })
+  label: string
+
+  componentWillLoad() {
+    this.validate()
+    this.buildAvatar()
+  }
+
+  validate() {
+    if (!this.label) throw new Error('Property "label" is required!')
+  }
+
   showAvatar(): boolean {
-    return this.avatar
+    const hasSlotAvatar = this.host.querySelector('[slot="avatar"]')
+
+    return this.avatar || !!hasSlotAvatar
+  }
+
+  buildAvatar() {
+    const avatarSlot = this.host.querySelector('[slot="avatar"]')
+
+    if (!avatarSlot) return
+
+    avatarSlot.setAttribute('width', AwChipAvatarSizes.width)
+    avatarSlot.setAttribute('height', AwChipAvatarSizes.height)
+    avatarSlot.setAttribute('styled', 'false')
+
+    const avatarMode = this.handleAvatarMode(this.mode)
+    avatarSlot.setAttribute('mode', avatarMode)
+  }
+
+  handleAvatarMode(chipMode: AwChipMode): AwAvatarMode {
+    let avatarMode = AwAvatarMode.rounded
+
+    if (chipMode === AwChipMode.square) avatarMode = AwAvatarMode.square
+    if (chipMode === AwChipMode.radius) avatarMode = AwAvatarMode.radius
+
+    return avatarMode
   }
 
   render() {
     return (
       <Host>
         <div id="wrapper">
-          <div id="avatar">
-            <slot name="avatar"></slot>
-          </div>
+          {this.showAvatar() && (
+            <div id="avatar">
+              <slot name="avatar"></slot>
+            </div>
+          )}
 
-          <div id="label"></div>
+          <div id="label">{this.label}</div>
         </div>
-        <slot></slot>
       </Host>
     )
   }

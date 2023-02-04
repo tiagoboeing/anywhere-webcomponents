@@ -88,6 +88,7 @@ export namespace Components {
           * Indicates if chip should be closed.
          */
         "dimissable": boolean;
+        "label": string;
         /**
           * The style of corners, like rounded, square or radius.
          */
@@ -218,6 +219,7 @@ declare namespace LocalJSX {
           * Indicates if chip should be closed.
          */
         "dimissable"?: boolean;
+        "label"?: string;
         /**
           * The style of corners, like rounded, square or radius.
          */
