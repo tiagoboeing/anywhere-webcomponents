@@ -4,7 +4,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[Demo here](https://anywhere.tiagoboeing.com/) | [Roadmap](https://github.com/tiagoboeing/anywhere-webcomponents/projects)
+[Demo here](https://anywhere.tiagoboeing.com/) | [Roadmap](https://github.com/users/tiagoboeing/projects/2)
 
 **This project is a work in progress.** See [projects page](https://github.com/tiagoboeing/anywhere-webcomponents/projects) to track all status.
 
